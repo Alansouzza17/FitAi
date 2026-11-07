@@ -6,7 +6,7 @@ import {
   Search, Filter, X, Award, Clock, Save, BarChart3, RefreshCw
 } from 'lucide-react';
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, signInAnonymously, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot, addDoc } from 'firebase/firestore';
 
 // --- FIREBASE INITIALIZATION ---
@@ -351,6 +351,7 @@ export default function App() {
   const [userProfile, setUserProfile] = useState(DEFAULT_USER_PROFILE);
   const [workoutPlan, setWorkoutPlan] = useState(null);
   const [user, setUser] = useState(null);
+  const [firebaseAuthError, setFirebaseAuthError] = useState('');
 
   // Active workout execution state
   const [activeWorkoutDay, setActiveWorkoutDay] = useState(null);
@@ -382,8 +383,17 @@ export default function App() {
   // Firebase Auth Setup
   useEffect(() => {
     if (!auth) return;
-    const unsubscribe = onAuthStateChanged(auth, (usr) => {
-      setUser(usr);
+    const unsubscribe = onAuthStateChanged(auth, async (usr) => {
+      if (usr) {
+        setUser(usr);
+        return;
+      }
+      try {
+        await signInAnonymously(auth);
+      } catch (err) {
+        setFirebaseAuthError('Habilite o provedor Anônimo no Firebase Authentication para sincronizar dados e gerar treinos.');
+        console.error('Não foi possível iniciar a sessão FitIA:', err);
+      }
     });
     return () => unsubscribe();
   }, []);
@@ -521,8 +531,6 @@ export default function App() {
     }
   };
 
-  if (!user) return <AuthGate auth={auth} />;
-
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans flex flex-col md:flex-row antialiased selection:bg-lime-500 selection:text-zinc-950">
       
@@ -580,8 +588,9 @@ export default function App() {
       {/* MAIN CONTENT AREA */}
       <main className={`app-main flex-1 overflow-y-auto pb-24 md:pb-8 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full ${activeTab === 'active-workout' ? 'is-workout-main' : ''}`}>
         
-        <div className="mb-3 flex justify-end"><button onClick={() => auth && signOut(auth)} className="min-h-11 rounded-lg border border-zinc-700 px-4 text-sm text-zinc-300">Sair da conta</button></div>
         {!isOnline && <div role="status" className="mb-4 rounded-xl border border-amber-700/60 bg-amber-950/50 px-4 py-3 text-sm text-amber-200">Você está offline. Recursos online e a geração de treinos por IA não estão disponíveis.</div>}
+        {!auth && <div role="status" className="mb-4 rounded-xl border border-amber-700/60 bg-amber-950/50 px-4 py-3 text-sm text-amber-200">O FitIA abriu em modo local. Configure as variáveis Firebase para sincronizar dados e ativar a geração de treinos.</div>}
+        {firebaseAuthError && <div role="alert" className="mb-4 rounded-xl border border-amber-700/60 bg-amber-950/50 px-4 py-3 text-sm text-amber-200">{firebaseAuthError}</div>}
 
         {/* TOP HEALTH DISCLAIMER BANNER */}
         <div className="mb-6 p-3 bg-amber-950/40 border border-amber-800/40 rounded-xl flex items-start gap-3 text-amber-200/90 text-xs">
@@ -1646,35 +1655,4 @@ function ExerciseDetailModal({ exercise, onClose }) {
       </div>
     </div>
   );
-}
-
-function AuthGate({ auth }) {
-  const [mode, setMode] = useState('login');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
-  const [busy, setBusy] = useState(false);
-  const submit = async (event) => {
-    event.preventDefault(); setMessage('');
-    if (!auth) { setMessage('Configure as variáveis VITE_FIREBASE_* no ambiente e recarregue a página.'); return; }
-    setBusy(true);
-    try {
-      if (mode === 'register') await createUserWithEmailAndPassword(auth, email, password);
-      else if (mode === 'reset') { await sendPasswordResetEmail(auth, email); setMessage('Enviamos instruções de recuperação para seu e-mail.'); }
-      else await signInWithEmailAndPassword(auth, email, password);
-    } catch (error) { setMessage(error?.message || 'Não foi possível autenticar. Verifique os dados e tente novamente.'); }
-    finally { setBusy(false); }
-  };
-  return <main className="min-h-screen bg-zinc-950 text-zinc-100 flex items-center justify-center p-4" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}>
-    <section className="w-full max-w-md rounded-2xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8">
-      <div className="mb-6"><p className="text-2xl font-black">Fit<span className="text-lime-400">IA</span></p><h1 className="mt-4 text-xl font-bold">{mode === 'register' ? 'Criar sua conta' : mode === 'reset' ? 'Recuperar senha' : 'Entre na sua conta'}</h1><p className="mt-2 text-sm text-zinc-400">Acesse seus treinos e sua evolução com segurança.</p></div>
-      <form onSubmit={submit} className="space-y-4">
-        <label className="block text-sm text-zinc-300">E-mail<input type="email" required autoComplete="email" value={email} onChange={e => setEmail(e.target.value)} className="mt-1 min-h-12 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 text-base" /></label>
-        {mode !== 'reset' && <label className="block text-sm text-zinc-300">Senha<input type="password" required minLength={6} autoComplete={mode === 'register' ? 'new-password' : 'current-password'} value={password} onChange={e => setPassword(e.target.value)} className="mt-1 min-h-12 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 text-base" /></label>}
-        {message && <p role="status" className="break-words rounded-lg border border-amber-800/60 bg-amber-950/40 p-3 text-sm text-amber-200">{message}</p>}
-        <button disabled={busy} className="min-h-12 w-full rounded-xl bg-lime-400 px-4 font-black text-zinc-950 disabled:opacity-50">{busy ? 'Aguarde…' : mode === 'register' ? 'Criar conta' : mode === 'reset' ? 'Enviar recuperação' : 'Entrar'}</button>
-      </form>
-      <div className="mt-5 flex flex-wrap justify-between gap-3 text-sm"><button className="text-lime-300" onClick={() => { setMessage(''); setMode(mode === 'register' ? 'login' : 'register'); }}>{mode === 'register' ? 'Já tenho uma conta' : 'Criar conta'}</button>{mode !== 'reset' && <button className="text-zinc-400" onClick={() => { setMessage(''); setMode('reset'); }}>Esqueci minha senha</button>}{mode === 'reset' && <button className="text-zinc-400" onClick={() => { setMessage(''); setMode('login'); }}>Voltar ao login</button>}</div>
-    </section>
-  </main>;
 }
