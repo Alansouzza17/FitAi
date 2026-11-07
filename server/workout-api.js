@@ -13,6 +13,11 @@ const profileSchema = z.object({
 const exerciseSchema = z.object({ id: z.enum(['bench-press','squat','deadlift','lat-pulldown','overhead-press','biceps-curl','triceps-pushdown','leg-press']), name: z.string().min(2).max(120), sets: z.number().int().min(1).max(8), reps: z.string().min(1).max(30), rest: z.string().min(1).max(20), notes: z.string().max(500).default('') });
 const workoutSchema = z.object({ splitName: z.string().min(2).max(100), summary: z.string().min(5).max(1200), warmupTips: z.string().max(1000).default(''), progressionStrategy: z.string().max(1000).default(''), days: z.array(z.object({ dayTitle: z.string().min(2).max(100), targetMuscles: z.array(z.string().max(60)).max(12), estimatedMinutes: z.number().int().min(15).max(240), exercises: z.array(exerciseSchema).min(1).max(12) })).min(1).max(7) });
 function send(res, status, payload) { return res.status(status).json(payload); }
+function minimumExercises(profile) {
+  const levelMinimum = { iniciante: 4, intermediario: 5, avançado: 6, avancado: 6 };
+  const base = levelMinimum[String(profile.level || '').toLowerCase()] || 4;
+  return Number(profile.timeAvailable) < 30 ? Math.min(base, 4) : base;
+}
 async function handleGenerateWorkout(req, res) {
   if (req.method !== 'POST') return send(res, 405, { error: 'Método não permitido.' });
   const profileResult = profileSchema.safeParse(req.body?.profile);
@@ -21,6 +26,7 @@ async function handleGenerateWorkout(req, res) {
     const profile = profileResult.data;
     if (!process.env.GEMINI_API_KEY) return send(res, 503, { error: 'A geração por IA não está configurada no servidor.' });
     const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+    const minExercises = minimumExercises(profile);
     const prompt = `Crie um plano de musculação individualizado, seguro e coerente com o perfil. Use apenas exercícios do catálogo: bench-press, squat, deadlift, lat-pulldown, overhead-press, biceps-curl, triceps-pushdown, leg-press.
 
 Personalização obrigatória:
@@ -28,36 +34,45 @@ Personalização obrigatória:
 - Use o gênero informado somente como contexto opcional e com linguagem respeitosa. Não deduza objetivo, aparência desejada, grupos musculares preferidos, capacidade ou tolerância a volume a partir do gênero. Não gere planos estereotipados: escolha os exercícios e a divisão pelos objetivos, focos, experiência, equipamentos, tempo e limitações individuais.
 - Se não houver foco muscular declarado, proponha uma divisão equilibrada compatível com o objetivo e os dias disponíveis.
 - Ajuste progressão e volume à experiência e recuperação; respeite limitações e exercícios a evitar. Não faça diagnóstico nem prometa resultados.
+- Respeite o nível ${profile.level}: gere pelo menos ${minExercises} exercícios diferentes em CADA dia de treino (máximo 8). Para avançado, normalmente são 6–8; intermediário, 5–8; iniciante, 4–8. Com menos de 30 minutos disponíveis, use no mínimo 4 exercícios bem selecionados.
+- Não conte aquecimento como exercício e não repita o mesmo id dentro de um dia. Distribua os grupos musculares do dia pelos exercícios e não reduza a sessão a apenas 3 movimentos. O total de séries e o descanso devem caber no tempo informado.
 
 Retorne exclusivamente JSON válido no formato {"splitName":"...","summary":"...","warmupTips":"...","progressionStrategy":"...","days":[{"dayTitle":"...","targetMuscles":["..."],"estimatedMinutes":50,"exercises":[{"id":"bench-press","name":"...","sets":3,"reps":"8-12","rest":"60s","notes":"..."}]}]. Perfil do aluno: ${JSON.stringify(profile)}`;
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 25000);
-    let response;
+    let workout = null;
     try {
-      response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(process.env.GEMINI_API_KEY)}`, {
-        method: 'POST', signal: controller.signal, headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { responseMimeType: 'application/json', temperature: 0.4 } })
-      });
-    } finally { clearTimeout(timeout); }
-    const result = await response.json().catch(() => ({}));
-    if (!response.ok) {
-      const upstreamMessage = result.error?.message || 'sem detalhes';
-      console.error('Gemini API error:', response.status, upstreamMessage);
-      if (response.status === 429) return send(res, 503, { error: 'A cota da API Gemini foi excedida. Verifique o plano e os limites do projeto associado à chave.' });
-      if ([400, 401, 403].includes(response.status) && /API.?KEY|key not valid|credential|permission/i.test(upstreamMessage)) {
-        return send(res, 503, { error: 'A chave Gemini é inválida ou não tem acesso à API. Confira GEMINI_API_KEY e a ativação da Gemini API no Google AI Studio.' });
+      for (let attempt = 0; attempt < 2; attempt++) {
+        const requestPrompt = attempt === 0 ? prompt : `${prompt}\n\nCORREÇÃO OBRIGATÓRIA: sua tentativa anterior tinha menos de ${minExercises} exercícios diferentes em pelo menos um dia. Refaça o plano inteiro e confira a quantidade antes de responder.`;
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(process.env.GEMINI_API_KEY)}`, {
+          method: 'POST', signal: controller.signal, headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contents: [{ parts: [{ text: requestPrompt }] }], generationConfig: { responseMimeType: 'application/json', temperature: 0.4, maxOutputTokens: 8192 } })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          const upstreamMessage = result.error?.message || 'sem detalhes';
+          console.error('Gemini API error:', response.status, upstreamMessage);
+          if (response.status === 429) return send(res, 503, { error: 'A cota da API Gemini foi excedida. Verifique o plano e os limites do projeto associado à chave.' });
+          if ([400, 401, 403].includes(response.status) && /API.?KEY|key not valid|credential|permission/i.test(upstreamMessage)) {
+            return send(res, 503, { error: 'A chave Gemini é inválida ou não tem acesso à API. Confira GEMINI_API_KEY e a ativação da Gemini API no Google AI Studio.' });
+          }
+          if (response.status === 404) return send(res, 503, { error: `O modelo Gemini "${model}" não está disponível para esta chave. Confira GEMINI_MODEL no Render.` });
+          return send(res, 502, { error: `A API Gemini recusou a solicitação (HTTP ${response.status}). Confira os logs do serviço FitIA no Render.` });
+        }
+        const raw = result.candidates?.[0]?.content?.parts?.map(part => part.text || '').join('');
+        if (!raw) return send(res, 502, { error: 'A IA não retornou um treino válido. Tente novamente.' });
+        let candidate;
+        try { candidate = workoutSchema.parse(JSON.parse(raw)); }
+        catch (error) {
+          console.error('Invalid Gemini workout response:', error.message);
+          return send(res, 502, { error: 'A IA respondeu em um formato inválido. Tente gerar novamente.' });
+        }
+        const incompleteDay = candidate.days.find(day => new Set(day.exercises.map(exercise => exercise.id)).size < minExercises);
+        if (!incompleteDay) { workout = candidate; break; }
+        console.warn(`Gemini returned fewer than ${minExercises} distinct exercises for ${incompleteDay.dayTitle}; requesting one correction.`);
       }
-      if (response.status === 404) return send(res, 503, { error: `O modelo Gemini "${model}" não está disponível para esta chave. Confira GEMINI_MODEL no Render.` });
-      return send(res, 502, { error: `A API Gemini recusou a solicitação (HTTP ${response.status}). Confira os logs do serviço FitIA no Render.` });
-    }
-    const raw = result.candidates?.[0]?.content?.parts?.map(part => part.text || '').join('');
-    if (!raw) return send(res, 502, { error: 'A IA não retornou um treino válido. Tente novamente.' });
-    let workout;
-    try { workout = workoutSchema.parse(JSON.parse(raw)); }
-    catch (error) {
-      console.error('Invalid Gemini workout response:', error.message);
-      return send(res, 502, { error: 'A IA respondeu em um formato inválido. Tente gerar novamente.' });
-    }
+    } finally { clearTimeout(timeout); }
+    if (!workout) return send(res, 502, { error: `A IA não conseguiu montar pelo menos ${minExercises} exercícios diferentes por dia. Tente gerar novamente ou aumente o tempo disponível por treino.` });
     workout.id = `plan-${Date.now()}`;
     workout.createdAt = new Date().toISOString();
     return send(res, 200, { workout });
