@@ -293,6 +293,7 @@ const DEFAULT_USER_PROFILE = {
     thighRight: '', thighLeft: '', calfRight: '', calfLeft: ''
   }
 };
+const FOCUS_MUSCLE_OPTIONS = ['Peitoral', 'Costas', 'Ombros', 'Braços', 'Abdômen', 'Glúteos', 'Quadríceps', 'Posteriores de coxa', 'Panturrilhas', 'Corpo inteiro'];
 
 function getProfileValidationErrors(profile) {
   const errors = [];
@@ -959,6 +960,21 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
             </div>
 
             <div>
+              <label className="block text-xs font-semibold text-zinc-300 mb-1">Como você se identifica? (opcional)</label>
+              <select
+                value={form.gender || ''}
+                onChange={(e) => handleInputChange('gender', e.target.value)}
+                className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-100 focus:outline-none focus:border-lime-500"
+              >
+                <option value="">Prefiro não informar</option>
+                <option value="mulher">Mulher</option>
+                <option value="homem">Homem</option>
+                <option value="nao-binario">Não binário / outra identidade</option>
+              </select>
+              <p className="mt-1 text-[11px] text-zinc-500">Esse dado é opcional e não determina seus objetivos ou exercícios.</p>
+            </div>
+
+            <div>
               <label className="block text-xs font-semibold text-zinc-300 mb-1">Nível de Experiência</label>
               <div className="grid grid-cols-3 gap-2">
                 {['iniciante', 'intermediario', 'avancado'].map((lvl) => (
@@ -1050,6 +1066,17 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
                 className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-100 focus:outline-none focus:border-lime-500"
               />
             </div>
+
+            <fieldset>
+              <legend className="block text-xs font-semibold text-zinc-300 mb-2">Grupos musculares prioritários (opcional)</legend>
+              <div className="flex flex-wrap gap-2">
+                {FOCUS_MUSCLE_OPTIONS.map((muscle) => {
+                  const selected = (form.focusMuscles || []).includes(muscle);
+                  return <button key={muscle} type="button" aria-pressed={selected} onClick={() => handleInputChange('focusMuscles', selected ? form.focusMuscles.filter(item => item !== muscle) : [...(form.focusMuscles || []), muscle])} className={`min-h-10 rounded-full border px-3 text-xs font-semibold ${selected ? 'border-lime-400 bg-lime-400 text-zinc-950' : 'border-zinc-700 bg-zinc-950 text-zinc-300'}`}>{muscle}</button>;
+                })}
+              </div>
+              <p className="mt-2 text-[11px] text-zinc-500">Escolha os focos que correspondem ao seu objetivo, independentemente do gênero.</p>
+            </fieldset>
 
             <div>
               <label className="block text-xs font-semibold text-zinc-300 mb-1">Restrições Físicas ou Lesões Previas</label>
@@ -1194,6 +1221,14 @@ function AIGeneratorView({ userProfile, isGenerating, error, onGenerate, profile
           <div className="bg-zinc-950 p-2.5 rounded-lg border border-zinc-800">
             <span className="text-zinc-500 block">Nível:</span>
             <span className="font-bold text-zinc-200 capitalize">{userProfile.level}</span>
+          </div>
+          <div className="bg-zinc-950 p-2.5 rounded-lg border border-zinc-800">
+            <span className="text-zinc-500 block">Identidade (opcional):</span>
+            <span className="font-bold text-zinc-200 capitalize">{userProfile.gender || 'Não informada'}</span>
+          </div>
+          <div className="bg-zinc-950 p-2.5 rounded-lg border border-zinc-800">
+            <span className="text-zinc-500 block">Foco muscular:</span>
+            <span className="font-bold text-zinc-200">{userProfile.focusMuscles?.length ? userProfile.focusMuscles.join(', ') : 'Sem preferência específica'}</span>
           </div>
           <div className="bg-zinc-950 p-2.5 rounded-lg border border-zinc-800">
             <span className="text-zinc-500 block">Restrições Informadas:</span>

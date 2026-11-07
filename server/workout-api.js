@@ -21,7 +21,15 @@ async function handleGenerateWorkout(req, res) {
     const profile = profileResult.data;
     if (!process.env.GEMINI_API_KEY) return send(res, 503, { error: 'A geração por IA não está configurada no servidor.' });
     const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
-    const prompt = `Crie um plano de musculação seguro e personalizado. Use apenas exercícios do catálogo: bench-press, squat, deadlift, lat-pulldown, overhead-press, biceps-curl, triceps-pushdown, leg-press. Respeite restrições, experiência, equipamentos e duração solicitada. Não diagnostique nem invente garantias. Retorne exclusivamente JSON no formato {"splitName":"...","summary":"...","warmupTips":"...","progressionStrategy":"...","days":[{"dayTitle":"...","targetMuscles":["..."],"estimatedMinutes":50,"exercises":[{"id":"bench-press","name":"...","sets":3,"reps":"8-12","rest":"60s","notes":"..."}]}]}. Perfil do aluno: ${JSON.stringify(profile)}`;
+    const prompt = `Crie um plano de musculação individualizado, seguro e coerente com o perfil. Use apenas exercícios do catálogo: bench-press, squat, deadlift, lat-pulldown, overhead-press, biceps-curl, triceps-pushdown, leg-press.
+
+Personalização obrigatória:
+- Trate o objetivo declarado e os grupos musculares em focusMuscles como as prioridades principais do plano.
+- Use o gênero informado somente como contexto opcional e com linguagem respeitosa. Não deduza objetivo, aparência desejada, grupos musculares preferidos, capacidade ou tolerância a volume a partir do gênero. Não gere planos estereotipados: escolha os exercícios e a divisão pelos objetivos, focos, experiência, equipamentos, tempo e limitações individuais.
+- Se não houver foco muscular declarado, proponha uma divisão equilibrada compatível com o objetivo e os dias disponíveis.
+- Ajuste progressão e volume à experiência e recuperação; respeite limitações e exercícios a evitar. Não faça diagnóstico nem prometa resultados.
+
+Retorne exclusivamente JSON válido no formato {"splitName":"...","summary":"...","warmupTips":"...","progressionStrategy":"...","days":[{"dayTitle":"...","targetMuscles":["..."],"estimatedMinutes":50,"exercises":[{"id":"bench-press","name":"...","sets":3,"reps":"8-12","rest":"60s","notes":"..."}]}]. Perfil do aluno: ${JSON.stringify(profile)}`;
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 25000);
     let response;
