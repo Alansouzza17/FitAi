@@ -27,6 +27,8 @@ Never commit `.env`, Firebase Admin JSON, or the Gemini API key. Firebase Web co
 
 Set the same Firebase project in Vercel/Render: the Firebase Web config and Admin service account must match. Enable Email/Password sign-in. Apply `firestore.rules` in Firebase Console or Firebase CLI. Without these secrets, the app shows the Firebase configuration prompt and the API refuses generation; it will not return a fake workout.
 
+The Firebase CLI default project is set to `fitai-7dc19` in `.firebaserc`, and the same ID is prefilled as `VITE_FIREBASE_PROJECT_ID`. The remaining web app settings (`apiKey`, `authDomain`, `storageBucket`, `messagingSenderId`, and `appId`) must come from a registered Web app in that Firebase project.
+
 The AI endpoint verifies the Firebase ID token, validates the profile and model output with Zod, applies a timeout, and calls Gemini from the server. Firestore stores each user's profile/plan under their authenticated UID.
 
 ## PWA
