@@ -1,32 +1,20 @@
-# Configuração manual das credenciais
+# Configuração manual do backend no Render
 
-Não coloque chaves secretas no código nem no GitHub. Este repositório já ignora `.env`.
+O FitIA não usa Firebase. A única integração de backend é a API Node hospedada no Render. Perfil, plano de treino e histórico ficam no armazenamento local do navegador deste dispositivo.
 
-## Valores do Firebase
+## Render (backend e site)
 
-No Firebase Console, escolha o mesmo projeto nas duas etapas:
+1. Conecte o repositório GitHub ao Render usando o Blueprint `render.yaml`.
+2. Preencha `GEMINI_API_KEY` no serviço Render para habilitar a geração de treinos. `GEMINI_MODEL` já tem um valor padrão.
+3. Se também hospedar o frontend na Vercel, preencha `CORS_ORIGINS` com a origem pública completa da Vercel, sem barra ao final (por exemplo, `https://fitai-eight-sigma.vercel.app`). Se houver domínio de produção e Preview, separe as origens por vírgula.
+4. O Render compila e serve o site e a API na mesma origem. Não é necessária variável de URL de API nesse caso.
 
-1. Em **Configurações do projeto → Seus apps**, copie a configuração do app Web e preencha os seis `VITE_FIREBASE_*` do `.env.example`.
-2. Em **Authentication → Sign-in method**, habilite **Anônimo**. O app cria uma sessão temporária em segundo plano; não exibe tela de login nem pede senha.
-3. Em **Contas de serviço**, gere/obtenha a credencial JSON do Firebase Admin e use o JSON completo em `FIREBASE_SERVICE_ACCOUNT`. Para `.env`, serialize o JSON em uma única linha, mantendo `private_key` como sequência JSON com `\n` escapado.
-4. Em Firestore, crie o banco e publique as regras deste repositório (`firebase deploy --only firestore:rules`, depois de selecionar o projeto Firebase correto).
+## Vercel (somente frontend opcional)
 
-O objeto do app Web contém configuração pública usada pelo navegador. O JSON do Admin permite acesso privilegiado e deve ficar somente como variável de servidor. As sessões anônimas mantêm os documentos separados por UID do Firebase; visitantes não compartilham perfil ou histórico entre contas.
+Configure `VITE_API_BASE_URL` como a URL pública completa do serviço FitIA no Render (por exemplo, `https://fitia.onrender.com`) e faça novo deploy. A Vercel entrega apenas os arquivos estáticos; não existe função de backend na Vercel. `GEMINI_API_KEY` deve existir somente no Render.
 
-## Chave Gemini
+## Desenvolvimento local
 
-Crie uma chave Gemini e preencha `GEMINI_API_KEY`. Use `GEMINI_MODEL=gemini-2.5-flash`, ou outro modelo disponível para sua conta. A chave é usada exclusivamente pelo backend; não use o prefixo `VITE_`.
+Copie `.env.example` para `.env`; mantenha a chave Gemini apenas no servidor local. Execute `npm ci`, `npm run build` e `npm start` para servir site e API na porta configurada. Para desenvolvimento com Vite, rode `npm start` em um terminal e `npm run dev` em outro; o proxy local encaminha `/api` para o servidor Node.
 
-## Local
-
-Copie `.env.example` para `.env`, preencha os valores e mantenha `.env` fora dos commits. `npm run dev` lê os valores `VITE_*` para o frontend. `npm start` carrega `.env` no servidor Node.
-
-## Render
-
-Crie o Blueprint usando `render.yaml`. Cada entrada `sync: false` solicita valor manualmente durante a configuração. Se o serviço já existir, abra **Environment** e crie/atualize as mesmas chaves do `.env.example`; salve e faça um novo deploy. `PORT` é fornecida pelo Render.
-
-## Vercel
-
-Em **Project → Settings → Environment Variables**, adicione as chaves do `.env.example`. Marque `VITE_*` para os ambientes de build desejados (Production e, se necessário, Preview). Adicione `GEMINI_API_KEY`, `GEMINI_MODEL` e `FIREBASE_SERVICE_ACCOUNT` como variáveis server-side. Depois de salvar, faça um novo deploy para aplicar variáveis `VITE_*` ao bundle.
-
-Não adicione credenciais em GitHub Actions, em `render.yaml`, `vercel.json`, issues ou commits. `.env.example` contém apenas os nomes e valores não secretos padrão. A configuração em `firebase.json` pode ser aplicada com `npx -y firebase-tools@latest deploy --only auth,firestore:rules` depois de autenticar a CLI e confirmar o projeto ativo.
+Nunca coloque a chave Gemini em código frontend, em variável `VITE_*`, em arquivos versionados ou em commits. A IA exige conexão e chave configurada no backend Render.

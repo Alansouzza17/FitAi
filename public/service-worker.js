@@ -1,4 +1,4 @@
-const CACHE = 'fitia-static-v1';
+const CACHE = 'fitia-static-v2';
 const SHELL = ['/offline.html', '/manifest.webmanifest', '/icons/fitia-192.svg', '/icons/fitia-512.svg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
@@ -10,7 +10,7 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   const url = new URL(request.url);
   if (request.method !== 'GET' || url.origin !== self.location.origin) return;
-  // Cache only the static app shell. Never cache API calls, Firestore data, user-specific pages, or Gemini responses.
+  // Cache only public static assets. Never cache API calls or personal user data.
   const isStaticAsset = /\.(?:css|js|mjs|svg|png|webp|woff2?)$/i.test(url.pathname) || url.pathname === '/manifest.webmanifest';
   if (isStaticAsset) {
     event.respondWith(caches.match(request).then(cached => cached || fetch(request).then(response => {

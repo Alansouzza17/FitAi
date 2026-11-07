@@ -1,6 +1,4 @@
 const { z } = require('zod');
-const { cert, getApps, initializeApp } = require('firebase-admin/app');
-const { getAuth } = require('firebase-admin/auth');
 
 const profileSchema = z.object({
   name: z.string().max(100).optional().default(''), age: z.coerce.number().int().min(13).max(100),
@@ -14,22 +12,10 @@ const profileSchema = z.object({
 });
 const exerciseSchema = z.object({ id: z.enum(['bench-press','squat','deadlift','lat-pulldown','overhead-press','biceps-curl','triceps-pushdown','leg-press']), name: z.string().min(2).max(120), sets: z.number().int().min(1).max(8), reps: z.string().min(1).max(30), rest: z.string().min(1).max(20), notes: z.string().max(500).default('') });
 const workoutSchema = z.object({ splitName: z.string().min(2).max(100), summary: z.string().min(5).max(1200), warmupTips: z.string().max(1000).default(''), progressionStrategy: z.string().max(1000).default(''), days: z.array(z.object({ dayTitle: z.string().min(2).max(100), targetMuscles: z.array(z.string().max(60)).max(12), estimatedMinutes: z.number().int().min(15).max(240), exercises: z.array(exerciseSchema).min(1).max(12) })).min(1).max(7) });
-let adminApp;
-function firebaseAuth() {
-  if (adminApp) return getAuth(adminApp);
-  if (!process.env.FIREBASE_SERVICE_ACCOUNT) throw new Error('FIREBASE_SERVICE_ACCOUNT is not configured');
-  const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-  adminApp = getApps()[0] || initializeApp({ credential: cert(serviceAccount) });
-  return getAuth(adminApp);
-}
 function send(res, status, payload) { return res.status(status).json(payload); }
 async function handleGenerateWorkout(req, res) {
   if (req.method !== 'POST') return send(res, 405, { error: 'Método não permitido.' });
   try {
-    const authorization = req.headers.authorization || '';
-    const token = authorization.startsWith('Bearer ') ? authorization.slice(7) : '';
-    if (!token) return send(res, 401, { error: 'Faça login para gerar seu treino.' });
-    await firebaseAuth().verifyIdToken(token);
     const profile = profileSchema.parse(req.body?.profile);
     if (!process.env.GEMINI_API_KEY) return send(res, 503, { error: 'A geração por IA não está configurada no servidor.' });
     const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
@@ -54,9 +40,8 @@ async function handleGenerateWorkout(req, res) {
   } catch (error) {
     if (error?.name === 'ZodError' || error instanceof SyntaxError) return send(res, 400, { error: 'Dados do perfil ou resposta de treino inválidos.' });
     if (error?.name === 'AbortError') return send(res, 504, { error: 'A geração demorou demais. Tente novamente.' });
-    if (error?.code === 'auth/argument-error' || error?.code === 'auth/id-token-expired' || error?.code === 'auth/invalid-id-token') return send(res, 401, { error: 'Sessão expirada. Entre novamente.' });
     console.error('Generate workout error:', error.message);
-    return send(res, error.message.includes('FIREBASE_SERVICE_ACCOUNT') ? 503 : 500, { error: 'Não foi possível gerar o treino agora.' });
+    return send(res, 500, { error: 'Não foi possível gerar o treino agora.' });
   }
 }
 module.exports = { handleGenerateWorkout };

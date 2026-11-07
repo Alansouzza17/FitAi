@@ -6,6 +6,18 @@ if (fs.existsSync(envFile) && typeof process.loadEnvFile === 'function') process
 const { handleGenerateWorkout } = require('./workout-api');
 const app = express();
 app.disable('x-powered-by');
+const allowedOrigins = (process.env.CORS_ORIGINS || '').split(',').map(origin => origin.trim()).filter(Boolean);
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin && (allowedOrigins.includes(origin) || origin === process.env.RENDER_EXTERNAL_URL)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  }
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+});
 app.use(express.json({ limit: '32kb' }));
 app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'fitia-api' }));
 app.post('/api/generate-workout', handleGenerateWorkout);

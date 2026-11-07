@@ -5,30 +5,12 @@ import {
   Plus, ArrowUpRight, TrendingUp, Info, Eye, RotateCcw, AlertTriangle, 
   Search, Filter, X, Award, Clock, Save, BarChart3, RefreshCw
 } from 'lucide-react';
-import { initializeApp } from 'firebase/app';
-import { getAuth, signInAnonymously, onAuthStateChanged } from 'firebase/auth';
-import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot, addDoc } from 'firebase/firestore';
-
-// --- FIREBASE INITIALIZATION ---
-let app, auth, db;
-try {
-  const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-    appId: import.meta.env.VITE_FIREBASE_APP_ID
-  };
-  if (!firebaseConfig.apiKey || !firebaseConfig.projectId || !firebaseConfig.appId) throw new Error('Firebase web config is missing');
-  app = initializeApp(firebaseConfig);
-  auth = getAuth(app);
-  db = getFirestore(app);
-} catch (e) {
-  console.warn("Firebase configuration missing. Running local-only mode.");
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+const STORAGE_KEYS = { profile: 'fitia.profile.v1', workout: 'fitia.workout.v1', history: 'fitia.history.v1' };
+function readStoredValue(key, fallback) {
+  try { const value = localStorage.getItem(key); return value ? JSON.parse(value) : fallback; }
+  catch { return fallback; }
 }
-
-const appId = typeof __app_id !== 'undefined' ? __app_id : 'fitia-production-app';
 
 // --- EXERCISE DATABASE WITH SVGS ---
 const EXERCISE_DATABASE = [
@@ -348,10 +330,8 @@ const DEFAULT_WORKOUT_PLAN = {
 // --- MAIN APPLICATION COMPONENT ---
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
-  const [userProfile, setUserProfile] = useState(DEFAULT_USER_PROFILE);
-  const [workoutPlan, setWorkoutPlan] = useState(null);
-  const [user, setUser] = useState(null);
-  const [firebaseAuthError, setFirebaseAuthError] = useState('');
+  const [userProfile, setUserProfile] = useState(() => readStoredValue(STORAGE_KEYS.profile, DEFAULT_USER_PROFILE));
+  const [workoutPlan, setWorkoutPlan] = useState(() => readStoredValue(STORAGE_KEYS.workout, null));
 
   // Active workout execution state
   const [activeWorkoutDay, setActiveWorkoutDay] = useState(null);
@@ -366,7 +346,7 @@ export default function App() {
   const [isOnline, setIsOnline] = useState(() => typeof navigator === 'undefined' ? true : navigator.onLine);
 
   // Evolution History Logs
-  const [historyLogs, setHistoryLogs] = useState([]);
+  const [historyLogs, setHistoryLogs] = useState(() => readStoredValue(STORAGE_KEYS.history, []));
 
   // Keep offline state visible; AI generation remains online-only.
   useEffect(() => {
@@ -380,48 +360,15 @@ export default function App() {
     if (!meta.parentNode) document.head.appendChild(meta);
     return () => { window.removeEventListener('online', update); window.removeEventListener('offline', update); };
   }, []);
-  // Firebase Auth Setup
   useEffect(() => {
-    if (!auth) return;
-    const unsubscribe = onAuthStateChanged(auth, async (usr) => {
-      if (usr) {
-        setUser(usr);
-        return;
-      }
-      try {
-        await signInAnonymously(auth);
-      } catch (err) {
-        setFirebaseAuthError('Habilite o provedor Anônimo no Firebase Authentication para sincronizar dados e gerar treinos.');
-        console.error('Não foi possível iniciar a sessão FitIA:', err);
-      }
-    });
-    return () => unsubscribe();
-  }, []);
-
-  // Fetch Firestore saved data
+    try { localStorage.setItem(STORAGE_KEYS.profile, JSON.stringify(userProfile)); } catch {}
+  }, [userProfile]);
   useEffect(() => {
-    if (!user || !db) return;
-    const profileRef = doc(db, 'artifacts', appId, 'users', user.uid, 'profile', 'main');
-    const workoutRef = doc(db, 'artifacts', appId, 'users', user.uid, 'workouts', 'current');
-    const historyRef = collection(db, 'artifacts', appId, 'users', user.uid, 'history');
-
-    const unsubProfile = onSnapshot(profileRef, (snap) => {
-      if (snap.exists()) setUserProfile(snap.data());
-    }, (err) => console.log('Profile snapshot note:', err.message));
-
-    const unsubWorkout = onSnapshot(workoutRef, (snap) => {
-      if (snap.exists()) setWorkoutPlan(snap.data());
-    }, (err) => console.log('Workout snapshot note:', err.message));
-    const unsubHistory = onSnapshot(historyRef, (snap) => {
-      setHistoryLogs(snap.docs.map((entry) => entry.data()).sort((a, b) => String(b.date).localeCompare(String(a.date))));
-    }, (err) => console.log('History snapshot note:', err.message));
-
-    return () => {
-      unsubProfile();
-      unsubWorkout();
-      unsubHistory();
-    };
-  }, [user]);
+    try { if (workoutPlan) localStorage.setItem(STORAGE_KEYS.workout, JSON.stringify(workoutPlan)); else localStorage.removeItem(STORAGE_KEYS.workout); } catch {}
+  }, [workoutPlan]);
+  useEffect(() => {
+    try { localStorage.setItem(STORAGE_KEYS.history, JSON.stringify(historyLogs)); } catch {}
+  }, [historyLogs]);
 
   // Rest Timer Effect
   useEffect(() => {
@@ -447,56 +394,11 @@ export default function App() {
     setIsGeneratingAI(true);
     setAiError('');
 
-    const prompt = `
-      Atue como um Personal Trainer Master PhD em Biomecânica e Fisiologia do Exercício.
-      Crie um treino estruturado e ultra-personalizado em formato JSON para o seguinte aluno:
-      - Nome: ${userProfile.name}
-      - Idade: ${userProfile.age} anos | Sexo: ${userProfile.gender}
-      - Peso: ${userProfile.weight}kg | Altura: ${userProfile.height}cm
-      - Objetivo Principal: ${userProfile.objective}
-      - Nível de Experiência: ${userProfile.level}
-      - Disponibilidade Semanal: ${userProfile.daysAvailable} dias por semana
-      - Tempo Limite por Treino: ${userProfile.timeAvailable} minutos
-      - Ambiente de Treino: ${userProfile.environment}
-      - Equipamentos Acessíveis: ${userProfile.equipment.join(', ')}
-      - Grupos Musculares Prioritários: ${userProfile.focusMuscles.join(', ')}
-      - Exercícios a evitar: ${userProfile.avoidExercises || 'Nenhum'}
-      - Restrições / Lesões: ${userProfile.physicalLimitations || 'Nenhuma'}
-      - Medidas Corporais: Braço ${userProfile.measurements.armRight}cm, Peito ${userProfile.measurements.chest}cm, Cintura ${userProfile.measurements.waist}cm.
-
-      RETORNE APENAS UM OBJETO JSON VÁLIDO no seguinte formato sem texto adicional ou marcações fora do código:
-      {
-        "splitName": "Nome da Divisão (ex: ABC, Push/Pull/Legs, Upper/Lower)",
-        "summary": "Resumo justificando a divisão biomecânica com base no nível e limitações",
-        "warmupTips": "Orientações específicas de aquecimento e mobilidade",
-        "progressionStrategy": "Como fazer a progressão de cargas com segurança",
-        "days": [
-          {
-            "dayTitle": "Treino A - Nome",
-            "targetMuscles": ["Músculo1", "Músculo2"],
-            "estimatedMinutes": 50,
-            "exercises": [
-              {
-                "id": "bench-press", // Escolha da lista: bench-press, squat, deadlift, lat-pulldown, overhead-press, biceps-curl, triceps-pushdown, leg-press
-                "name": "Nome do Exercício",
-                "sets": 4,
-                "reps": "8-12",
-                "rest": "60s",
-                "notes": "Instruções biomecânicas específicas para o aluno"
-              }
-            ]
-          }
-        ]
-      }
-    `;
-
     try {
-      const idToken = await user?.getIdToken();
-      if (!idToken) throw new Error('Entre na sua conta para gerar um treino.');
-      const response = await fetch('/api/generate-workout', {
+      const response = await fetch(`${API_BASE_URL}/api/generate-workout`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${idToken}` },
-        body: JSON.stringify({ profile: userProfile, prompt })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ profile: userProfile })
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || 'Não foi possível gerar o treino.');
@@ -505,11 +407,6 @@ export default function App() {
       generatedPlan.createdAt = new Date().toISOString();
 
       setWorkoutPlan(generatedPlan);
-
-      // Save to Firebase if available
-      if (user && db) {
-        await setDoc(doc(db, 'artifacts', appId, 'users', user.uid, 'workouts', 'current'), generatedPlan);
-      }
 
       setActiveTab('workout');
     } catch (err) {
@@ -522,13 +419,6 @@ export default function App() {
 
   const saveProfileData = async (updated) => {
     setUserProfile(updated);
-    if (user && db) {
-      try {
-        await setDoc(doc(db, 'artifacts', appId, 'users', user.uid, 'profile', 'main'), updated);
-      } catch (e) {
-        console.error("Error saving profile:", e);
-      }
-    }
   };
 
   return (
@@ -589,8 +479,7 @@ export default function App() {
       <main className={`app-main flex-1 overflow-y-auto pb-24 md:pb-8 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full ${activeTab === 'active-workout' ? 'is-workout-main' : ''}`}>
         
         {!isOnline && <div role="status" className="mb-4 rounded-xl border border-amber-700/60 bg-amber-950/50 px-4 py-3 text-sm text-amber-200">Você está offline. Recursos online e a geração de treinos por IA não estão disponíveis.</div>}
-        {!auth && <div role="status" className="mb-4 rounded-xl border border-amber-700/60 bg-amber-950/50 px-4 py-3 text-sm text-amber-200">O FitIA abriu em modo local. Configure as variáveis Firebase para sincronizar dados e ativar a geração de treinos.</div>}
-        {firebaseAuthError && <div role="alert" className="mb-4 rounded-xl border border-amber-700/60 bg-amber-950/50 px-4 py-3 text-sm text-amber-200">{firebaseAuthError}</div>}
+        {!isOnline && <div role="status" className="mb-4 rounded-xl border border-amber-700/60 bg-amber-950/50 px-4 py-3 text-sm text-amber-200">Sem conexão. Seus dados permanecem neste dispositivo; a geração de treinos precisa de internet.</div>}
 
         {/* TOP HEALTH DISCLAIMER BANNER */}
         <div className="mb-6 p-3 bg-amber-950/40 border border-amber-800/40 rounded-xl flex items-start gap-3 text-amber-200/90 text-xs">
@@ -653,12 +542,7 @@ export default function App() {
             isTimerRunning={isTimerRunning}
             onStartTimer={startRestTimer}
             onFinishWorkout={async (session) => {
-              if (user && db && session) {
-                await addDoc(collection(db, 'artifacts', appId, 'users', user.uid, 'sessions'), {
-                  dayTitle: activeWorkoutDay?.dayTitle || '', completedSets: session.completedSets,
-                  weights: session.weights, completedAt: new Date().toISOString()
-                });
-              }
+              if (session) setHistoryLogs((current) => [{ type: 'workout', dayTitle: activeWorkoutDay?.dayTitle || '', completedSets: session.completedSets, weights: session.weights, completedAt: new Date().toISOString(), date: new Date().toISOString() }, ...current]);
               setActiveTab('dashboard');
             }}
           />
@@ -678,8 +562,7 @@ export default function App() {
             historyLogs={historyLogs}
             userProfile={userProfile}
             onAddLog={async (newLog) => {
-              if (!user || !db) return;
-              await addDoc(collection(db, 'artifacts', appId, 'users', user.uid, 'history'), newLog);
+              setHistoryLogs((current) => [{ ...newLog, date: newLog.date || new Date().toISOString() }, ...current]);
             }}
           />
         )}

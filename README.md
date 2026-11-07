@@ -1,40 +1,23 @@
 # FitIA
 
-App web React/TypeScript mobile-first with Firebase Authentication/Firestore, server-side Gemini generation, and PWA support.
+Aplicação web mobile-first com PWA e backend Node/Express hospedado exclusivamente no Render. O frontend pode ser servido pelo próprio Render ou hospedado como arquivos estáticos na Vercel, apontando para a API do Render.
 
-## Run locally
+## Executar localmente
 
-1. Install Node.js 20 or newer.
-2. Copy `.env.example` to `.env` and fill the Firebase Web config. Add the Firebase Admin service account JSON and Gemini key for AI generation. `.env` is ignored by Git.
-3. Enable Anonymous in Firebase Authentication and deploy the configured `auth` provider and `firestore.rules` to the project.
-4. Run `npm ci` then `npm run dev`. For the production server locally, run `npm run build` then `npm start`; Node loads the local `.env` automatically.
+1. Instale Node.js 20 ou superior.
+2. Copie `.env.example` para `.env` e coloque `GEMINI_API_KEY` no ambiente do servidor. Essa chave nunca vai para o bundle do navegador.
+3. Execute `npm ci && npm run build && npm start` para servir a aplicação e a API localmente.
+4. Para desenvolver com Vite, mantenha `npm start` em um terminal e rode `npm run dev` em outro.
 
-The app uses `/api/generate-workout`. In local development, run `npm start` after `npm run build` to serve the UI and API together. Vercel runs the same endpoint as a serverless function.
+Perfil, plano e histórico são mantidos no `localStorage` do navegador e não são enviados ao backend para armazenamento. A API Render recebe o perfil apenas quando o usuário solicita geração de treino; a chave Gemini fica no servidor.
 
-## GitHub, Vercel, Render
+## Deploy
 
-The repository is configured for both providers. The actual secret values are deliberately not stored in GitHub; enter them manually in each provider's Environment Variables settings:
+- **Render (backend e frontend recomendado):** conecte o repositório ao Blueprint `render.yaml`; informe `GEMINI_API_KEY`. O mesmo serviço atende o site e `/api/generate-workout`.
+- **Vercel (frontend opcional):** configure `VITE_API_BASE_URL` com a origem pública do serviço Render. Configure `CORS_ORIGINS` no Render com a origem da Vercel. A Vercel não hospeda nenhuma função de backend.
 
-See [`CREDENTIALS.md`](./CREDENTIALS.md) for the exact Firebase, Gemini, Render, and Vercel setup steps and environment-variable names.
-
-- **Vercel:** Import `Alansouzza17/FitAi`, framework Vite, build `npm run build`, output `dist`. The app opens without an email/password screen and creates an anonymous Firebase session in the background. Add the variables listed in `.env.example` under Project Settings → Environment Variables. Apply `VITE_FIREBASE_*` to Production and Preview builds; `FIREBASE_SERVICE_ACCOUNT` and `GEMINI_API_KEY` are server-only. API route is `api/generate-workout.js`.
-- **Render:** Create a Blueprint from this repository's `render.yaml`. Its `sync: false` entries prompt for the values during setup, or add them later under the service's Environment tab. It runs `npm start`, serves the built SPA and `/api/health`, and exposes the API to the same origin.
-- Pushes to the connected production branch trigger provider builds. Both are set up to use `main` by default.
-
-Never commit `.env`, Firebase Admin JSON, or the Gemini API key. Firebase Web configuration is public client configuration; Firebase Admin JSON and Gemini API key are server-only secrets. `FIREBASE_SERVICE_ACCOUNT` must be the complete JSON for the Admin SDK service account, serialized as a single line for `.env`.
-
-## Before first use
-
-Set the same Firebase project in Vercel/Render: the Firebase Web config and Admin service account must match. Enable Anonymous sign-in. Apply `firestore.rules` in Firebase Console or Firebase CLI. Without the Firebase Web config, the app still opens, but Firebase persistence and AI generation are unavailable. The API does not return a fake workout.
-
-The Firebase CLI default project is set to `fitai-7dc19` in `.firebaserc`, and the same ID is prefilled as `VITE_FIREBASE_PROJECT_ID`. The remaining web app settings (`apiKey`, `authDomain`, `storageBucket`, `messagingSenderId`, and `appId`) must come from a registered Web app in that Firebase project.
-
-The AI endpoint verifies the Firebase ID token, validates the profile and model output with Zod, applies a timeout, and calls Gemini from the server. Firestore stores each user's profile/plan under their authenticated UID.
+Consulte [`CREDENTIALS.md`](./CREDENTIALS.md) para as variáveis manuais. Nenhuma configuração ou dependência Firebase é necessária.
 
 ## PWA
 
-`public/manifest.webmanifest`, the FitIA icons, `public/service-worker.js`, and `public/offline.html` provide install metadata and a static-shell cache. API responses, Gemini output, and user data are excluded from cache. AI generation is unavailable offline.
-
-## Status and limits
-
-The original UI is preserved with direct app access and an anonymous Firebase session created in the background (no email/password screen). The repo was supplied empty, so this project scaffolds it from the provided TSX. The Render Blueprint and Vercel config prepare deployments; actual deploys still require linking provider accounts and setting Firebase/Gemini values. No production deployment is complete until those account-side steps succeed.
+`public/manifest.webmanifest`, os ícones FitIA, `public/service-worker.js` e `public/offline.html` dão suporte à instalação e ao shell estático offline. Chamadas de IA não funcionam offline, e dados pessoais não são armazenados no cache do service worker.
