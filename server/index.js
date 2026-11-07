@@ -1,5 +1,8 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
+const envFile = path.join(__dirname, '..', '.env');
+if (fs.existsSync(envFile) && typeof process.loadEnvFile === 'function') process.loadEnvFile(envFile);
 const { handleGenerateWorkout } = require('./workout-api');
 const app = express();
 app.disable('x-powered-by');
