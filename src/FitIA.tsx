@@ -166,7 +166,21 @@ const EXERCISE_DATABASE = [
       'Juntar os joelhos para dentro durante o esforço.'
     ],
     svgType: 'legpress'
-  }
+  },
+  { id: 'incline-press', name: 'Supino Inclinado com Halteres', category: 'Peitoral', secondary: ['Deltoide Anterior', 'Tríceps'], equipment: 'Halteres e banco inclinado', instructions: ['Ajuste o banco entre 30° e 45° e apoie os pés no chão.', 'Inicie com os halteres ao lado da parte superior do peito.', 'Empurre sem bater os halteres e desça com controle.'], commonMistakes: ['Usar inclinação excessiva e sobrecarregar os ombros.', 'Perder o controle na descida.'], svgType: 'chest-press' },
+  { id: 'cable-fly', name: 'Crucifixo na Polia', category: 'Peitoral', secondary: ['Deltoide Anterior'], equipment: 'Polias e puxadores', instructions: ['Mantenha o tronco estável e os cotovelos levemente flexionados.', 'Aproxime as mãos à frente do peito em arco controlado.', 'Retorne até sentir alongamento confortável, sem forçar o ombro.'], commonMistakes: ['Transformar o movimento em um empurrão.', 'Alongar além da amplitude confortável.'], svgType: 'chest-press' },
+  { id: 'seated-row', name: 'Remada Sentada na Polia', category: 'Costas', secondary: ['Bíceps', 'Deltoide Posterior'], equipment: 'Polia baixa e puxador', instructions: ['Sente-se com a coluna neutra e os joelhos levemente flexionados.', 'Puxe o acessório em direção ao tronco levando os cotovelos para trás.', 'Retorne os braços sem arredondar as costas.'], commonMistakes: ['Balançar o tronco para mover a carga.', 'Encolher os ombros durante a puxada.'], svgType: 'row' },
+  { id: 'chest-supported-row', name: 'Remada com Peito Apoiado', category: 'Costas', secondary: ['Bíceps', 'Deltoide Posterior'], equipment: 'Banco inclinado e halteres', instructions: ['Apoie o peito no banco inclinado e mantenha os pés firmes.', 'Puxe os halteres em direção às laterais do tronco.', 'Desça até estender os braços sem perder o apoio do peito.'], commonMistakes: ['Tirar o peito do banco para ganhar impulso.', 'Subir os ombros em direção às orelhas.'], svgType: 'row' },
+  { id: 'face-pull', name: 'Face Pull na Polia', category: 'Ombros', secondary: ['Trapézio', 'Costas'], equipment: 'Polia alta e corda', instructions: ['Posicione a polia aproximadamente na altura do rosto.', 'Puxe a corda em direção à testa separando as mãos.', 'Mantenha o tronco firme e controle o retorno.'], commonMistakes: ['Arquear a lombar para puxar mais carga.', 'Usar impulso ou deixar os cotovelos caírem.'], svgType: 'row' },
+  { id: 'lateral-raise', name: 'Elevação Lateral com Halteres', category: 'Ombros', secondary: ['Trapézio'], equipment: 'Halteres', instructions: ['Fique em pé com halteres ao lado do corpo e cotovelos soltos.', 'Eleve os braços lateralmente até uma amplitude confortável.', 'Desça devagar sem balançar o tronco.'], commonMistakes: ['Usar impulso e balançar o corpo.', 'Elevar muito acima da linha confortável do ombro.'], svgType: 'lateral-raise' },
+  { id: 'romanian-deadlift', name: 'Levantamento Terra Romeno', category: 'Posteriores de Coxa', secondary: ['Glúteos', 'Lombar'], equipment: 'Barra ou halteres', instructions: ['Segure a carga próxima às coxas com joelhos levemente flexionados.', 'Leve o quadril para trás mantendo a coluna neutra.', 'Desça até alongar a parte posterior da coxa e retorne contraindo os glúteos.'], commonMistakes: ['Arredondar as costas.', 'Afastar a carga das pernas ou agachar em vez de levar o quadril para trás.'], svgType: 'deadlift' },
+  { id: 'hip-thrust', name: 'Elevação Pélvica com Barra', category: 'Glúteos', secondary: ['Posteriores de Coxa'], equipment: 'Banco e barra', instructions: ['Apoie a parte superior das costas no banco e posicione os pés firmes.', 'Eleve o quadril até alinhar o tronco e as coxas.', 'Pause brevemente no topo sem hiperestender a lombar e desça com controle.'], commonMistakes: ['Arremessar a carga usando impulso.', 'Compensar a extensão do quadril arqueando a lombar.'], svgType: 'hip-thrust' },
+  { id: 'leg-curl', name: 'Flexora', category: 'Posteriores de Coxa', secondary: ['Panturrilhas'], equipment: 'Máquina flexora', instructions: ['Ajuste o aparelho para que o eixo fique alinhado ao joelho.', 'Flexione os joelhos levando o rolo em direção às coxas.', 'Retorne lentamente sem tirar o quadril do apoio.'], commonMistakes: ['Usar impulso.', 'Encurtar a amplitude ou levantar o quadril do banco.'], svgType: 'leg-curl' },
+  { id: 'split-squat', name: 'Agachamento Búlgaro', category: 'Quadríceps', secondary: ['Glúteos'], equipment: 'Banco e halteres opcionais', instructions: ['Apoie o peito do pé de trás em um banco baixo e firme.', 'Desça flexionando a perna da frente dentro de uma amplitude confortável.', 'Empurre o chão com o pé da frente para retornar.'], commonMistakes: ['Perder o equilíbrio por usar apoio alto demais.', 'Deixar o joelho colapsar para dentro.'], svgType: 'squat' },
+  { id: 'leg-extension', name: 'Cadeira Extensora', category: 'Quadríceps', secondary: [], equipment: 'Máquina extensora', instructions: ['Ajuste o eixo do aparelho à articulação do joelho.', 'Estenda as pernas sem dar tranco no final.', 'Retorne controlando a flexão.'], commonMistakes: ['Usar carga que cause impulso.', 'Bater os joelhos no final da extensão.'], svgType: 'legpress' },
+  { id: 'calf-raise', name: 'Elevação de Panturrilhas em Pé', category: 'Panturrilhas', secondary: [], equipment: 'Máquina ou degrau', instructions: ['Posicione a parte dianteira dos pés em apoio estável.', 'Desça os calcanhares em amplitude confortável.', 'Eleve os calcanhares e pause brevemente no topo.'], commonMistakes: ['Quicar no fim da amplitude.', 'Fazer repetições parciais sem controle.'], svgType: 'calf-raise' },
+  { id: 'hammer-curl', name: 'Rosca Martelo', category: 'Bíceps', secondary: ['Braquial', 'Antebraço'], equipment: 'Halteres', instructions: ['Segure os halteres com pegada neutra e cotovelos junto ao tronco.', 'Flexione os cotovelos sem girar os punhos.', 'Desça controlando a carga.'], commonMistakes: ['Balançar o tronco.', 'Levar os cotovelos para a frente.'], svgType: 'biceps' },
+  { id: 'overhead-triceps-extension', name: 'Extensão de Tríceps Acima da Cabeça', category: 'Tríceps', secondary: [], equipment: 'Halter ou polia', instructions: ['Mantenha os braços elevados e cotovelos apontados para a frente.', 'Flexione os cotovelos baixando a carga atrás da cabeça.', 'Estenda sem abrir excessivamente os cotovelos.'], commonMistakes: ['Arquear a lombar.', 'Abrir os cotovelos ou forçar amplitude dolorosa.'], svgType: 'triceps' }
 ];
 
 // SVG Renderer Component for Dynamic Diagrams
@@ -256,6 +270,51 @@ const ExerciseSVG = ({ type }) => {
             <rect x="130" y="30" width="40" height="12" fill="#ef4444" rx="2" transform="rotate(-45 150 36)" />
             <circle cx="65" cy="140" r="12" stroke="#84cc16" strokeWidth="3" />
             <path d="M 65 152 L 90 155 L 120 100 L 140 55" stroke="#84cc16" strokeWidth="4" />
+          </g>
+        )}
+        {type === 'row' && (
+          <g>
+            <path d="M 45 165 L 155 165 M 55 165 L 55 180 M 145 165 L 145 180" stroke="#52525b" strokeWidth="5" />
+            <circle cx="95" cy="65" r="11" stroke="#84cc16" strokeWidth="3" />
+            <path d="M 95 77 L 95 125 L 120 160 M 95 125 L 75 160" stroke="#84cc16" strokeWidth="4" />
+            <path d="M 95 90 L 65 115 L 75 125 M 95 90 L 125 115 L 115 125" stroke="#a3e635" strokeWidth="4" />
+            <path d="M 60 120 L 130 120" stroke="#ef4444" strokeWidth="5" />
+            <path d="M 55 115 L 55 125 M 135 115 L 135 125" stroke="#ef4444" strokeWidth="4" />
+          </g>
+        )}
+        {type === 'lateral-raise' && (
+          <g>
+            <circle cx="100" cy="42" r="12" stroke="#84cc16" strokeWidth="3" />
+            <path d="M 100 54 L 100 125 L 82 175 M 100 125 L 118 175" stroke="#84cc16" strokeWidth="4" />
+            <path d="M 100 72 L 62 105 L 48 115 M 100 72 L 138 105 L 152 115" stroke="#a3e635" strokeWidth="4" />
+            <rect x="37" y="111" width="20" height="7" rx="3" fill="#ef4444" />
+            <rect x="143" y="111" width="20" height="7" rx="3" fill="#ef4444" />
+          </g>
+        )}
+        {type === 'hip-thrust' && (
+          <g>
+            <path d="M 35 150 L 165 150 M 45 150 L 45 175 M 155 150 L 155 175" stroke="#52525b" strokeWidth="5" />
+            <circle cx="72" cy="105" r="11" stroke="#84cc16" strokeWidth="3" />
+            <path d="M 82 110 L 118 105 L 145 135 L 155 150 M 118 105 L 125 75 L 148 65" stroke="#84cc16" strokeWidth="4" />
+            <path d="M 70 100 L 105 90" stroke="#a3e635" strokeWidth="5" />
+            <line x1="92" y1="82" x2="120" y2="82" stroke="#ef4444" strokeWidth="5" />
+          </g>
+        )}
+        {type === 'leg-curl' && (
+          <g>
+            <path d="M 45 85 L 120 85 L 145 105" stroke="#52525b" strokeWidth="8" />
+            <circle cx="72" cy="65" r="11" stroke="#84cc16" strokeWidth="3" />
+            <path d="M 82 72 L 112 85 L 128 110 L 110 132 L 78 132" stroke="#84cc16" strokeWidth="4" />
+            <circle cx="108" cy="140" r="11" fill="#ef4444" stroke="#ef4444" />
+            <path d="M 45 85 L 45 160 M 35 160 L 55 160" stroke="#52525b" strokeWidth="5" />
+          </g>
+        )}
+        {type === 'calf-raise' && (
+          <g>
+            <path d="M 50 165 L 150 165" stroke="#52525b" strokeWidth="7" />
+            <circle cx="100" cy="42" r="12" stroke="#84cc16" strokeWidth="3" />
+            <path d="M 100 54 L 100 112 L 85 140 L 75 155 L 60 155 M 100 112 L 115 140 L 125 155 L 140 155" stroke="#84cc16" strokeWidth="4" />
+            <path d="M 75 155 L 60 150 M 125 155 L 140 150" stroke="#ef4444" strokeWidth="5" />
           </g>
         )}
       </svg>

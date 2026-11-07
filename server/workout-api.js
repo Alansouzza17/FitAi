@@ -10,7 +10,7 @@ const profileSchema = z.object({
   avoidExercises: z.string().max(500).optional().default(''), physicalLimitations: z.string().max(500).optional().default(''),
   measurements: z.object({ armRight: z.coerce.number().optional(), chest: z.coerce.number().optional(), waist: z.coerce.number().optional() }).optional().default({})
 });
-const exerciseSchema = z.object({ id: z.enum(['bench-press','squat','deadlift','lat-pulldown','overhead-press','biceps-curl','triceps-pushdown','leg-press']), name: z.string().min(2).max(120), sets: z.number().int().min(1).max(8), reps: z.string().min(1).max(30), rest: z.string().min(1).max(20), notes: z.string().max(500).default('') });
+const exerciseSchema = z.object({ id: z.enum(['bench-press','squat','deadlift','lat-pulldown','overhead-press','biceps-curl','triceps-pushdown','leg-press','incline-press','cable-fly','seated-row','chest-supported-row','face-pull','lateral-raise','romanian-deadlift','hip-thrust','leg-curl','split-squat','leg-extension','calf-raise','hammer-curl','overhead-triceps-extension']), name: z.string().min(2).max(120), sets: z.number().int().min(1).max(8), reps: z.string().min(1).max(30), rest: z.string().min(1).max(20), notes: z.string().max(500).default('') });
 const workoutSchema = z.object({ splitName: z.string().min(2).max(100), summary: z.string().min(5).max(1200), warmupTips: z.string().max(1000).default(''), progressionStrategy: z.string().max(1000).default(''), days: z.array(z.object({ dayTitle: z.string().min(2).max(100), targetMuscles: z.array(z.string().max(60)).max(12), estimatedMinutes: z.number().int().min(15).max(240), exercises: z.array(exerciseSchema).min(1).max(12) })).min(1).max(7) });
 function send(res, status, payload) { return res.status(status).json(payload); }
 function minimumExercises(profile) {
@@ -27,7 +27,9 @@ async function handleGenerateWorkout(req, res) {
     if (!process.env.GEMINI_API_KEY) return send(res, 503, { error: 'A geração por IA não está configurada no servidor.' });
     const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
     const minExercises = minimumExercises(profile);
-    const prompt = `Crie um plano de musculação individualizado, seguro e coerente com o perfil. Use apenas exercícios do catálogo: bench-press, squat, deadlift, lat-pulldown, overhead-press, biceps-curl, triceps-pushdown, leg-press.
+    const prompt = `Crie um plano de musculação individualizado, seguro e coerente com o perfil. Use apenas estes IDs de exercícios disponíveis: bench-press, incline-press, cable-fly, squat, split-squat, deadlift, romanian-deadlift, lat-pulldown, seated-row, chest-supported-row, face-pull, overhead-press, lateral-raise, biceps-curl, hammer-curl, triceps-pushdown, overhead-triceps-extension, leg-press, leg-extension, leg-curl, hip-thrust, calf-raise.
+
+Mapa para variar os movimentos por grupo: peitoral (bench-press, incline-press, cable-fly); costas (lat-pulldown, seated-row, chest-supported-row); ombros (overhead-press, lateral-raise, face-pull); bíceps (biceps-curl, hammer-curl); tríceps (triceps-pushdown, overhead-triceps-extension); quadríceps (squat, split-squat, leg-press, leg-extension); glúteos e posteriores (deadlift, romanian-deadlift, hip-thrust, leg-curl); panturrilhas (calf-raise).
 
 Personalização obrigatória:
 - Trate o objetivo declarado e os grupos musculares em focusMuscles como as prioridades principais do plano.
@@ -78,7 +80,8 @@ Retorne exclusivamente JSON válido no formato {"splitName":"...","summary":"...
         }
         const incompleteDay = candidate.days.find(day => new Set(day.exercises.map(exercise => exercise.id)).size < minExercises);
         if (!incompleteDay) { workout = candidate; break; }
-        console.warn(`Gemini returned fewer than ${minExercises} distinct exercises for ${incompleteDay.dayTitle}; requesting one correction.`);
+        const distinctCount = new Set(incompleteDay.exercises.map(exercise => exercise.id)).size;
+        console.warn(`Gemini returned ${incompleteDay.exercises.length} exercises (${distinctCount} distinct IDs) for ${incompleteDay.dayTitle}; minimum is ${minExercises}. Requesting one correction.`);
       }
     } finally { clearTimeout(timeout); }
     if (!workout) return send(res, 502, { error: `A IA não conseguiu montar pelo menos ${minExercises} exercícios diferentes por dia. Tente gerar novamente ou aumente o tempo disponível por treino.` });
