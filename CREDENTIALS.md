@@ -6,12 +6,12 @@ O FitIA não usa Firebase. A única integração de backend é a API Node hosped
 
 1. Conecte o repositório GitHub ao Render usando o Blueprint `render.yaml`.
 2. Preencha `GEMINI_API_KEY` no serviço Render para habilitar a geração de treinos. `GEMINI_MODEL` já tem um valor padrão.
-3. Se também hospedar o frontend na Vercel, preencha `CORS_ORIGINS` com a origem pública completa da Vercel, sem barra ao final (por exemplo, `https://fitai-eight-sigma.vercel.app`). Se houver domínio de produção e Preview, separe as origens por vírgula.
+3. Se também hospedar o frontend na Vercel, preencha `CORS_ORIGINS` com a origem pública completa da Vercel, sem barra ao final. Para o deploy atual, use `https://fitai-eight-sigma.vercel.app`. Se houver domínio de produção e Preview, separe as origens por vírgula.
 4. O Render compila e serve o site e a API na mesma origem. Não é necessária variável de URL de API nesse caso.
 
 ## Vercel (somente frontend opcional)
 
-Configure `VITE_API_BASE_URL` como a URL pública completa do serviço FitIA no Render (por exemplo, `https://fitia.onrender.com`) e faça novo deploy. A Vercel entrega apenas os arquivos estáticos; não existe função de backend na Vercel. `GEMINI_API_KEY` deve existir somente no Render.
+Configure `VITE_API_BASE_URL` nas **Environment Variables da Vercel** como a URL pública completa do serviço FitIA no Render (por exemplo, `https://fitia.onrender.com`) e faça novo deploy. Essa variável é incorporada durante o build; defini-la somente no Render não altera um frontend já publicado pela Vercel. A Vercel entrega apenas os arquivos estáticos; não existe função de backend na Vercel. `GEMINI_API_KEY` deve existir somente no Render.
 
 ## Desenvolvimento local
 

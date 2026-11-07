@@ -294,6 +294,22 @@ const DEFAULT_USER_PROFILE = {
   }
 };
 
+function getProfileValidationErrors(profile) {
+  const errors = [];
+  const age = Number(profile.age);
+  const height = Number(profile.height);
+  const weight = Number(profile.weight);
+  const minutes = Number(profile.timeAvailable);
+  if (!String(profile.name || '').trim()) errors.push('nome');
+  if (!Number.isInteger(age) || age < 13 || age > 100) errors.push('idade entre 13 e 100 anos');
+  if (!Number.isFinite(height) || height < 100 || height > 250) errors.push('altura entre 100 e 250 cm');
+  if (!Number.isFinite(weight) || weight < 30 || weight > 400) errors.push('peso entre 30 e 400 kg');
+  if (!String(profile.objective || '').trim()) errors.push('objetivo');
+  if (!Number.isInteger(Number(profile.daysAvailable)) || Number(profile.daysAvailable) < 1 || Number(profile.daysAvailable) > 7) errors.push('dias disponíveis');
+  if (!Number.isInteger(minutes) || minutes < 15 || minutes > 240) errors.push('tempo de treino entre 15 e 240 minutos');
+  return errors;
+}
+
 const DEFAULT_WORKOUT_PLAN = {
   id: 'plan-1',
   createdAt: new Date().toISOString(),
@@ -347,6 +363,7 @@ export default function App() {
 
   // Evolution History Logs
   const [historyLogs, setHistoryLogs] = useState(() => readStoredValue(STORAGE_KEYS.history, []));
+  const profileValidationErrors = getProfileValidationErrors(userProfile);
 
   // Keep offline state visible; AI generation remains online-only.
   useEffect(() => {
@@ -390,17 +407,25 @@ export default function App() {
 
   // Gemini API Workout Generator Call
   const handleGenerateAIWorkout = async () => {
+    if (profileValidationErrors.length) {
+      setAiError(`Complete a avaliação antes de gerar: ${profileValidationErrors.join(', ')}.`);
+      setActiveTab('profile');
+      return;
+    }
     if (!navigator.onLine) { setAiError('A geração de treinos com IA precisa de conexão com a internet. Reconecte-se e tente novamente.'); return; }
     setIsGeneratingAI(true);
     setAiError('');
 
     try {
+      if (!API_BASE_URL && location.hostname.endsWith('vercel.app')) {
+        throw new Error('Configure VITE_API_BASE_URL na Vercel com a URL do backend Render e publique novamente.');
+      }
       const response = await fetch(`${API_BASE_URL}/api/generate-workout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ profile: userProfile })
       });
-      const result = await response.json();
+      const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || 'Não foi possível gerar o treino.');
       const generatedPlan = result.workout;
       generatedPlan.id = `plan-${Date.now()}`;
@@ -508,7 +533,15 @@ export default function App() {
           <ProfileAssessmentView 
             userProfile={userProfile} 
             onSave={saveProfileData} 
-            onGenerateRequest={() => setActiveTab('generator')}
+            onGenerateRequest={(profile) => {
+              const errors = getProfileValidationErrors(profile);
+              if (errors.length) {
+                setAiError(`Complete a avaliação antes de gerar: ${errors.join(', ')}.`);
+                return;
+              }
+              setAiError('');
+              setActiveTab('generator');
+            }}
           />
         )}
 
@@ -517,6 +550,9 @@ export default function App() {
           <AIGeneratorView 
             userProfile={userProfile}
             isGenerating={isGeneratingAI}
+            profileComplete={profileValidationErrors.length === 0}
+            profileErrors={profileValidationErrors}
+            onCompleteProfile={() => setActiveTab('profile')}
             error={aiError}
             onGenerate={handleGenerateAIWorkout}
           />
@@ -770,9 +806,11 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
   const [form, setForm] = useState(userProfile);
   const [step, setStep] = useState(1);
   const [savedSuccess, setSavedSuccess] = useState(false);
+  const [validationMessage, setValidationMessage] = useState('');
 
   const handleInputChange = (field, value) => {
     setForm(prev => ({ ...prev, [field]: value }));
+    setValidationMessage('');
   };
 
   const handleMeasurementChange = (field, value) => {
@@ -789,13 +827,40 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
     setTimeout(() => setSavedSuccess(false), 3000);
   };
 
+  const goToNextStep = () => {
+    if (step === 1) {
+      const missing = [];
+      if (!String(form.name || '').trim()) missing.push('nome');
+      const age = Number(form.age), height = Number(form.height), weight = Number(form.weight);
+      if (!Number.isInteger(age) || age < 13 || age > 100) missing.push('idade entre 13 e 100 anos');
+      if (!Number.isFinite(height) || height < 100 || height > 250) missing.push('altura entre 100 e 250 cm');
+      if (!Number.isFinite(weight) || weight < 30 || weight > 400) missing.push('peso entre 30 e 400 kg');
+      if (!String(form.objective || '').trim()) missing.push('objetivo');
+      if (missing.length) { setValidationMessage(`Preencha os dados obrigatórios para continuar: ${missing.join(', ')}.`); return; }
+    }
+    setValidationMessage('');
+    setStep(step + 1);
+  };
+
+  const requestWorkout = () => {
+    const errors = getProfileValidationErrors(form);
+    if (errors.length) {
+      setValidationMessage(`Antes de gerar, corrija: ${errors.join(', ')}.`);
+      if (errors.some(error => ['nome', 'idade entre 13 e 100 anos', 'altura entre 100 e 250 cm', 'peso entre 30 e 400 kg', 'objetivo'].includes(error))) setStep(1);
+      return;
+    }
+    setValidationMessage('');
+    onSave(form);
+    onGenerateRequest(form);
+  };
+
   return (
     <div className="max-w-3xl mx-auto space-y-6 animate-fadeIn">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-black text-white">Avaliação Física & Perfil</h1>
-          <p className="text-xs text-zinc-400">Mantenha seus dados atualizados para que a IA crie o treino perfeito.</p>
+          <p className="text-xs text-zinc-400">Complete os dados obrigatórios antes de solicitar um treino personalizado.</p>
         </div>
         <div className="flex items-center gap-1 text-xs font-bold text-lime-400 bg-lime-950/60 px-3 py-1.5 rounded-lg border border-lime-800/40">
           Etapa {step} de 3
@@ -804,9 +869,10 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
 
       {savedSuccess && (
         <div className="p-3 bg-emerald-950/80 border border-emerald-800 text-emerald-300 text-xs rounded-xl flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4" /> Perfil atualizado com sucesso no banco de dados!
+          <CheckCircle2 className="w-4 h-4" /> Perfil atualizado neste dispositivo.
         </div>
       )}
+      {validationMessage && <div role="alert" className="p-3 bg-amber-950/80 border border-amber-800 text-amber-200 text-sm rounded-xl">{validationMessage}</div>}
 
       {/* Wizard Form */}
       <form onSubmit={handleSubmit} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-6">
@@ -834,6 +900,9 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
                 <label className="block text-xs font-semibold text-zinc-300 mb-1">Idade</label>
                 <input
                   type="number"
+                  min="13"
+                  max="100"
+                  inputMode="numeric"
                   value={form.age}
                   onChange={(e) => handleInputChange('age', e.target.value)}
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-100 focus:outline-none focus:border-lime-500"
@@ -845,6 +914,9 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
                 <label className="block text-xs font-semibold text-zinc-300 mb-1">Altura (cm)</label>
                 <input
                   type="number"
+                  min="100"
+                  max="250"
+                  inputMode="numeric"
                   value={form.height}
                   onChange={(e) => handleInputChange('height', e.target.value)}
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-100 focus:outline-none focus:border-lime-500"
@@ -857,6 +929,9 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
                 <input
                   type="number"
                   step="0.1"
+                  min="30"
+                  max="400"
+                  inputMode="decimal"
                   value={form.weight}
                   onChange={(e) => handleInputChange('weight', e.target.value)}
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-100 focus:outline-none focus:border-lime-500"
@@ -871,7 +946,9 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
                 value={form.objective}
                 onChange={(e) => handleInputChange('objective', e.target.value)}
                 className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-100 focus:outline-none focus:border-lime-500"
+                required
               >
+                <option value="" disabled>Selecione seu objetivo</option>
                 <option value="hipertrofia">Hipertrofia Muscular (Ganho de Massa)</option>
                 <option value="emagrecimento">Emagrecimento / Perda de Gordura</option>
                 <option value="definicao">Definição Muscular</option>
@@ -938,6 +1015,7 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
                   value={form.daysAvailable}
                   onChange={(e) => handleInputChange('daysAvailable', e.target.value)}
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-100 focus:outline-none focus:border-lime-500"
+                  required
                 >
                   <option value="2">2 dias por semana</option>
                   <option value="3">3 dias por semana</option>
@@ -951,9 +1029,13 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
                 <label className="block text-xs font-semibold text-zinc-300 mb-1">Tempo Disponível por Treino (min)</label>
                 <input
                   type="number"
+                  min="15"
+                  max="240"
+                  inputMode="numeric"
                   value={form.timeAvailable}
                   onChange={(e) => handleInputChange('timeAvailable', e.target.value)}
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-100 focus:outline-none focus:border-lime-500"
+                  required
                 />
               </div>
             </div>
@@ -1005,7 +1087,7 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
             {step < 3 ? (
               <button
                 type="button"
-                onClick={() => setStep(step + 1)}
+                onClick={goToNextStep}
                 className="bg-lime-400 text-zinc-950 px-5 py-2 rounded-lg text-xs font-extrabold hover:bg-lime-300"
               >
                 Próxima Etapa
@@ -1014,8 +1096,7 @@ function ProfileAssessmentView({ userProfile, onSave, onGenerateRequest }) {
               <button
                 type="button"
                 onClick={() => {
-                  onSave(form);
-                  onGenerateRequest();
+                  requestWorkout();
                 }}
                 className="bg-lime-400 text-zinc-950 px-5 py-2 rounded-lg text-xs font-extrabold hover:bg-lime-300 flex items-center gap-1.5"
               >
@@ -1045,7 +1126,23 @@ function MeasurementInput({ label, field, val, onChange }) {
 }
 
 // --- AI GENERATOR VIEW ---
-function AIGeneratorView({ userProfile, isGenerating, error, onGenerate }) {
+function AIGeneratorView({ userProfile, isGenerating, error, onGenerate, profileComplete, profileErrors, onCompleteProfile }) {
+  const [backendStatus, setBackendStatus] = useState('checking');
+  useEffect(() => {
+    if (!API_BASE_URL && location.hostname.endsWith('vercel.app')) {
+      setBackendStatus('missing-url');
+      return;
+    }
+    fetch(`${API_BASE_URL}/api/health`)
+      .then(async response => {
+        if (!response.headers.get('content-type')?.includes('application/json')) { setBackendStatus('not-api'); return; }
+        const status = await response.json();
+        if (!response.ok || status.service !== 'fitia-api') setBackendStatus('unreachable');
+        else setBackendStatus(status.aiConfigured ? 'ready' : 'missing-key');
+      })
+      .catch(() => setBackendStatus('unreachable'));
+  }, []);
+
   return (
     <div className="max-w-3xl mx-auto space-y-6 animate-fadeIn">
       <div className="text-center space-y-2">
@@ -1064,6 +1161,18 @@ function AIGeneratorView({ userProfile, isGenerating, error, onGenerate }) {
           <span>{error}</span>
         </div>
       )}
+
+      {!profileComplete && (
+        <div role="status" className="p-4 bg-amber-950/70 border border-amber-800 text-amber-200 text-sm rounded-xl space-y-3">
+          <p>Complete a avaliação antes de gerar: {profileErrors.join(', ')}.</p>
+          <button type="button" onClick={onCompleteProfile} className="min-h-11 px-4 rounded-lg bg-amber-300 text-zinc-950 font-bold">Preencher meus dados</button>
+        </div>
+      )}
+
+      {backendStatus === 'missing-url' && <div role="alert" className="p-3 bg-amber-950/80 border border-amber-800 text-amber-200 text-sm rounded-xl">A URL da API Render não está neste build da Vercel. Configure VITE_API_BASE_URL nas variáveis da Vercel e faça um novo deploy.</div>}
+      {backendStatus === 'not-api' && <div role="alert" className="p-3 bg-amber-950/80 border border-amber-800 text-amber-200 text-sm rounded-xl">Este site não está encontrando a API Render. Confira VITE_API_BASE_URL e publique o frontend novamente.</div>}
+      {backendStatus === 'unreachable' && <div role="alert" className="p-3 bg-amber-950/80 border border-amber-800 text-amber-200 text-sm rounded-xl">Não foi possível acessar a API Render. Verifique se o serviço está ativo e se CORS_ORIGINS no Render inclui o domínio deste site.</div>}
+      {backendStatus === 'missing-key' && <div role="alert" className="p-3 bg-amber-950/80 border border-amber-800 text-amber-200 text-sm rounded-xl">GEMINI_API_KEY não está configurada no serviço Render.</div>}
 
       {/* Summary Review Card */}
       <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-4">
@@ -1098,8 +1207,8 @@ function AIGeneratorView({ userProfile, isGenerating, error, onGenerate }) {
 
         <button
           onClick={onGenerate}
-          disabled={isGenerating}
-          className="w-full bg-lime-400 hover:bg-lime-300 text-zinc-950 font-black py-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg shadow-lime-500/20 transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
+          disabled={isGenerating || !profileComplete}
+          className="w-full bg-lime-400 hover:bg-lime-300 text-zinc-950 font-black py-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg shadow-lime-500/20 transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isGenerating ? (
             <>

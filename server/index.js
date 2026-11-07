@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json({ limit: '32kb' }));
-app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'fitia-api' }));
+app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'fitia-api', aiConfigured: Boolean(process.env.GEMINI_API_KEY) }));
 app.post('/api/generate-workout', handleGenerateWorkout);
 const dist = path.join(__dirname, '..', 'dist');
 app.use(express.static(dist, { maxAge: '1h', index: false }));
