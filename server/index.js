@@ -1,0 +1,13 @@
+const express = require('express');
+const path = require('path');
+const { handleGenerateWorkout } = require('./workout-api');
+const app = express();
+app.disable('x-powered-by');
+app.use(express.json({ limit: '32kb' }));
+app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'fitia-api' }));
+app.post('/api/generate-workout', handleGenerateWorkout);
+const dist = path.join(__dirname, '..', 'dist');
+app.use(express.static(dist, { maxAge: '1h', index: false }));
+app.get('*', (_req, res) => res.sendFile(path.join(dist, 'index.html')));
+const port = Number(process.env.PORT || 10000);
+app.listen(port, '0.0.0.0', () => console.log(`FitIA listening on ${port}`));
