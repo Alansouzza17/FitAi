@@ -1,0 +1,4566 @@
+{
+  "version": 1,
+  "catalog_source": "catalogo.json",
+  "csv_source": "exercises.csv/exercises.csv",
+  "gif_asset_directory": "assets",
+  "generated_at": "2026-11-09",
+  "entries": [
+    {
+      "exercise_id": "supino-reto-barra",
+      "exercise_name": "Supino Reto com Barra",
+      "english_name": "Barbell Bench Press",
+      "csv_id": "0025",
+      "csv_name": "barbell bench press",
+      "gif": "0025.gif",
+      "path": "/assets/0025.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior"
+      ],
+      "secondary_muscles": [
+        "Tríceps",
+        "Deltoide Anterior"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": "bench-press",
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "puxada-frontal-polia",
+      "exercise_name": "Puxada Frontal na Polia",
+      "english_name": "Lat Pulldown",
+      "csv_id": "0197",
+      "csv_name": "cable pulldown (pro lat bar)",
+      "gif": "0197.gif",
+      "path": "/assets/0197.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso"
+      ],
+      "secondary_muscles": [
+        "Bíceps Braquial",
+        "Trapézio Inferior",
+        "Romboides"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": [
+        "lat-pulldown"
+      ],
+      "notes": "Cable pulldown com barra pronada larga; equipamento e instruções do catálogo conferem."
+    },
+    {
+      "exercise_id": "desenvolvimento-halteres",
+      "exercise_name": "Desenvolvimento com Halteres",
+      "english_name": "Dumbbell Shoulder Press",
+      "csv_id": "0405",
+      "csv_name": "dumbbell seated shoulder press",
+      "gif": "0405.gif",
+      "path": "/assets/0405.gif",
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Anterior",
+        "Deltoide Lateral"
+      ],
+      "secondary_muscles": [
+        "Tríceps",
+        "Porção Superior do Peitoral"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": [
+        "overhead-press"
+      ],
+      "notes": "Dumbbell seated shoulder press; equipamento, músculos e execução sentada conferem."
+    },
+    {
+      "exercise_id": "rosca-direta-barra",
+      "exercise_name": "Rosca Direta com Barra",
+      "english_name": "Barbell Bicep Curl",
+      "csv_id": "0031",
+      "csv_name": "barbell curl",
+      "gif": "0031.gif",
+      "path": "/assets/0031.gif",
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial"
+      ],
+      "secondary_muscles": [
+        "Braquial",
+        "Braquiorradial"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": [
+        "biceps-curl"
+      ],
+      "notes": "Barbell curl com barra reta; a animação e o CSV correspondem à flexão de cotovelo em pé."
+    },
+    {
+      "exercise_id": "triceps-corda-polia",
+      "exercise_name": "Tríceps Corda na Polia",
+      "english_name": "Cable Triceps Rope Pushdown",
+      "csv_id": "0200",
+      "csv_name": "cable pushdown (with rope attachment)",
+      "gif": "0200.gif",
+      "path": "/assets/0200.gif",
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial (Cabeça Lateral e Medial)"
+      ],
+      "secondary_muscles": [
+        "Ancôneo"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.99,
+      "status": "confirmed",
+      "application_aliases": [
+        "triceps-pushdown"
+      ],
+      "notes": "Cable pushdown com corda; acessório, alvo muscular e movimento conferem."
+    },
+    {
+      "exercise_id": "rosca-punho-barra",
+      "exercise_name": "Rosca Punho com Barra",
+      "english_name": "Barbell Wrist Curl",
+      "csv_id": "0126",
+      "csv_name": "barbell wrist curl",
+      "gif": "0126.gif",
+      "path": "/assets/0126.gif",
+      "muscle_group": "Antebraço",
+      "primary_muscles": [
+        "Flexores do Antebraço"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Barra",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "agachamento-livre-barra",
+      "exercise_name": "Agachamento Livre com Barra",
+      "english_name": "Barbell Back Squat",
+      "csv_id": "0043",
+      "csv_name": "barbell full squat",
+      "gif": "0043.gif",
+      "path": "/assets/0043.gif",
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Posterior de Coxa",
+        "Core",
+        "Lombar"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.96,
+      "status": "confirmed",
+      "application_aliases": [
+        "squat"
+      ],
+      "notes": "Barbell back squat confere com agachamento livre com barra; padrão visual e foco em quadríceps/glúteos compatíveis."
+    },
+    {
+      "exercise_id": "mesa-flexora",
+      "exercise_name": "Mesa Flexora",
+      "english_name": "Lying Leg Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais"
+      ],
+      "secondary_muscles": [
+        "Panturrilhas (Gastrocnêmio)"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": "leg-curl",
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-pelvica-barra",
+      "exercise_name": "Elevação Pélvica com Barra",
+      "english_name": "Barbell Hip Thrust",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais",
+        "Eretores da Espinha",
+        "Core"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": "hip-thrust",
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-panturrilha-em-pe",
+      "exercise_name": "Elevação de Panturrilha em Pé",
+      "english_name": "Standing Calf Raise",
+      "csv_id": "0605",
+      "csv_name": "lever standing calf raise",
+      "gif": "0605.gif",
+      "path": "/assets/0605.gif",
+      "muscle_group": "Panturrilhas",
+      "primary_muscles": [
+        "Gastrocnêmio"
+      ],
+      "secondary_muscles": [
+        "Sóleos"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.99,
+      "status": "confirmed",
+      "application_aliases": [
+        "calf-raise"
+      ],
+      "notes": "Lever standing calf raise; máquina com apoio dos ombros e elevação dos calcanhares conferem."
+    },
+    {
+      "exercise_id": "crunch-abdominal-maquina",
+      "exercise_name": "Crunch Abdominal na Máquina",
+      "english_name": "Machine Abdominal Crunch",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal"
+      ],
+      "secondary_muscles": [
+        "Oblíquos"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "esteira-inclinada",
+      "exercise_name": "Caminhada Inclinada na Esteira",
+      "english_name": "Incline Treadmill Walk",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Cardio",
+      "primary_muscles": [
+        "Coração",
+        "Sistema Cardiovascular"
+      ],
+      "secondary_muscles": [
+        "Panturrilhas",
+        "Quadríceps",
+        "Glúteos"
+      ],
+      "equipment": "Esteira",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "supino-inclinado-barra",
+      "exercise_name": "Supino Inclinado com Barra",
+      "english_name": "Incline Barbell Bench Press",
+      "csv_id": "0047",
+      "csv_name": "barbell incline bench press",
+      "gif": "0047.gif",
+      "path": "/assets/0047.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Porção Clavicular)"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior",
+        "Tríceps Braquial"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.99,
+      "status": "confirmed",
+      "application_aliases": [],
+      "notes": "Incline barbell bench press; banco inclinado e barra visíveis na animação."
+    },
+    {
+      "exercise_id": "crucifixo-halteres-banco-reto",
+      "exercise_name": "Crucifixo com Halteres no Banco Reto",
+      "english_name": "Dumbbell Flyes",
+      "csv_id": "0308",
+      "csv_name": "dumbbell fly",
+      "gif": "0308.gif",
+      "path": "/assets/0308.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.88,
+      "status": "probable",
+      "application_aliases": [],
+      "notes": "Dumbbell fly em banco reto; movimento e equipamento conferem, embora este registro do catálogo não explicite o ângulo do banco."
+    },
+    {
+      "exercise_id": "remada-curvada-barra",
+      "exercise_name": "Remada Curvada com Barra",
+      "english_name": "Barbell Bent Over Row",
+      "csv_id": "0027",
+      "csv_name": "barbell bent over row",
+      "gif": "0027.gif",
+      "path": "/assets/0027.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso",
+        "Romboides",
+        "Trapézio Médio"
+      ],
+      "secondary_muscles": [
+        "Eretores da Espinha",
+        "Bíceps Braquial",
+        "Deltóide Posterior"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "remada-unilateral-haltere",
+      "exercise_name": "Remada Unilateral com Haltere (Serrote)",
+      "english_name": "One-Arm Dumbbell Row",
+      "csv_id": "0292",
+      "csv_name": "dumbbell one arm bent-over row",
+      "gif": "0292.gif",
+      "path": "/assets/0292.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso"
+      ],
+      "secondary_muscles": [
+        "Bíceps Braquial",
+        "Trapézio",
+        "Romboides"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": [],
+      "notes": "One-arm dumbbell row com apoio no banco; movimento, equipamento e músculos conferem."
+    },
+    {
+      "exercise_id": "elevacao-lateral-halteres",
+      "exercise_name": "Elevação Lateral com Halteres",
+      "english_name": "Dumbbell Lateral Raise",
+      "csv_id": "0334",
+      "csv_name": "dumbbell lateral raise",
+      "gif": "0334.gif",
+      "path": "/assets/0334.gif",
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Lateral"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior",
+        "Trapézio Superior"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": "lateral-raise",
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "rosca-martelo-halteres",
+      "exercise_name": "Rosca Martelo com Halteres",
+      "english_name": "Dumbbell Hammer Curl",
+      "csv_id": "0313",
+      "csv_name": "dumbbell hammer curl",
+      "gif": "0313.gif",
+      "path": "/assets/0313.gif",
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial",
+        "Braquiorradial",
+        "Braquial"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Halteres",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": "hammer-curl",
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "triceps-testa-barra",
+      "exercise_name": "Tríceps Testa com Barra",
+      "english_name": "Barbell Skull Crusher",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial (Cabeça Longa, Lateral e Medial)"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "leg-press-45",
+      "exercise_name": "Leg Press 45 Graus",
+      "english_name": "45-Degree Leg Press",
+      "csv_id": "0739",
+      "csv_name": "sled 45в° leg press",
+      "gif": "0739.gif",
+      "path": "/assets/0739.gif",
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais",
+        "Panturrilhas"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": [
+        "leg-press"
+      ],
+      "notes": "Leg press 45°; plataforma inclinada e extensão bilateral de joelhos/quadril conferem."
+    },
+    {
+      "exercise_id": "supino-declinado-barra",
+      "exercise_name": "Supino Declinado com Barra",
+      "english_name": "Decline Barbell Bench Press",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Porção Esternocostal Inferior)"
+      ],
+      "secondary_muscles": [
+        "Tríceps Braquial",
+        "Deltoide Anterior"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "supino-reto-halteres",
+      "exercise_name": "Supino Reto com Halteres",
+      "english_name": "Dumbbell Bench Press",
+      "csv_id": "0289",
+      "csv_name": "dumbbell bench press",
+      "gif": "0289.gif",
+      "path": "/assets/0289.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior",
+        "Tríceps Braquial"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "supino-inclinado-halteres",
+      "exercise_name": "Supino Inclinado com Halteres",
+      "english_name": "Incline Dumbbell Press",
+      "csv_id": "0314",
+      "csv_name": "dumbbell incline bench press",
+      "gif": "0314.gif",
+      "path": "/assets/0314.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Porção Clavicular)"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior",
+        "Tríceps Braquial"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": [
+        "incline-press"
+      ],
+      "notes": "Dumbbell incline bench press; halteres e banco inclinado conferem."
+    },
+    {
+      "exercise_id": "supino-declinado-halteres",
+      "exercise_name": "Supino Declinado com Halteres",
+      "english_name": "Decline Dumbbell Press",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Inferior)"
+      ],
+      "secondary_muscles": [
+        "Tríceps Braquial",
+        "Deltoide Anterior"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "crucifixo-reto-halteres",
+      "exercise_name": "Crucifixo Reto com Halteres",
+      "english_name": "Flat Dumbbell Flyes",
+      "csv_id": "0308",
+      "csv_name": "dumbbell fly",
+      "gif": "0308.gif",
+      "path": "/assets/0308.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": [],
+      "notes": "Dumbbell fly em banco reto; postura deitada e arco de adução horizontal conferem."
+    },
+    {
+      "exercise_id": "crucifixo-inclinado-halteres",
+      "exercise_name": "Crucifixo Inclinado com Halteres",
+      "english_name": "Incline Dumbbell Flyes",
+      "csv_id": "0319",
+      "csv_name": "dumbbell incline fly",
+      "gif": "0319.gif",
+      "path": "/assets/0319.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Clavicular)"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": [],
+      "notes": "Dumbbell incline fly; o banco inclinado e a adução horizontal estão visíveis."
+    },
+    {
+      "exercise_id": "crucifixo-declinado-halteres",
+      "exercise_name": "Crucifixo Declinado com Halteres",
+      "english_name": "Decline Dumbbell Flyes",
+      "csv_id": "0302",
+      "csv_name": "dumbbell decline fly",
+      "gif": "0302.gif",
+      "path": "/assets/0302.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Inferior)"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": [],
+      "notes": "Dumbbell decline fly; banco declinado e movimento de crucifixo conferem."
+    },
+    {
+      "exercise_id": "peck-deck-voador",
+      "exercise_name": "Voador (Peck Deck)",
+      "english_name": "Pec Deck Machine",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "crossover-polia-alta",
+      "exercise_name": "Crossover na Polia Alta",
+      "english_name": "High Cable Crossover",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Inferior)"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior",
+        "Tríceps Braquial (estabilização)"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0,
+      "status": "pending",
+      "application_aliases": [],
+      "notes": "O GIF CSV 1270 foi rejeitado: mostra cabos à altura do peito e não confirma a trajetória alta para baixa necessária neste crossover.",
+      "rejected_csv_id": "1270"
+    },
+    {
+      "exercise_id": "crossover-polia-baixa",
+      "exercise_name": "Crossover na Polia Baixa (Elevação)",
+      "english_name": "Low Cable Crossover",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Clavicular/Superior)"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior",
+        "Bíceps Braquial (estabilização)"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "crossover-polia-media",
+      "exercise_name": "Crossover na Polia Média",
+      "english_name": "Mid Cable Crossover",
+      "csv_id": "1269",
+      "csv_name": "cable standing up straight crossovers",
+      "gif": "1269.gif",
+      "path": "/assets/1269.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Esternocostal)"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.96,
+      "status": "confirmed",
+      "application_aliases": [
+        "cable-fly"
+      ],
+      "notes": "Cable standing crossovers com cabos à altura do peito; coincide com o crossover médio do catálogo."
+    },
+    {
+      "exercise_id": "flexao-de-bracos",
+      "exercise_name": "Flexão de Braços",
+      "english_name": "Push-Up",
+      "csv_id": "0662",
+      "csv_name": "push-up",
+      "gif": "0662.gif",
+      "path": "/assets/0662.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior"
+      ],
+      "secondary_muscles": [
+        "Tríceps Braquial",
+        "Deltoide Anterior",
+        "Core"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "flexao-declinada",
+      "exercise_name": "Flexão Declinada (Pés elevados)",
+      "english_name": "Decline Push-Up",
+      "csv_id": "0279",
+      "csv_name": "decline push-up",
+      "gif": "0279.gif",
+      "path": "/assets/0279.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Clavicular)"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior",
+        "Tríceps Braquial",
+        "Core"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "flexao-inclinada",
+      "exercise_name": "Flexão Inclinada (Mãos elevadas)",
+      "english_name": "Incline Push-Up",
+      "csv_id": "0493",
+      "csv_name": "incline push-up",
+      "gif": "0493.gif",
+      "path": "/assets/0493.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Inferior)"
+      ],
+      "secondary_muscles": [
+        "Tríceps Braquial",
+        "Deltoide Anterior"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "mergulho-paralelas-peito",
+      "exercise_name": "Mergulho nas Paralelas (Foco Peitoral)",
+      "english_name": "Chest Dips",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Inferior)"
+      ],
+      "secondary_muscles": [
+        "Tríceps Braquial",
+        "Deltoide Anterior"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "supino-maquina-articulado",
+      "exercise_name": "Supino Máquina (Articulado/Reto)",
+      "english_name": "Machine Chest Press",
+      "csv_id": "0577",
+      "csv_name": "lever chest press",
+      "gif": "0577.gif",
+      "path": "/assets/0577.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior",
+        "Tríceps Braquial"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.96,
+      "status": "confirmed",
+      "application_aliases": [],
+      "notes": "Lever chest press em máquina; empurrada horizontal, assento e equipamento conferem."
+    },
+    {
+      "exercise_id": "supino-maquina-inclinado",
+      "exercise_name": "Supino Máquina Inclinado",
+      "english_name": "Incline Machine Chest Press",
+      "csv_id": "1299",
+      "csv_name": "lever incline chest press",
+      "gif": "1299.gif",
+      "path": "/assets/1299.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior (Clavicular)"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior",
+        "Tríceps Braquial"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": [],
+      "notes": "Lever incline chest press; banco inclinado, máquina e direção da empurrada conferem."
+    },
+    {
+      "exercise_id": "pullover-haltere",
+      "exercise_name": "Pullover com Haltere",
+      "english_name": "Dumbbell Pullover",
+      "csv_id": "0375",
+      "csv_name": "dumbbell pullover",
+      "gif": "0375.gif",
+      "path": "/assets/0375.gif",
+      "muscle_group": "Peito",
+      "primary_muscles": [
+        "Peitoral Maior",
+        "Latíssimo do Dorso"
+      ],
+      "secondary_muscles": [
+        "Tríceps Braquial (Cabeça Longa)",
+        "Serrátil Anterior"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "barra-fixa-pronada",
+      "exercise_name": "Barra Fixa Pronada",
+      "english_name": "Pull-Up",
+      "csv_id": "0652",
+      "csv_name": "pull-up",
+      "gif": "0652.gif",
+      "path": "/assets/0652.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso"
+      ],
+      "secondary_muscles": [
+        "Bíceps Braquial",
+        "Trapézio Inferior",
+        "Romboides"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "barra-fixa-supinada",
+      "exercise_name": "Barra Fixa Supinada",
+      "english_name": "Chin-Up",
+      "csv_id": "1326",
+      "csv_name": "chin-up",
+      "gif": "1326.gif",
+      "path": "/assets/1326.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso"
+      ],
+      "secondary_muscles": [
+        "Bíceps Braquial",
+        "Braquial",
+        "Romboides"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "barra-fixa-neutra",
+      "exercise_name": "Barra Fixa Neutra",
+      "english_name": "Neutral Grip Pull-Up",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso"
+      ],
+      "secondary_muscles": [
+        "Braquiorradial",
+        "Bíceps Braquial",
+        "Trapézio Inferior"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "puxada-supinada-polia",
+      "exercise_name": "Puxada Supinada na Polia",
+      "english_name": "Reverse Grip Lat Pulldown",
+      "csv_id": "0245",
+      "csv_name": "cable underhand pulldown",
+      "gif": "0245.gif",
+      "path": "/assets/0245.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso (Parte Inferior)"
+      ],
+      "secondary_muscles": [
+        "Bíceps Braquial",
+        "Trapézio"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.96,
+      "status": "confirmed",
+      "application_aliases": [],
+      "notes": "Cable underhand pulldown; pegada supinada, polia alta, puxada ao peito e músculos-alvo conferem."
+    },
+    {
+      "exercise_id": "puxada-triangulo-polia",
+      "exercise_name": "Puxada com Triângulo na Polia",
+      "english_name": "V-Bar Pulldown",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso"
+      ],
+      "secondary_muscles": [
+        "Braquiorradial",
+        "Romboides"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "remada-curvada-supinada",
+      "exercise_name": "Remada Curvada Supinada (Underhand)",
+      "english_name": "Underhand Barbell Row",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso",
+        "Bíceps Braquial"
+      ],
+      "secondary_muscles": [
+        "Romboides",
+        "Trapézio Inferior"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "remada-cavalinho",
+      "exercise_name": "Remada Cavalinho (T-Bar Row)",
+      "english_name": "T-Bar Row",
+      "csv_id": "0606",
+      "csv_name": "lever t bar row",
+      "gif": "0606.gif",
+      "path": "/assets/0606.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso",
+        "Romboides",
+        "Trapézio Médio"
+      ],
+      "secondary_muscles": [
+        "Deltoide Posterior",
+        "Eretores da Espinha"
+      ],
+      "equipment": "Máquina / Barra (T-Bar)",
+      "confidence": 0.88,
+      "status": "probable",
+      "application_aliases": [],
+      "notes": "T-bar row em máquina com apoio do peito; movimento e equipamento compatíveis, mas o apoio do peito não é especificado no catálogo."
+    },
+    {
+      "exercise_id": "remada-baixa-triangulo",
+      "exercise_name": "Remada Baixa com Triângulo",
+      "english_name": "Seated Cable Row (V-Grip)",
+      "csv_id": "0861",
+      "csv_name": "cable seated row",
+      "gif": "0861.gif",
+      "path": "/assets/0861.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso",
+        "Romboides",
+        "Trapézio Médio"
+      ],
+      "secondary_muscles": [
+        "Bíceps Braquial",
+        "Deltoide Posterior"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.85,
+      "status": "probable",
+      "application_aliases": [
+        "seated-row"
+      ],
+      "notes": "Remada sentada baixa em cabo com pegada fechada; o GIF sugere puxador triangular, mas a CSV não confirma o acessório."
+    },
+    {
+      "exercise_id": "remada-baixa-barra-reta",
+      "exercise_name": "Remada Baixa com Barra Reta",
+      "english_name": "Seated Cable Row (Straight Bar)",
+      "csv_id": "0180",
+      "csv_name": "cable low seated row",
+      "gif": "0180.gif",
+      "path": "/assets/0180.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Romboides",
+        "Trapézio Médio/Inferior"
+      ],
+      "secondary_muscles": [
+        "Latíssimo do Dorso",
+        "Deltoide Posterior"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.95,
+      "status": "confirmed",
+      "application_aliases": [],
+      "notes": "Cable low seated row com puxador reto; posição, equipamento e movimento conferem."
+    },
+    {
+      "exercise_id": "remada-articulada-maquina",
+      "exercise_name": "Remada Articulada (Máquina)",
+      "english_name": "Machine Row",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso",
+        "Trapézio Médio"
+      ],
+      "secondary_muscles": [
+        "Bíceps Braquial",
+        "Deltoide Posterior"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "pulldown-corda-polia",
+      "exercise_name": "Pulldown com Corda (Braços Estendidos)",
+      "english_name": "Straight Arm Rope Pulldown",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso"
+      ],
+      "secondary_muscles": [
+        "Tríceps Braquial (Cabeça Longa)",
+        "Serrátil Anterior"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "pulldown-barra-reta",
+      "exercise_name": "Pulldown com Barra Reta (Braços Estendidos)",
+      "english_name": "Straight Arm Bar Pulldown",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso"
+      ],
+      "secondary_muscles": [
+        "Tríceps (Cabeça Longa)",
+        "Core (Estabilização)"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "remada-pendlay",
+      "exercise_name": "Remada Pendlay",
+      "english_name": "Pendlay Row",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso",
+        "Romboides",
+        "Trapézio"
+      ],
+      "secondary_muscles": [
+        "Lombar",
+        "Isquiotibiais (Isometria)"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "remada-meadows",
+      "exercise_name": "Remada Meadows",
+      "english_name": "Meadows Row",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Latíssimo do Dorso",
+        "Deltoide Posterior"
+      ],
+      "secondary_muscles": [
+        "Trapézio Inferior",
+        "Romboides",
+        "Antebraço"
+      ],
+      "equipment": "Barra (T-Bar)",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "encolhimento-barra",
+      "exercise_name": "Encolhimento com Barra",
+      "english_name": "Barbell Shrugs",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Trapézio (Parte Superior)"
+      ],
+      "secondary_muscles": [
+        "Antebraços (Pegada)"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "encolhimento-halteres",
+      "exercise_name": "Encolhimento com Halteres",
+      "english_name": "Dumbbell Shrugs",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Trapézio (Parte Superior)"
+      ],
+      "secondary_muscles": [
+        "Antebraços"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "crucifixo-invertido-maquina",
+      "exercise_name": "Crucifixo Invertido na Máquina",
+      "english_name": "Reverse Pec Deck",
+      "csv_id": "0602",
+      "csv_name": "lever seated reverse fly",
+      "gif": "0602.gif",
+      "path": "/assets/0602.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Deltoide Posterior",
+        "Romboides"
+      ],
+      "secondary_muscles": [
+        "Trapézio Médio"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.95,
+      "status": "confirmed",
+      "application_aliases": [],
+      "notes": "Lever seated reverse fly; abertura dos braços para trás, apoio do peito e deltoide posterior conferem com o reverse pec deck."
+    },
+    {
+      "exercise_id": "crucifixo-invertido-halteres",
+      "exercise_name": "Crucifixo Invertido com Halteres",
+      "english_name": "Dumbbell Reverse Fly",
+      "csv_id": "0383",
+      "csv_name": "dumbbell reverse fly",
+      "gif": "0383.gif",
+      "path": "/assets/0383.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Deltoide Posterior",
+        "Romboides"
+      ],
+      "secondary_muscles": [
+        "Trapézio Médio/Inferior"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.84,
+      "status": "probable",
+      "application_aliases": null,
+      "notes": "A animação mostra o crucifixo invertido com o peito apoiado; o catálogo não especifica esse apoio."
+    },
+    {
+      "exercise_id": "extensao-lombar-maquina",
+      "exercise_name": "Extensão Lombar na Máquina",
+      "english_name": "Back Extension Machine",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Eretores da Espinha (Lombar)"
+      ],
+      "secondary_muscles": [
+        "Glúteos",
+        "Isquiotibiais"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "hiperextensao-lombar-banco",
+      "exercise_name": "Hiperextensão Lombar (Banco Romano)",
+      "english_name": "Hyperextension",
+      "csv_id": "0489",
+      "csv_name": "hyperextension",
+      "gif": "0489.gif",
+      "path": "/assets/0489.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Eretores da Espinha"
+      ],
+      "secondary_muscles": [
+        "Glúteo Máximo",
+        "Isquiotibiais"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "remada-alta-polia",
+      "exercise_name": "Remada Alta na Polia",
+      "english_name": "Cable Upright Row",
+      "csv_id": "0246",
+      "csv_name": "cable upright row",
+      "gif": "0246.gif",
+      "path": "/assets/0246.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Trapézio (Parte Superior e Média)"
+      ],
+      "secondary_muscles": [
+        "Deltoide Lateral",
+        "Deltoide Anterior",
+        "Bíceps Braquial"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "bom-dia-barra",
+      "exercise_name": "Bom Dia com Barra (Good Morning)",
+      "english_name": "Barbell Good Morning",
+      "csv_id": "0044",
+      "csv_name": "barbell good morning",
+      "gif": "0044.gif",
+      "path": "/assets/0044.gif",
+      "muscle_group": "Costas",
+      "primary_muscles": [
+        "Eretores da Espinha (Lombar)",
+        "Isquiotibiais"
+      ],
+      "secondary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "desenvolvimento-militar-barra",
+      "exercise_name": "Desenvolvimento Militar com Barra (Em Pé)",
+      "english_name": "Military Press / Overhead Press",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Anterior",
+        "Deltoide Lateral"
+      ],
+      "secondary_muscles": [
+        "Tríceps Braquial",
+        "Peitoral Superior",
+        "Core"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "desenvolvimento-barra-sentado",
+      "exercise_name": "Desenvolvimento com Barra Sentado",
+      "english_name": "Seated Barbell Shoulder Press",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Anterior",
+        "Deltoide Lateral"
+      ],
+      "secondary_muscles": [
+        "Tríceps Braquial",
+        "Peitoral Superior"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "desenvolvimento-arnold",
+      "exercise_name": "Desenvolvimento Arnold",
+      "english_name": "Arnold Press",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Anterior",
+        "Deltoide Lateral",
+        "Deltoide Posterior"
+      ],
+      "secondary_muscles": [
+        "Tríceps Braquial"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "desenvolvimento-maquina",
+      "exercise_name": "Desenvolvimento Máquina (Articulado)",
+      "english_name": "Machine Shoulder Press",
+      "csv_id": "0603",
+      "csv_name": "lever shoulder press",
+      "gif": "0603.gif",
+      "path": "/assets/0603.gif",
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Anterior"
+      ],
+      "secondary_muscles": [
+        "Deltoide Lateral",
+        "Tríceps Braquial"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.86,
+      "status": "probable",
+      "application_aliases": [],
+      "notes": "Shoulder press em máquina de alavancas; movimento confere, mas o modelo de máquina não é especificado no catálogo."
+    },
+    {
+      "exercise_id": "elevacao-lateral-polia",
+      "exercise_name": "Elevação Lateral na Polia Baixa",
+      "english_name": "Cable Lateral Raise",
+      "csv_id": "0178",
+      "csv_name": "cable lateral raise",
+      "gif": "0178.gif",
+      "path": "/assets/0178.gif",
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Lateral"
+      ],
+      "secondary_muscles": [
+        "Trapézio Superior"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "elevacao-lateral-maquina",
+      "exercise_name": "Elevação Lateral na Máquina",
+      "english_name": "Machine Lateral Raise",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Lateral"
+      ],
+      "secondary_muscles": [
+        "Trapézio Superior"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-lateral-inclinada",
+      "exercise_name": "Elevação Lateral em Banco Inclinado",
+      "english_name": "Incline Lateral Raise",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Lateral"
+      ],
+      "secondary_muscles": [
+        "Deltoide Posterior"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-front-halteres",
+      "exercise_name": "Elevação Frontal com Halteres",
+      "english_name": "Dumbbell Front Raise",
+      "csv_id": "0310",
+      "csv_name": "dumbbell front raise",
+      "gif": "0310.gif",
+      "path": "/assets/0310.gif",
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Anterior"
+      ],
+      "secondary_muscles": [
+        "Peitoral Superior",
+        "Serrátil Anterior"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "elevacao-frontal-barra",
+      "exercise_name": "Elevação Frontal com Barra",
+      "english_name": "Barbell Front Raise",
+      "csv_id": "0041",
+      "csv_name": "barbell front raise",
+      "gif": "0041.gif",
+      "path": "/assets/0041.gif",
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Anterior"
+      ],
+      "secondary_muscles": [
+        "Peitoral Superior"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "elevacao-frontal-polia",
+      "exercise_name": "Elevação Frontal na Polia Baixa",
+      "english_name": "Cable Front Raise",
+      "csv_id": "0162",
+      "csv_name": "cable front raise",
+      "gif": "0162.gif",
+      "path": "/assets/0162.gif",
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Anterior"
+      ],
+      "secondary_muscles": [
+        "Peitoral Superior"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "elevacao-frontal-anilha",
+      "exercise_name": "Elevação Frontal com Anilha",
+      "english_name": "Plate Front Raise",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Anterior"
+      ],
+      "secondary_muscles": [
+        "Deltoide Lateral",
+        "Peitoral Superior"
+      ],
+      "equipment": "Anilha",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "face-pull",
+      "exercise_name": "Face Pull (Puxada no Rosto)",
+      "english_name": "Face Pull",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Posterior",
+        "Manguito Rotador (Rotadores Externos)"
+      ],
+      "secondary_muscles": [
+        "Trapézio (Médio e Inferior)",
+        "Romboides"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": "face-pull",
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "crucifixo-invertido-curvado-halteres",
+      "exercise_name": "Crucifixo Invertido Curvado",
+      "english_name": "Bent Over Reverse Fly",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Posterior"
+      ],
+      "secondary_muscles": [
+        "Romboides",
+        "Trapézio Médio"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "remada-alta-barra",
+      "exercise_name": "Remada Alta com Barra (Upright Row)",
+      "english_name": "Barbell Upright Row",
+      "csv_id": "0120",
+      "csv_name": "barbell upright row",
+      "gif": "0120.gif",
+      "path": "/assets/0120.gif",
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Lateral",
+        "Deltoide Anterior"
+      ],
+      "secondary_muscles": [
+        "Trapézio Superior"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "elevacao-lateral-unilateral-polia",
+      "exercise_name": "Elevação Lateral Unilateral com Polia",
+      "english_name": "Single-Arm Cable Lateral Raise",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Lateral"
+      ],
+      "secondary_muscles": [
+        "Trapézio Superior"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-y-polia",
+      "exercise_name": "Elevação em Y na Polia Baixa",
+      "english_name": "Cable Y-Raise",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Lateral",
+        "Trapézio Inferior"
+      ],
+      "secondary_muscles": [
+        "Deltoide Posterior",
+        "Manguito Rotador"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "remada-alta-halteres",
+      "exercise_name": "Remada Alta com Halteres",
+      "english_name": "Dumbbell Upright Row",
+      "csv_id": "0437",
+      "csv_name": "dumbbell upright row",
+      "gif": "0437.gif",
+      "path": "/assets/0437.gif",
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Lateral"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior",
+        "Trapézio Superior"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "desenvolvimento-nuca",
+      "exercise_name": "Desenvolvimento Atrás da Nuca (Behind the Neck Press)",
+      "english_name": "Behind the Neck Press",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Ombros",
+      "primary_muscles": [
+        "Deltoide Lateral",
+        "Deltoide Anterior"
+      ],
+      "secondary_muscles": [
+        "Tríceps Braquial",
+        "Trapézio Superior"
+      ],
+      "equipment": "Barra (ou Smith)",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-direta-barra-ez",
+      "exercise_name": "Rosca Direta com Barra EZ",
+      "english_name": "EZ-Bar Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial",
+        "Braquiorradial"
+      ],
+      "secondary_muscles": [
+        "Braquial"
+      ],
+      "equipment": "Barra EZ",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-alternada-halteres",
+      "exercise_name": "Rosca Alternada com Halteres",
+      "english_name": "Alternate Dumbbell Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial"
+      ],
+      "secondary_muscles": [
+        "Braquial",
+        "Braquiorradial"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-martelo",
+      "exercise_name": "Rosca Martelo",
+      "english_name": "Hammer Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Braquiorradial",
+        "Braquial"
+      ],
+      "secondary_muscles": [
+        "Bíceps Braquial"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-concentrada",
+      "exercise_name": "Rosca Concentrada",
+      "english_name": "Concentration Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial (Cabeça Curta)"
+      ],
+      "secondary_muscles": [
+        "Braquial"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-scott-barra",
+      "exercise_name": "Rosca Scott com Barra (Preacher Curl)",
+      "english_name": "Preacher Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial (Cabeça Curta)"
+      ],
+      "secondary_muscles": [
+        "Braquial"
+      ],
+      "equipment": "Barra EZ / Banco Scott",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-scott-haltere",
+      "exercise_name": "Rosca Scott Unilateral com Haltere",
+      "english_name": "One-Arm Dumbbell Preacher Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial"
+      ],
+      "secondary_muscles": [
+        "Braquial"
+      ],
+      "equipment": "Haltere / Banco Scott",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-aranha",
+      "exercise_name": "Rosca Aranha (Spider Curl)",
+      "english_name": "Spider Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial (Cabeça Curta)"
+      ],
+      "secondary_muscles": [
+        "Braquial"
+      ],
+      "equipment": "Barra / Halteres (Banco Inclinado)",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-polia-baixa",
+      "exercise_name": "Rosca na Polia Baixa",
+      "english_name": "Cable Bicep Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial"
+      ],
+      "secondary_muscles": [
+        "Braquiorradial"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-inclinada-halteres",
+      "exercise_name": "Rosca Inclinada com Halteres",
+      "english_name": "Incline Dumbbell Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial (Cabeça Longa)"
+      ],
+      "secondary_muscles": [
+        "Braquial"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-unilateral-polia-alta",
+      "exercise_name": "Rosca Duplo Bíceps na Polia Alta (Crossover)",
+      "english_name": "High Cable Curls",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial (Cabeça Curta)"
+      ],
+      "secondary_muscles": [
+        "Braquial"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-zottman",
+      "exercise_name": "Rosca Zottman",
+      "english_name": "Zottman Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial",
+        "Braquiorradial"
+      ],
+      "secondary_muscles": [
+        "Braquial",
+        "Antebraços"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-martelo-corda-polia",
+      "exercise_name": "Rosca Martelo com Corda na Polia",
+      "english_name": "Cable Hammer Curl with Rope",
+      "csv_id": "0165",
+      "csv_name": "cable hammer curl (with rope)",
+      "gif": "0165.gif",
+      "path": "/assets/0165.gif",
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Braquiorradial",
+        "Braquial"
+      ],
+      "secondary_muscles": [
+        "Bíceps Braquial"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "rosca-inversa-barra",
+      "exercise_name": "Rosca Inversa com Barra",
+      "english_name": "Reverse Barbell Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Braquiorradial",
+        "Braquial"
+      ],
+      "secondary_muscles": [
+        "Bíceps Braquial",
+        "Extensores do Antebraço"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-21",
+      "exercise_name": "Rosca 21 com Barra",
+      "english_name": "21s Bicep Curls",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Bíceps",
+      "primary_muscles": [
+        "Bíceps Braquial"
+      ],
+      "secondary_muscles": [
+        "Braquial",
+        "Braquiorradial"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "triceps-pulldown-barra-reta",
+      "exercise_name": "Tríceps Pulldown com Barra Reta",
+      "english_name": "Triceps Pushdown (Straight Bar)",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial (Cabeça Lateral e Medial)"
+      ],
+      "secondary_muscles": [
+        "Ancôneo"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "triceps-testa-barra-ez",
+      "exercise_name": "Tríceps Testa com Barra EZ (Skullcrusher)",
+      "english_name": "EZ-Bar Skullcrusher",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial (Todas as cabeças, forte ênfase na longa)"
+      ],
+      "secondary_muscles": [
+        "Ancôneo"
+      ],
+      "equipment": "Barra EZ",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "triceps-frances-haltere-bilateral",
+      "exercise_name": "Tríceps Francês com Haltere (Bilateral)",
+      "english_name": "Seated Overhead Dumbbell Triceps Extension",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial (Cabeça Longa)"
+      ],
+      "secondary_muscles": [
+        "Ancôneo",
+        "Core (Estabilização)"
+      ],
+      "equipment": "Haltere",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": "overhead-triceps-extension",
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "triceps-frances-unilateral",
+      "exercise_name": "Tríceps Francês Unilateral com Haltere",
+      "english_name": "Single-Arm Overhead Triceps Extension",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial (Cabeça Longa)"
+      ],
+      "secondary_muscles": [
+        "Ancôneo"
+      ],
+      "equipment": "Haltere",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "mergulho-banco-triceps",
+      "exercise_name": "Mergulho no Banco (Tríceps Banco)",
+      "english_name": "Bench Dips",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial"
+      ],
+      "secondary_muscles": [
+        "Peitoral (Inferior)",
+        "Deltoide Anterior"
+      ],
+      "equipment": "Peso Corporal / Bancos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "mergulho-paralelas-triceps",
+      "exercise_name": "Mergulho nas Paralelas (Foco Tríceps)",
+      "english_name": "Triceps Dips",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial"
+      ],
+      "secondary_muscles": [
+        "Peitoral (Inferior)",
+        "Deltoide Anterior"
+      ],
+      "equipment": "Peso Corporal / Barras Paralelas",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "supino-fechado",
+      "exercise_name": "Supino Fechado",
+      "english_name": "Close-Grip Bench Press",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial"
+      ],
+      "secondary_muscles": [
+        "Peitoral (Parte Interna)",
+        "Deltoide Anterior"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "triceps-coice-haltere",
+      "exercise_name": "Tríceps Coice (Kickback) com Haltere",
+      "english_name": "Dumbbell Triceps Kickback",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial (Cabeça Lateral)"
+      ],
+      "secondary_muscles": [
+        "Ombro Posterior (Isometria)"
+      ],
+      "equipment": "Haltere",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "triceps-coice-polia",
+      "exercise_name": "Tríceps Coice na Polia",
+      "english_name": "Cable Triceps Kickback",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial (Cabeça Lateral)"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "triceps-corda-acima-cabeca",
+      "exercise_name": "Extensão de Tríceps Acima da Cabeça na Polia (Corda)",
+      "english_name": "Overhead Cable Triceps Extension",
+      "csv_id": "0194",
+      "csv_name": "cable overhead triceps extension (rope attachment)",
+      "gif": "0194.gif",
+      "path": "/assets/0194.gif",
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial (Cabeça Longa)"
+      ],
+      "secondary_muscles": [
+        "Core (Estabilização)"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.97,
+      "status": "confirmed",
+      "application_aliases": [],
+      "notes": "Overhead triceps extension com cabo e corda; posição acima da cabeça e equipamento conferem."
+    },
+    {
+      "exercise_id": "triceps-pulldown-unilateral-reverso",
+      "exercise_name": "Tríceps Unilateral na Polia (Pegada Inversa)",
+      "english_name": "Reverse Grip Single-Arm Triceps Pushdown",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial (Cabeça Medial)"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "triceps-pulldown-barra-v",
+      "exercise_name": "Tríceps Pulldown com Barra em V",
+      "english_name": "Triceps Pushdown (V-Bar)",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial (Cabeça Lateral e Medial)"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "maquina-mergulho-triceps",
+      "exercise_name": "Máquina de Tríceps (Mergulho Sentado)",
+      "english_name": "Seated Triceps Dip Machine",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial"
+      ],
+      "secondary_muscles": [
+        "Peitoral Inferior",
+        "Deltoide Anterior"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "jm-press",
+      "exercise_name": "JM Press (Supino JM)",
+      "english_name": "JM Press",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Tríceps",
+      "primary_muscles": [
+        "Tríceps Braquial"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-punho-invertida-barra",
+      "exercise_name": "Rosca Punho Invertida com Barra",
+      "english_name": "Reverse Barbell Wrist Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Antebraço",
+      "primary_muscles": [
+        "Extensores do Antebraço",
+        "Extensor Radial Longo do Carpo",
+        "Extensor Ulnar do Carpo"
+      ],
+      "secondary_muscles": [
+        "Braquiorradial"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-punho-halteres",
+      "exercise_name": "Rosca Punho com Halteres",
+      "english_name": "Dumbbell Wrist Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Antebraço",
+      "primary_muscles": [
+        "Flexores do Antebraço"
+      ],
+      "secondary_muscles": [
+        "Palmar Longo"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-punho-invertida-halteres",
+      "exercise_name": "Rosca Punho Invertida com Halteres",
+      "english_name": "Reverse Dumbbell Wrist Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Antebraço",
+      "primary_muscles": [
+        "Extensores do Antebraço"
+      ],
+      "secondary_muscles": [
+        "Braquiorradial"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-punho-tras-corpo-barra",
+      "exercise_name": "Rosca Punho Atrás do Corpo com Barra",
+      "english_name": "Behind-the-Back Barbell Wrist Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Antebraço",
+      "primary_muscles": [
+        "Flexores do Antebraço"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rolo-de-punho",
+      "exercise_name": "Rolo de Punho (Wrist Roller)",
+      "english_name": "Wrist Roller",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Antebraço",
+      "primary_muscles": [
+        "Flexores do Antebraço",
+        "Extensores do Antebraço"
+      ],
+      "secondary_muscles": [
+        "Deltoide Anterior (Isometria)"
+      ],
+      "equipment": "Wrist Roller (Rolo e Corda)",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "caminhada-do-fazendeiro",
+      "exercise_name": "Caminhada do Fazendeiro",
+      "english_name": "Farmer's Walk",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Antebraço",
+      "primary_muscles": [
+        "Músculos da Pegada (Antebraços)"
+      ],
+      "secondary_muscles": [
+        "Trapézio",
+        "Core",
+        "Panturrilhas"
+      ],
+      "equipment": "Halteres ou Kettlebells pesados",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "dead-hang",
+      "exercise_name": "Suspensão na Barra Fixa (Dead Hang)",
+      "english_name": "Dead Hang",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Antebraço",
+      "primary_muscles": [
+        "Músculos da Pegada (Antebraço)"
+      ],
+      "secondary_muscles": [
+        "Latíssimo do Dorso",
+        "Core"
+      ],
+      "equipment": "Barra Fixa",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "sustentacao-anilhas",
+      "exercise_name": "Sustentação de Anilhas (Pinch Grip)",
+      "english_name": "Plate Pinch Hold",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Antebraço",
+      "primary_muscles": [
+        "Flexores dos Dedos",
+        "Musculatura Intrínseca da Mão"
+      ],
+      "secondary_muscles": [
+        "Flexores do Antebraço"
+      ],
+      "equipment": "Anilhas",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "rosca-punho-polia",
+      "exercise_name": "Rosca Punho na Polia Baixa",
+      "english_name": "Cable Wrist Curl",
+      "csv_id": "0247",
+      "csv_name": "cable wrist curl",
+      "gif": "0247.gif",
+      "path": "/assets/0247.gif",
+      "muscle_group": "Antebraço",
+      "primary_muscles": [
+        "Flexores do Antebraço"
+      ],
+      "secondary_muscles": [
+        "Palmar Longo"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "agachamento-frontal",
+      "exercise_name": "Agachamento Frontal com Barra",
+      "english_name": "Barbell Front Squat",
+      "csv_id": "0042",
+      "csv_name": "barbell front squat",
+      "gif": "0042.gif",
+      "path": "/assets/0042.gif",
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps"
+      ],
+      "secondary_muscles": [
+        "Glúteo Máximo",
+        "Core (Reto Abdominal)",
+        "Lombar"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "agachamento-smith",
+      "exercise_name": "Agachamento no Smith",
+      "english_name": "Smith Machine Squat",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais"
+      ],
+      "equipment": "Máquina Smith",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "leg-press-horizontal",
+      "exercise_name": "Leg Press Horizontal (Seated Leg Press)",
+      "english_name": "Seated Leg Press",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps"
+      ],
+      "secondary_muscles": [
+        "Glúteo Máximo",
+        "Panturrilhas"
+      ],
+      "equipment": "Máquina (Cabos/Placas)",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "cadeira-extensora",
+      "exercise_name": "Cadeira Extensora (Leg Extension)",
+      "english_name": "Leg Extension",
+      "csv_id": "0585",
+      "csv_name": "lever leg extension",
+      "gif": "0585.gif",
+      "path": "/assets/0585.gif",
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps (Vasto Lateral, Vasto Medial, Vasto Intermédio, Reto Femoral)"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Máquina",
+      "confidence": 0.99,
+      "status": "confirmed",
+      "application_aliases": [
+        "leg-extension"
+      ],
+      "notes": "Extensão de joelho na máquina; assento, rolo e músculos-alvo conferem."
+    },
+    {
+      "exercise_id": "cadeira-extensora-unilateral",
+      "exercise_name": "Cadeira Extensora Unilateral",
+      "english_name": "Single-Leg Extension",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "agachamento-bulgaro",
+      "exercise_name": "Agachamento Búlgaro (Bulgarian Split Squat)",
+      "english_name": "Bulgarian Split Squat",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais",
+        "Core (Estabilização)"
+      ],
+      "equipment": "Halteres / Banco",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": "split-squat",
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "avanco-halteres",
+      "exercise_name": "Avanço com Halteres (Passada / Lunges)",
+      "english_name": "Dumbbell Lunges",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais",
+        "Panturrilhas"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "afundo-barra",
+      "exercise_name": "Afundo com Barra no Lugar",
+      "english_name": "Barbell Stationary Lunge",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps"
+      ],
+      "secondary_muscles": [
+        "Glúteo Máximo",
+        "Isquiotibiais",
+        "Core"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "agachamento-hack",
+      "exercise_name": "Agachamento Hack (Hack Squat)",
+      "english_name": "Hack Squat",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps"
+      ],
+      "secondary_muscles": [
+        "Glúteos",
+        "Isquiotibiais"
+      ],
+      "equipment": "Máquina Hack Squat",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "agachamento-goblet",
+      "exercise_name": "Agachamento Goblet (Cálice)",
+      "english_name": "Goblet Squat",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Core (Reto Abdominal)"
+      ],
+      "equipment": "Haltere / Kettlebell",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "agachamento-sissy",
+      "exercise_name": "Agachamento Sissy (Sissy Squat)",
+      "english_name": "Sissy Squat",
+      "csv_id": "1489",
+      "csv_name": "sissy squat",
+      "gif": "1489.gif",
+      "path": "/assets/1489.gif",
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps (Isolamento total)"
+      ],
+      "secondary_muscles": [
+        "Core (Estabilização)"
+      ],
+      "equipment": "Peso Corporal / Suporte Sissy",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "agachamento-zercher",
+      "exercise_name": "Agachamento Zercher",
+      "english_name": "Zercher Squat",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps",
+        "Glúteos"
+      ],
+      "secondary_muscles": [
+        "Core",
+        "Bíceps (Isometria)",
+        "Trapézio Superior"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "subida-banco-halteres",
+      "exercise_name": "Subida no Banco (Step-Up) com Halteres",
+      "english_name": "Dumbbell Step-Ups",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais",
+        "Panturrilhas"
+      ],
+      "equipment": "Halteres / Banco",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "agachamento-sumo",
+      "exercise_name": "Agachamento Sumô (Haltere ou Kettlebell)",
+      "english_name": "Sumo Squat",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Adutores da Coxa",
+        "Quadríceps",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais"
+      ],
+      "equipment": "Haltere / Kettlebell",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "pendulum-squat",
+      "exercise_name": "Agachamento Pêndulo (Pendulum Squat)",
+      "english_name": "Pendulum Squat",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps"
+      ],
+      "secondary_muscles": [
+        "Glúteos"
+      ],
+      "equipment": "Máquina Pendulum Squat",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "belt-squat",
+      "exercise_name": "Agachamento com Cinto (Belt Squat)",
+      "english_name": "Belt Squat",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais"
+      ],
+      "equipment": "Máquina Belt Squat / Cinto de Lastro",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "agachamento-isometrico-parede",
+      "exercise_name": "Agachamento Isométrico na Parede (Cadeirinha)",
+      "english_name": "Wall Sit",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps"
+      ],
+      "secondary_muscles": [
+        "Glúteos",
+        "Panturrilhas",
+        "Core"
+      ],
+      "equipment": "Peso Corporal / Parede",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "agachamento-pistol",
+      "exercise_name": "Agachamento Pistol (Pistol Squat)",
+      "english_name": "Pistol Squat",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Quadríceps",
+      "primary_muscles": [
+        "Quadríceps",
+        "Glúteo Máximo",
+        "Core"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais",
+        "Estabilizadores de Tornozelo"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "cadeira-flexora",
+      "exercise_name": "Cadeira Flexora",
+      "english_name": "Seated Leg Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais"
+      ],
+      "secondary_muscles": [
+        "Gastrocnêmio"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "flexora-em-pe",
+      "exercise_name": "Flexora em Pé Unilateral",
+      "english_name": "Standing Leg Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais"
+      ],
+      "secondary_muscles": [
+        "Glúteo Máximo (Isometria)"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "stiff-barra",
+      "exercise_name": "Stiff com Barra",
+      "english_name": "Stiff-Legged Deadlift",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Eretores da Espinha (Lombar)"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "stiff-halteres",
+      "exercise_name": "Stiff com Halteres",
+      "english_name": "Dumbbell Stiff-Legged Deadlift",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Lombar",
+        "Antebraços"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "levantamento-terra-romeno",
+      "exercise_name": "Levantamento Terra Romeno (RDL)",
+      "english_name": "Romanian Deadlift (RDL)",
+      "csv_id": "0085",
+      "csv_name": "barbell romanian deadlift",
+      "gif": "0085.gif",
+      "path": "/assets/0085.gif",
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Eretores da Espinha",
+        "Trapézio",
+        "Adutor Magno"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": [
+        "romanian-deadlift"
+      ],
+      "notes": "Barbell Romanian deadlift; barra junto às pernas e dobradiça de quadril conferem."
+    },
+    {
+      "exercise_id": "rdl-halteres",
+      "exercise_name": "Levantamento Terra Romeno com Halteres",
+      "english_name": "Dumbbell RDL",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Eretores da Espinha"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "flexao-nordica",
+      "exercise_name": "Flexão Nórdica",
+      "english_name": "Nordic Hamstring Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais"
+      ],
+      "secondary_muscles": [
+        "Glúteos",
+        "Lombar"
+      ],
+      "equipment": "Peso Corporal / Suporte",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "glute-ham-raise",
+      "exercise_name": "Glute Ham Raise (GHR)",
+      "english_name": "Glute Ham Raise",
+      "csv_id": "3193",
+      "csv_name": "glute-ham raise",
+      "gif": null,
+      "path": null,
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais",
+        "Glúteo Máximo",
+        "Panturrilhas"
+      ],
+      "secondary_muscles": [
+        "Eretores da Espinha"
+      ],
+      "equipment": "Máquina GHD",
+      "confidence": 0.0,
+      "status": "no_match",
+      "application_aliases": null,
+      "notes": "Exercício identificado no CSV (3193), mas o arquivo GIF correspondente não está na pasta assets."
+    },
+    {
+      "exercise_id": "stiff-unilateral-haltere",
+      "exercise_name": "Stiff Unilateral (RDL de Uma Perna)",
+      "english_name": "Single-Leg RDL",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Core (Equilíbrio)",
+        "Músculos Estabilizadores do Tornozelo"
+      ],
+      "equipment": "Haltere / Kettlebell",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "flexora-polia-baixa",
+      "exercise_name": "Flexão de Perna na Polia (Cabo)",
+      "english_name": "Cable Leg Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais"
+      ],
+      "secondary_muscles": [
+        "Gastrocnêmio"
+      ],
+      "equipment": "Máquina de Cabos / Tornozeleira",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "swing-kettlebell",
+      "exercise_name": "Swing com Kettlebell (Balanço)",
+      "english_name": "Kettlebell Swing",
+      "csv_id": "0549",
+      "csv_name": "kettlebell swing",
+      "gif": "0549.gif",
+      "path": "/assets/0549.gif",
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais",
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Core",
+        "Lombar",
+        "Ombros (Isometria)"
+      ],
+      "equipment": "Kettlebell",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "flexao-bola-suica",
+      "exercise_name": "Flexão de Pernas na Bola Suíça",
+      "english_name": "Swiss Ball Hamstring Curl",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais",
+        "Glúteo Máximo",
+        "Core"
+      ],
+      "secondary_muscles": [
+        "Lombar",
+        "Panturrilhas"
+      ],
+      "equipment": "Bola Suíça (Fitball)",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "pull-through-polia",
+      "exercise_name": "Pull-Through na Polia",
+      "english_name": "Cable Pull-Through",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Glúteo Máximo",
+        "Isquiotibiais"
+      ],
+      "secondary_muscles": [
+        "Core",
+        "Eretores da Espinha"
+      ],
+      "equipment": "Máquina de Cabos / Corda",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "good-morning",
+      "exercise_name": "Bom Dia (Good Morning)",
+      "english_name": "Barbell Good Morning",
+      "csv_id": "0044",
+      "csv_name": "barbell good morning",
+      "gif": "0044.gif",
+      "path": "/assets/0044.gif",
+      "muscle_group": "Posterior de Coxa",
+      "primary_muscles": [
+        "Isquiotibiais",
+        "Eretores da Espinha"
+      ],
+      "secondary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "equipment": "Barra",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos. Duplicate original of bom-dia-barra; the shared movement uses the same GIF.",
+      "duplicate_of": "bom-dia-barra"
+    },
+    {
+      "exercise_id": "elevacao-panturrilha-pe",
+      "exercise_name": "Elevação de Panturrilha em Pé",
+      "english_name": "Standing Calf Raise",
+      "csv_id": "0605",
+      "csv_name": "lever standing calf raise",
+      "gif": "0605.gif",
+      "path": "/assets/0605.gif",
+      "muscle_group": "Panturrilhas",
+      "primary_muscles": [
+        "Gastrocnêmio"
+      ],
+      "secondary_muscles": [
+        "Sóleo"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.99,
+      "status": "confirmed",
+      "application_aliases": [],
+      "notes": "Mesmo movimento e especificação do outro registro original de standing calf raise; compartilha legitimamente a demonstração 0605.",
+      "duplicate_of": "elevacao-panturrilha-em-pe"
+    },
+    {
+      "exercise_id": "elevacao-panturrilha-sentado",
+      "exercise_name": "Elevação de Panturrilha Sentado",
+      "english_name": "Seated Calf Raise",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Panturrilhas",
+      "primary_muscles": [
+        "Sóleo"
+      ],
+      "secondary_muscles": [
+        "Gastrocnêmio"
+      ],
+      "equipment": "Máquina / Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-panturrilha-leg-press",
+      "exercise_name": "Panturrilha no Leg Press",
+      "english_name": "Leg Press Calf Raise",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Panturrilhas",
+      "primary_muscles": [
+        "Gastrocnêmio",
+        "Sóleo"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Máquina Leg Press",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-panturrilha-burro",
+      "exercise_name": "Panturrilha Burrinho (Donkey Calf Raise)",
+      "english_name": "Donkey Calf Raise",
+      "csv_id": "0284",
+      "csv_name": "donkey calf raise",
+      "gif": "0284.gif",
+      "path": "/assets/0284.gif",
+      "muscle_group": "Panturrilhas",
+      "primary_muscles": [
+        "Gastrocnêmio",
+        "Sóleo"
+      ],
+      "secondary_muscles": [
+        "Core (Estabilização)"
+      ],
+      "equipment": "Máquina / Parceiro / Peso Livre",
+      "confidence": 0.82,
+      "status": "probable",
+      "application_aliases": null,
+      "notes": "O movimento de panturrilha burrinho confere; a animação usa apoio corporal, enquanto o catálogo menciona máquina/plataforma."
+    },
+    {
+      "exercise_id": "elevacao-panturrilha-unilateral",
+      "exercise_name": "Elevação de Panturrilha Unilateral",
+      "english_name": "Single-Leg Calf Raise",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Panturrilhas",
+      "primary_muscles": [
+        "Gastrocnêmio"
+      ],
+      "secondary_muscles": [
+        "Sóleo",
+        "Estabilizadores do Tornozelo"
+      ],
+      "equipment": "Haltere / Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-panturrilha-smith",
+      "exercise_name": "Elevação de Panturrilha no Smith",
+      "english_name": "Smith Machine Calf Raise",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Panturrilhas",
+      "primary_muscles": [
+        "Gastrocnêmio",
+        "Sóleo"
+      ],
+      "secondary_muscles": [
+        "Core"
+      ],
+      "equipment": "Máquina Smith / Step",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-panturrilha-livre-pe",
+      "exercise_name": "Elevação de Panturrilha Livre em Pé (Peso Corporal)",
+      "english_name": "Bodyweight Standing Calf Raise",
+      "csv_id": "1373",
+      "csv_name": "bodyweight standing calf raise",
+      "gif": "1373.gif",
+      "path": "/assets/1373.gif",
+      "muscle_group": "Panturrilhas",
+      "primary_muscles": [
+        "Gastrocnêmio"
+      ],
+      "secondary_muscles": [
+        "Sóleo"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "elevacao-tibial",
+      "exercise_name": "Elevação Tibial (Tibialis Raise)",
+      "english_name": "Tibialis Raise",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Panturrilhas",
+      "primary_muscles": [
+        "Tibial Anterior"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Peso Corporal / Parede / Aparelho Específico",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-panturrilha-hack",
+      "exercise_name": "Panturrilha no Hack Squat",
+      "english_name": "Hack Machine Calf Raise",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Panturrilhas",
+      "primary_muscles": [
+        "Gastrocnêmio",
+        "Sóleo"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Máquina Hack Squat",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "pular-corda",
+      "exercise_name": "Pular Corda (Foco Panturrilha e Cardio)",
+      "english_name": "Jump Rope",
+      "csv_id": "2612",
+      "csv_name": "jump rope",
+      "gif": null,
+      "path": null,
+      "muscle_group": "Panturrilhas",
+      "primary_muscles": [
+        "Gastrocnêmio",
+        "Sóleo",
+        "Sistema Cardiovascular"
+      ],
+      "secondary_muscles": [
+        "Core",
+        "Ombros",
+        "Antebraços"
+      ],
+      "equipment": "Corda de Pular",
+      "confidence": 0.0,
+      "status": "no_match",
+      "application_aliases": null,
+      "notes": "Exercício identificado no CSV (2612), mas o arquivo GIF correspondente não está na pasta assets."
+    },
+    {
+      "exercise_id": "elevacao-pelvica-maquina",
+      "exercise_name": "Elevação Pélvica na Máquina",
+      "english_name": "Machine Hip Thrust",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-pelvica-smith",
+      "exercise_name": "Elevação Pélvica no Smith",
+      "english_name": "Smith Machine Hip Thrust",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais"
+      ],
+      "equipment": "Máquina Smith / Banco",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-pelvica-haltere",
+      "exercise_name": "Elevação Pélvica com Haltere",
+      "english_name": "Dumbbell Hip Thrust",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais"
+      ],
+      "equipment": "Haltere / Banco",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "ponte-gluteos-peso-corporal",
+      "exercise_name": "Ponte de Glúteos (Glute Bridge)",
+      "english_name": "Glute Bridge",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais",
+        "Core"
+      ],
+      "equipment": "Peso Corporal / Solo",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "ponte-gluteos-unilateral",
+      "exercise_name": "Ponte de Glúteos Unilateral",
+      "english_name": "Single-Leg Glute Bridge",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais",
+        "Core"
+      ],
+      "equipment": "Peso Corporal / Solo",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "ponte-gluteos-elevada",
+      "exercise_name": "Ponte de Glúteos Elevada (Pés no Banco)",
+      "english_name": "Elevated Glute Bridge",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo",
+        "Isquiotibiais"
+      ],
+      "secondary_muscles": [
+        "Core"
+      ],
+      "equipment": "Banco / Caixote",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "frog-pumps",
+      "exercise_name": "Frog Pumps (Ponte Sapo)",
+      "english_name": "Frog Pumps",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo",
+        "Glúteo Médio"
+      ],
+      "secondary_muscles": [
+        "Adutores"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "abducao-quadril-maquina",
+      "exercise_name": "Cadeira Abdutora",
+      "english_name": "Seated Hip Abduction Machine",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Médio",
+        "Glúteo Mínimo"
+      ],
+      "secondary_muscles": [
+        "Tensor da Fáscia Lata"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "abducao-quadril-polia",
+      "exercise_name": "Abdução de Quadril na Polia",
+      "english_name": "Cable Hip Abduction",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Médio",
+        "Glúteo Mínimo"
+      ],
+      "secondary_muscles": [
+        "Tensor da Fáscia Lata"
+      ],
+      "equipment": "Máquina de Cabos / Tornozeleira",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "gluteo-coice-polia",
+      "exercise_name": "Glúteo Coice na Polia (Glute Kickback)",
+      "english_name": "Cable Glute Kickback",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais",
+        "Core (Estabilização)"
+      ],
+      "equipment": "Máquina de Cabos / Tornozeleira",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "gluteo-coice-maquina",
+      "exercise_name": "Máquina de Glúteo Coice",
+      "english_name": "Glute Kickback Machine",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais"
+      ],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "gluteo-coice-smith",
+      "exercise_name": "Glúteo Coice no Smith",
+      "english_name": "Smith Machine Donkey Kicks",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais",
+        "Core"
+      ],
+      "equipment": "Máquina Smith",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "gluteo-4-apoios-caneleira",
+      "exercise_name": "Glúteo 4 Apoios com Caneleira (Joelhos dobrados)",
+      "english_name": "Ankle Weight Donkey Kicks",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Core (Estabilização)"
+      ],
+      "equipment": "Caneleira (Pesos de Tornozelo)",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "gluteo-4-apoios-perna-estendida",
+      "exercise_name": "Glúteo 4 Apoios com Perna Estendida",
+      "english_name": "Straight-Leg Donkey Kicks",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo",
+        "Isquiotibiais"
+      ],
+      "secondary_muscles": [
+        "Core (Estabilização)"
+      ],
+      "equipment": "Caneleira",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "abducao-elastico-deitado",
+      "exercise_name": "Ostra com Elástico (Clamshells)",
+      "english_name": "Banded Clamshells",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Médio"
+      ],
+      "secondary_muscles": [
+        "Rotadores Externos do Quadril"
+      ],
+      "equipment": "Faixa Elástica (Mini Band)",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "caminhada-lateral-elastico",
+      "exercise_name": "Caminhada Lateral com Elástico (Monster Walk)",
+      "english_name": "Banded Lateral Walk",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Médio",
+        "Glúteo Mínimo"
+      ],
+      "secondary_muscles": [
+        "Tensor da Fáscia Lata",
+        "Quadríceps (Isometria)"
+      ],
+      "equipment": "Faixa Elástica (Mini Band)",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "passada-cruzada-halteres",
+      "exercise_name": "Passada Cruzada (Curtsy Lunge)",
+      "english_name": "Curtsy Lunge",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo",
+        "Glúteo Médio"
+      ],
+      "secondary_muscles": [
+        "Quadríceps"
+      ],
+      "equipment": "Halteres",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "hiperextensao-reversa",
+      "exercise_name": "Hiperextensão Reversa (Reverse Hyper)",
+      "english_name": "Reverse Hyperextension",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo",
+        "Eretores da Espinha"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais"
+      ],
+      "equipment": "Máquina Reverse Hyper / Banco",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "extensao-lombar-foco-gluteo",
+      "exercise_name": "Banco Romano com Foco em Glúteo",
+      "english_name": "Glute-Focused Back Extension",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Glúteos",
+      "primary_muscles": [
+        "Glúteo Máximo"
+      ],
+      "secondary_muscles": [
+        "Isquiotibiais",
+        "Eretores da Espinha"
+      ],
+      "equipment": "Banco Romano 45 Graus",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "crunch-abdominal-solo",
+      "exercise_name": "Crunch Abdominal no Solo",
+      "english_name": "Floor Crunch",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal (Parte Superior)"
+      ],
+      "secondary_muscles": [
+        "Oblíquos Externos"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "abdominal-sit-up",
+      "exercise_name": "Abdominal Sit-Up (Completo)",
+      "english_name": "Sit-Up",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal",
+        "Flexores do Quadril (Psoas)"
+      ],
+      "secondary_muscles": [
+        "Oblíquos"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "prancha-isometrica",
+      "exercise_name": "Prancha Isométrica",
+      "english_name": "Plank",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Transverso do Abdômen",
+        "Reto Abdominal"
+      ],
+      "secondary_muscles": [
+        "Lombar",
+        "Ombros",
+        "Glúteos"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "prancha-lateral",
+      "exercise_name": "Prancha Lateral",
+      "english_name": "Side Plank",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Oblíquos (Interno e Externo)"
+      ],
+      "secondary_muscles": [
+        "Quadrado Lombar",
+        "Glúteo Médio"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-pernas-solo",
+      "exercise_name": "Elevação de Pernas no Solo",
+      "english_name": "Lying Leg Raises",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal (Parte Inferior)",
+        "Flexores do Quadril"
+      ],
+      "secondary_muscles": [
+        "Transverso do Abdômen"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "elevacao-pernas-barra",
+      "exercise_name": "Elevação de Pernas Suspenso (Hanging Leg Raise)",
+      "english_name": "Hanging Leg Raise",
+      "csv_id": "0472",
+      "csv_name": "hanging leg raise",
+      "gif": "0472.gif",
+      "path": "/assets/0472.gif",
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal",
+        "Flexores do Quadril"
+      ],
+      "secondary_muscles": [
+        "Músculos da Pegada",
+        "Serrátil Anterior"
+      ],
+      "equipment": "Barra Fixa",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "elevacao-joelhos-paralelas",
+      "exercise_name": "Elevação de Joelhos na Cadeira / Paralelas",
+      "english_name": "Captain's Chair Knee Raises",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal (Infra)",
+        "Flexores do Quadril"
+      ],
+      "secondary_muscles": [
+        "Oblíquos"
+      ],
+      "equipment": "Cadeira Romana (Captain's Chair)",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "abdominal-remador",
+      "exercise_name": "Abdominal Remador",
+      "english_name": "V-Ups / Lemon Squeezers",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal"
+      ],
+      "secondary_muscles": [
+        "Flexores do Quadril"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "crunch-polia-alta",
+      "exercise_name": "Crunch Abdominal na Polia Alta",
+      "english_name": "Cable Crunch",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal"
+      ],
+      "secondary_muscles": [
+        "Oblíquos"
+      ],
+      "equipment": "Máquina de Cabos / Corda",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "lenhador-polia",
+      "exercise_name": "Lenhador na Polia (Woodchopper)",
+      "english_name": "Cable Woodchopper",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Oblíquos (Interno e Externo)"
+      ],
+      "secondary_muscles": [
+        "Reto Abdominal",
+        "Transverso do Abdômen",
+        "Ombros"
+      ],
+      "equipment": "Máquina de Cabos",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "abdominal-bicicleta",
+      "exercise_name": "Abdominal Bicicleta",
+      "english_name": "Bicycle Crunches",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal",
+        "Oblíquos"
+      ],
+      "secondary_muscles": [
+        "Flexores do Quadril"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "roda-abdominal",
+      "exercise_name": "Roda Abdominal (Ab Wheel Rollout)",
+      "english_name": "Ab Wheel Rollout",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal",
+        "Transverso do Abdômen"
+      ],
+      "secondary_muscles": [
+        "Latíssimo do Dorso",
+        "Ombros",
+        "Lombar"
+      ],
+      "equipment": "Roda Abdominal (Ab Wheel)",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "abdominal-canivete",
+      "exercise_name": "Abdominal Canivete (V-Up)",
+      "english_name": "V-Up",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal"
+      ],
+      "secondary_muscles": [
+        "Flexores do Quadril"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "giro-russo",
+      "exercise_name": "Giro Russo (Russian Twist)",
+      "english_name": "Russian Twist",
+      "csv_id": "0687",
+      "csv_name": "russian twist",
+      "gif": "0687.gif",
+      "path": "/assets/0687.gif",
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Oblíquos",
+        "Reto Abdominal"
+      ],
+      "secondary_muscles": [
+        "Transverso do Abdômen"
+      ],
+      "equipment": "Anilha / Bola Medicinal (opcional)",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "crunch-maquina",
+      "exercise_name": "Abdominal na Máquina Articulada",
+      "english_name": "Machine Crunch",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Máquina",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "crunch-declinado",
+      "exercise_name": "Abdominal Declinado",
+      "english_name": "Decline Crunch",
+      "csv_id": "0277",
+      "csv_name": "decline crunch",
+      "gif": "0277.gif",
+      "path": "/assets/0277.gif",
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal"
+      ],
+      "secondary_muscles": [
+        "Flexores do Quadril"
+      ],
+      "equipment": "Banco Declinado",
+      "confidence": 0.98,
+      "status": "confirmed",
+      "application_aliases": null,
+      "notes": "Nome em inglês, região/músculos, equipamento e movimento visual conferidos."
+    },
+    {
+      "exercise_id": "isometria-hollow-body",
+      "exercise_name": "Hollow Body Hold (Isometria do Corpo Oco)",
+      "english_name": "Hollow Body Hold",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Transverso do Abdômen",
+        "Reto Abdominal"
+      ],
+      "secondary_muscles": [
+        "Lombar (Estabilização)"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "windshield-wipers",
+      "exercise_name": "Limpador de Parabrisa (Windshield Wipers)",
+      "english_name": "Windshield Wipers",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Oblíquos",
+        "Reto Abdominal"
+      ],
+      "secondary_muscles": [
+        "Flexores do Quadril"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "prancha-toque-ombros",
+      "exercise_name": "Prancha com Toque nos Ombros",
+      "english_name": "Plank Shoulder Taps",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Transverso do Abdômen",
+        "Oblíquos"
+      ],
+      "secondary_muscles": [
+        "Ombros (Estabilização)"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "abdominal-infra-banco",
+      "exercise_name": "Abdominal Infra no Banco Plano",
+      "english_name": "Bench Leg Raises",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Abdômen",
+      "primary_muscles": [
+        "Reto Abdominal (Inferior)",
+        "Flexores do Quadril"
+      ],
+      "secondary_muscles": [],
+      "equipment": "Banco Reto",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "esteira-corrida",
+      "exercise_name": "Corrida na Esteira",
+      "english_name": "Treadmill Running",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Cardio",
+      "primary_muscles": [
+        "Sistema Cardiovascular",
+        "Coração"
+      ],
+      "secondary_muscles": [
+        "Panturrilhas",
+        "Quadríceps",
+        "Glúteos",
+        "Isquiotibiais"
+      ],
+      "equipment": "Esteira",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "esteira-caminhada-inclinada",
+      "exercise_name": "Caminhada Inclinada na Esteira",
+      "english_name": "Incline Treadmill Walk",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Cardio",
+      "primary_muscles": [
+        "Sistema Cardiovascular"
+      ],
+      "secondary_muscles": [
+        "Glúteos",
+        "Panturrilhas"
+      ],
+      "equipment": "Esteira",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "bicicleta-ergometrica",
+      "exercise_name": "Bicicleta Ergométrica (Vertical/Horizontal)",
+      "english_name": "Stationary Bike",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Cardio",
+      "primary_muscles": [
+        "Sistema Cardiovascular"
+      ],
+      "secondary_muscles": [
+        "Quadríceps"
+      ],
+      "equipment": "Bicicleta Ergométrica",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "bicicleta-spinning",
+      "exercise_name": "Bicicleta de Spinning",
+      "english_name": "Spin Bike",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Cardio",
+      "primary_muscles": [
+        "Sistema Cardiovascular"
+      ],
+      "secondary_muscles": [
+        "Quadríceps",
+        "Isquiotibiais",
+        "Panturrilhas",
+        "Glúteos"
+      ],
+      "equipment": "Spin Bike",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "eliptico",
+      "exercise_name": "Elíptico",
+      "english_name": "Elliptical Trainer",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Cardio",
+      "primary_muscles": [
+        "Sistema Cardiovascular"
+      ],
+      "secondary_muscles": [
+        "Quadríceps",
+        "Glúteos",
+        "Costas",
+        "Peito (ao empurrar/puxar braços)"
+      ],
+      "equipment": "Elíptico",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "simulador-escada",
+      "exercise_name": "Simulador de Escada (StairMaster)",
+      "english_name": "Stair Climber",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Cardio",
+      "primary_muscles": [
+        "Sistema Cardiovascular",
+        "Glúteo Máximo",
+        "Quadríceps"
+      ],
+      "secondary_muscles": [
+        "Panturrilhas"
+      ],
+      "equipment": "Simulador de Escadas",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "remo-ergometro",
+      "exercise_name": "Remo Seco (Ergômetro)",
+      "english_name": "Rowing Machine",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Cardio",
+      "primary_muscles": [
+        "Sistema Cardiovascular",
+        "Costas",
+        "Pernas"
+      ],
+      "secondary_muscles": [
+        "Core",
+        "Bíceps",
+        "Ombros"
+      ],
+      "equipment": "Remo Ergômetro (Concept2, etc)",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "air-bike",
+      "exercise_name": "Bicicleta Ergométrica de Ar (Air Bike / Assault Bike)",
+      "english_name": "Air Bike",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Cardio",
+      "primary_muscles": [
+        "Sistema Cardiovascular",
+        "Pernas",
+        "Ombros",
+        "Costas"
+      ],
+      "secondary_muscles": [
+        "Core",
+        "Peito"
+      ],
+      "equipment": "Air Bike (Assault, Echo, etc)",
+      "confidence": 0.0,
+      "status": "no_match",
+      "application_aliases": null,
+      "notes": "O CSV usa Air Bike para um movimento abdominal no solo; o catálogo descreve a bicicleta ergométrica. A associação foi rejeitada por diferença biomecânica.",
+      "rejected_csv_id": "0003"
+    },
+    {
+      "exercise_id": "pular-corda-cardio",
+      "exercise_name": "Pular Corda (Cardio Progressivo)",
+      "english_name": "Jump Rope Cardio",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Cardio",
+      "primary_muscles": [
+        "Sistema Cardiovascular"
+      ],
+      "secondary_muscles": [
+        "Panturrilhas",
+        "Antebraços"
+      ],
+      "equipment": "Corda de Pular",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    },
+    {
+      "exercise_id": "burpees",
+      "exercise_name": "Burpees",
+      "english_name": "Burpees",
+      "csv_id": null,
+      "csv_name": null,
+      "gif": null,
+      "path": null,
+      "muscle_group": "Cardio",
+      "primary_muscles": [
+        "Sistema Cardiovascular",
+        "Core"
+      ],
+      "secondary_muscles": [
+        "Peito",
+        "Quadríceps",
+        "Ombros"
+      ],
+      "equipment": "Peso Corporal",
+      "confidence": 0.0,
+      "status": "pending",
+      "application_aliases": null,
+      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+    }
+  ]
+}

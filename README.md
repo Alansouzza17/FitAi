@@ -21,3 +21,9 @@ Consulte [`CREDENTIALS.md`](./CREDENTIALS.md) para as variáveis manuais. Nenhum
 ## PWA
 
 `public/manifest.webmanifest`, os ícones FitIA, `public/service-worker.js` e `public/offline.html` dão suporte à instalação e ao shell estático offline. Chamadas de IA não funcionam offline, e dados pessoais não são armazenados no cache do service worker.
+
+## Biblioteca de exercícios e GIFs
+
+O catálogo de exercícios usa `catalogo.json`; o mapeamento centralizado fica em `exercise-gif-map.json`. GIFs confirmados e prováveis são carregados sob demanda. O build copia para `dist/assets` apenas os arquivos mapeados, mantendo seus nomes originais. Exercícios pendentes ou sem correspondência exibem um estado alternativo e continuam disponíveis.
+
+Para revisar associações, abra `/?exercise-gif-review=1` no site local ou hospedado. A relação detalhada de itens pendentes está em [`exercise-gif-review.md`](./exercise-gif-review.md). A biblioteca fornecida neste checkout contém 1.000 GIFs íntegros; o mapeamento não presume que números de CSV e arquivos sejam iguais.

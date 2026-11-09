@@ -5,6 +5,7 @@ import {
   Plus, ArrowUpRight, TrendingUp, Info, Eye, RotateCcw, AlertTriangle, 
   Search, Filter, X, Award, Clock, Save, BarChart3, RefreshCw
 } from 'lucide-react';
+const ExerciseGifContext = React.createContext(null);
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
 const STORAGE_KEYS = { profile: 'fitia.profile.v1', workout: 'fitia.workout.v1', history: 'fitia.history.v1' };
 function readStoredValue(key, fallback) {
@@ -330,6 +331,42 @@ const ExerciseSVG = ({ type }) => {
   );
 };
 
+function ExerciseVisual({ exerciseId, fallbackType, variant = 'catalog' }) {
+  const [imageFailed, setImageFailed] = useState(false);
+  const gifModule = React.useContext(ExerciseGifContext);
+  const mapping = gifModule?.resolveExerciseGif(exerciseId);
+
+  useEffect(() => setImageFailed(false), [exerciseId]);
+
+  if (!mapping || imageFailed) {
+    if (variant === 'thumbnail') return <Dumbbell className="w-5 h-5" aria-hidden="true" />;
+    if (variant === 'workout') return <ExerciseSVG type={fallbackType} />;
+    return (
+      <div className="w-full h-48 bg-zinc-950 rounded-xl border border-zinc-800 flex flex-col items-center justify-center gap-2 text-zinc-500">
+        <Dumbbell className="w-7 h-7 text-zinc-600" aria-hidden="true" />
+        <span className="text-xs">Demonstração em revisão</span>
+      </div>
+    );
+  }
+
+  const imageClass = variant === 'thumbnail'
+    ? 'w-full h-full object-contain'
+    : variant === 'workout'
+      ? 'w-full h-full object-contain bg-zinc-950'
+      : 'w-full h-48 bg-zinc-950 rounded-xl border border-zinc-800 object-contain p-2';
+
+  return (
+    <img
+      src={mapping.path}
+      alt={`Demonstração de ${mapping.exercise_name}`}
+      className={imageClass}
+      loading={variant === 'workout' ? 'eager' : 'lazy'}
+      decoding="async"
+      onError={() => setImageFailed(true)}
+    />
+  );
+}
+
 // --- DEFAULT STATE MOCKS & HELPERS ---
 const DEFAULT_USER_PROFILE = {
   name: '',
@@ -423,7 +460,30 @@ export default function App() {
 
   // Evolution History Logs
   const [historyLogs, setHistoryLogs] = useState(() => readStoredValue(STORAGE_KEYS.history, []));
+  const [exerciseGifModule, setExerciseGifModule] = useState(null);
+  const [exerciseCatalog, setExerciseCatalog] = useState(null);
   const profileValidationErrors = getProfileValidationErrors(userProfile);
+  const showExerciseGifReview = typeof window !== 'undefined'
+    && new URLSearchParams(window.location.search).get('exercise-gif-review') === '1';
+
+  useEffect(() => {
+    const needsGifIndex = showExerciseGifReview || ['workout', 'active-workout', 'exercises'].includes(activeTab);
+    if (!needsGifIndex || exerciseGifModule) return;
+    let cancelled = false;
+    import('./exercise-gifs').then((module) => {
+      if (!cancelled) setExerciseGifModule(module);
+    }).catch((error) => console.error('Could not load the exercise GIF index:', error));
+    return () => { cancelled = true; };
+  }, [activeTab, showExerciseGifReview, exerciseGifModule]);
+
+  useEffect(() => {
+    if (activeTab !== 'exercises' || exerciseCatalog) return;
+    let cancelled = false;
+    import('./exercise-catalog').then((module) => {
+      if (!cancelled) setExerciseCatalog(module.EXERCISE_CATALOG_DATABASE);
+    }).catch((error) => console.error('Could not load the exercise catalogue:', error));
+    return () => { cancelled = true; };
+  }, [activeTab, exerciseCatalog]);
 
   // Keep offline state visible; AI generation remains online-only.
   useEffect(() => {
@@ -507,10 +567,11 @@ export default function App() {
   };
 
   return (
+    <ExerciseGifContext.Provider value={exerciseGifModule}>
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans flex flex-col md:flex-row antialiased selection:bg-lime-500 selection:text-zinc-950">
       
       {/* DESKTOP SIDEBAR */}
-      <aside className="hidden md:flex flex-col w-64 bg-zinc-900 border-r border-zinc-800/80 p-5 justify-between shrink-0">
+      <aside className={`${showExerciseGifReview ? 'hidden' : 'hidden md:flex'} flex-col w-64 bg-zinc-900 border-r border-zinc-800/80 p-5 justify-between shrink-0`}>
         <div className="space-y-8">
           {/* Logo Branding */}
           <div className="flex items-center gap-3">
@@ -552,17 +613,17 @@ export default function App() {
       </aside>
 
       {/* MOBILE BOTTOM NAVIGATION BAR */}
-      <nav className={`mobile-bottom-nav md:hidden fixed bottom-0 left-0 right-0 z-50 bg-zinc-900/95 backdrop-blur-md border-t border-zinc-800 px-2 pt-2 flex items-center justify-around ${activeTab === 'active-workout' ? 'is-workout-hidden' : ''}`} aria-label="Navegação principal">
+      {!showExerciseGifReview && <nav className={`mobile-bottom-nav md:hidden fixed bottom-0 left-0 right-0 z-50 bg-zinc-900/95 backdrop-blur-md border-t border-zinc-800 px-2 pt-2 flex items-center justify-around ${activeTab === 'active-workout' ? 'is-workout-hidden' : ''}`} aria-label="Navegação principal">
         <MobileNavButton id="dashboard" icon={Activity} label="Início" active={activeTab} onClick={setActiveTab} />
         <MobileNavButton id="workout" icon={Dumbbell} label="Treino" active={activeTab} onClick={setActiveTab} />
         <MobileNavButton id="generator" icon={Sparkles} label="IA" active={activeTab} onClick={setActiveTab} highlight />
         <MobileNavButton id="exercises" icon={Eye} label="Catálogo" active={activeTab} onClick={setActiveTab} />
         <MobileNavButton id="profile" icon={User} label="Perfil" active={activeTab} onClick={setActiveTab} />
-      </nav>
+      </nav>}
 
       {/* MAIN CONTENT AREA */}
       <main className={`app-main flex-1 overflow-y-auto pb-24 md:pb-8 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full ${activeTab === 'active-workout' ? 'is-workout-main' : ''}`}>
-        
+        {showExerciseGifReview ? <ExerciseGifReviewView /> : <>
         {!isOnline && <div role="status" className="mb-4 rounded-xl border border-amber-700/60 bg-amber-950/50 px-4 py-3 text-sm text-amber-200">Você está offline. Recursos online e a geração de treinos por IA não estão disponíveis.</div>}
         {!isOnline && <div role="status" className="mb-4 rounded-xl border border-amber-700/60 bg-amber-950/50 px-4 py-3 text-sm text-amber-200">Sem conexão. Seus dados permanecem neste dispositivo; a geração de treinos precisa de internet.</div>}
 
@@ -647,7 +708,8 @@ export default function App() {
         {/* VIEW 6: EXERCISES CATALOGUE */}
         {activeTab === 'exercises' && (
           <ExerciseCatalogView 
-            exercises={EXERCISE_DATABASE}
+            exercises={exerciseCatalog || []}
+            loading={!exerciseCatalog}
             onSelectExercise={(ex) => setSelectedExerciseForModal(ex)}
           />
         )}
@@ -662,6 +724,7 @@ export default function App() {
             }}
           />
         )}
+        </>}
       </main>
 
       {/* EXERCISE DETAIL MODAL */}
@@ -672,12 +735,13 @@ export default function App() {
         />
       )}
     </div>
+    </ExerciseGifContext.Provider>
   );
 }
 
 // --- SUB-COMPONENTS & VIEWS ---
 
-function NavButton({ id, icon: Icon, label, active, onClick, highlight }) {
+function NavButton({ id, icon: Icon, label, active, onClick, highlight = false }) {
   const isActive = active === id;
   return (
     <button
@@ -699,7 +763,7 @@ function NavButton({ id, icon: Icon, label, active, onClick, highlight }) {
   );
 }
 
-function MobileNavButton({ id, icon: Icon, label, active, onClick, highlight }) {
+function MobileNavButton({ id, icon: Icon, label, active, onClick, highlight = false }) {
   const isActive = active === id;
   return (
     <button
@@ -1388,7 +1452,7 @@ function WorkoutPlanView({ workoutPlan, onStartDay, onOpenExerciseModal }) {
                   <div key={eIdx} className="bg-zinc-950 border border-zinc-800/80 rounded-xl p-3.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-zinc-700 transition-colors">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 bg-zinc-900 rounded-lg overflow-hidden shrink-0 border border-zinc-800 flex items-center justify-center text-lime-400">
-                        <Dumbbell className="w-5 h-5" />
+                        <ExerciseVisual exerciseId={dbEx.id} fallbackType={dbEx.svgType} variant="thumbnail" />
                       </div>
                       <div>
                         <h4 className="font-bold text-sm text-zinc-100 flex items-center gap-2">
@@ -1485,7 +1549,7 @@ function ActiveWorkoutView({ day, timer, isTimerRunning, onStartTimer, onFinishW
           return (
             <div key={eIdx} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-20 h-20 bg-zinc-950 rounded-xl overflow-hidden border border-zinc-800 flex items-center justify-center text-lime-400 shrink-0"><ExerciseSVG type={dbEx.svgType} /></div>
+                <div className="w-20 h-20 bg-zinc-950 rounded-xl overflow-hidden border border-zinc-800 flex items-center justify-center text-lime-400 shrink-0"><ExerciseVisual exerciseId={dbEx.id} fallbackType={dbEx.svgType} variant="workout" /></div>
                 <div>
                   <h3 className="font-extrabold text-base text-white">{ex.name}</h3>
                   <p className="text-xs text-zinc-400">Meta: {ex.sets} séries x {ex.reps} reps | Descanso: {ex.rest}</p>
@@ -1536,14 +1600,15 @@ function ActiveWorkoutView({ day, timer, isTimerRunning, onStartTimer, onFinishW
 }
 
 // --- EXERCISE CATALOGUE VIEW ---
-function ExerciseCatalogView({ exercises, onSelectExercise }) {
+function ExerciseCatalogView({ exercises, loading, onSelectExercise }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todos');
-
-  const categories = ['Todos', 'Peitoral', 'Quadríceps', 'Cadeia Posterior', 'Dorsais', 'Deltoides', 'Bíceps', 'Tríceps'];
+  const categories = ['Todos', ...new Set(exercises.map(ex => ex.category).filter(Boolean))];
 
   const filtered = exercises.filter(ex => {
-    const matchesSearch = ex.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const query = searchTerm.toLocaleLowerCase('pt-BR');
+    const matchesSearch = ex.name.toLocaleLowerCase('pt-BR').includes(query)
+      || ex.nameEn.toLocaleLowerCase('pt-BR').includes(query);
     const matchesCat = selectedCategory === 'Todos' || ex.category === selectedCategory;
     return matchesSearch && matchesCat;
   });
@@ -1552,7 +1617,7 @@ function ExerciseCatalogView({ exercises, onSelectExercise }) {
     <div className="space-y-6 animate-fadeIn">
       <div>
         <h1 className="text-2xl font-black text-white">Catálogo de Exercícios & Biomecânica</h1>
-        <p className="text-xs text-zinc-400">Guia técnico completo com execuções biomecânicas corretas e ilustrações.</p>
+        <p className="text-xs text-zinc-400">{exercises.length} exercícios. Demonstrações carregadas sob demanda para economizar dados móveis.</p>
       </div>
 
       {/* Filter Bar */}
@@ -1586,7 +1651,7 @@ function ExerciseCatalogView({ exercises, onSelectExercise }) {
       </div>
 
       {/* Exercises Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {loading ? <p role="status" className="rounded-xl border border-zinc-800 bg-zinc-900 p-6 text-sm text-zinc-400">Carregando catálogo…</p> : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filtered.map((ex) => (
           <div 
             key={ex.id}
@@ -1594,7 +1659,7 @@ function ExerciseCatalogView({ exercises, onSelectExercise }) {
             className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden hover:border-lime-500/50 transition-all cursor-pointer group flex flex-col justify-between"
           >
             <div>
-              <ExerciseSVG type={ex.svgType} />
+              <ExerciseVisual exerciseId={ex.id} fallbackType={ex.svgType} />
               <div className="p-4 space-y-2">
                 <span className="text-[10px] uppercase font-bold text-lime-400 bg-lime-950/60 px-2.5 py-0.5 rounded border border-lime-800/40">
                   {ex.category}
@@ -1612,8 +1677,95 @@ function ExerciseCatalogView({ exercises, onSelectExercise }) {
             </div>
           </div>
         ))}
-      </div>
+      </div>}
     </div>
+  );
+}
+
+function ExerciseGifReviewView() {
+  const [query, setQuery] = useState('');
+  const [statusFilter, setStatusFilter] = useState('needs-review');
+  const gifModule = React.useContext(ExerciseGifContext);
+  const entries = gifModule?.EXERCISE_GIF_MAP.entries || [];
+  const statuses = [
+    ['needs-review', 'Precisa de revisão'],
+    ['all', 'Todos'],
+    ['confirmed', 'Confirmados'],
+    ['probable', 'Prováveis'],
+    ['pending', 'Pendentes'],
+    ['no_match', 'Sem correspondência'],
+  ];
+  const statusNames = {
+    confirmed: 'Confirmada',
+    probable: 'Provável',
+    pending: 'Pendente',
+    no_match: 'Sem correspondência',
+  };
+  const countForStatus = (status) => entries.filter((entry) => entry.status === status).length;
+  const filtered = entries.filter((entry) => {
+    const text = `${entry.exercise_name} ${entry.english_name} ${entry.csv_name || ''} ${entry.gif || ''}`.toLocaleLowerCase('pt-BR');
+    const matchesQuery = text.includes(query.toLocaleLowerCase('pt-BR'));
+    const matchesStatus = statusFilter === 'all'
+      || (statusFilter === 'needs-review' && ['probable', 'pending', 'no_match'].includes(entry.status))
+      || entry.status === statusFilter;
+    return matchesQuery && matchesStatus;
+  });
+
+  if (!gifModule) return <p role="status" className="rounded-xl border border-zinc-800 bg-zinc-900 p-6 text-sm text-zinc-400">Carregando o mapeamento de exercícios…</p>;
+
+  return (
+    <section className="space-y-5" aria-labelledby="gif-review-title">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-wider text-lime-400">Ferramenta de revisão</p>
+          <h1 id="gif-review-title" className="text-2xl font-black text-white">Mapeamento de GIFs</h1>
+          <p className="text-sm text-zinc-400">{entries.length} exercícios · {countForStatus('confirmed')} confirmados · {countForStatus('probable')} prováveis · {countForStatus('pending')} pendentes · {countForStatus('no_match')} sem correspondência</p>
+        </div>
+        <a href={window.location.pathname} className="inline-flex min-h-11 items-center justify-center rounded-xl border border-zinc-700 px-4 text-sm font-semibold text-zinc-200 hover:bg-zinc-800">Voltar ao FitIA</a>
+      </div>
+
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <label className="sr-only" htmlFor="gif-review-search">Buscar exercício ou GIF</label>
+        <input
+          id="gif-review-search"
+          type="search"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Buscar exercício, CSV ou arquivo GIF..."
+          className="min-h-11 min-w-0 flex-1 rounded-xl border border-zinc-700 bg-zinc-900 px-4 text-base text-white placeholder:text-zinc-500 focus:border-lime-500 focus:outline-none"
+        />
+        <label className="sr-only" htmlFor="gif-review-status">Filtrar por status</label>
+        <select
+          id="gif-review-status"
+          value={statusFilter}
+          onChange={(event) => setStatusFilter(event.target.value)}
+          className="min-h-11 rounded-xl border border-zinc-700 bg-zinc-900 px-3 text-sm text-white focus:border-lime-500 focus:outline-none"
+        >
+          {statuses.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+        </select>
+      </div>
+
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        {filtered.map((entry) => (
+          <article key={entry.exercise_id} className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+            {gifModule?.resolveExerciseGif(entry.exercise_id)
+              ? <img src={entry.path} alt={`GIF ${entry.gif} — ${entry.exercise_name}`} loading="lazy" decoding="async" className="h-44 w-full bg-white object-contain" />
+              : <div className="flex h-44 flex-col items-center justify-center gap-2 bg-zinc-950 text-zinc-500"><Dumbbell className="h-7 w-7" aria-hidden="true" /><span className="text-xs">Sem GIF confirmado</span></div>}
+            <div className="space-y-2 p-4">
+              <div className="flex items-start justify-between gap-2">
+                <h2 className="font-bold text-white">{entry.exercise_name}</h2>
+                <span className={`shrink-0 rounded-full px-2 py-1 text-[10px] font-bold ${entry.status === 'confirmed' ? 'bg-lime-950 text-lime-300' : entry.status === 'probable' ? 'bg-amber-950 text-amber-300' : 'bg-zinc-800 text-zinc-300'}`}>{statusNames[entry.status]}</span>
+              </div>
+              <p className="text-xs text-zinc-400">CSV: {entry.csv_name || 'não identificado'}{entry.csv_id ? ` · ID ${entry.csv_id}` : ''}</p>
+              <p className="text-xs text-zinc-400">GIF: {entry.gif || '—'} · Confiança: {Math.round(entry.confidence * 100)}%</p>
+              <p className="break-all text-[11px] text-zinc-500">{entry.path || 'Sem caminho local'}</p>
+              <p className="text-xs leading-relaxed text-zinc-400">{entry.notes}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+      {!filtered.length && <p className="rounded-xl border border-zinc-800 bg-zinc-900 p-6 text-center text-sm text-zinc-400">Nenhum exercício encontrado com esse filtro.</p>}
+    </section>
   );
 }
 
@@ -1707,7 +1859,7 @@ function ExerciseDetailModal({ exercise, onClose }) {
           <X className="w-5 h-5" />
         </button>
 
-        <ExerciseSVG type={exercise.svgType} />
+        <ExerciseVisual exerciseId={exercise.id} fallbackType={exercise.svgType} />
 
         <div className="space-y-4">
           <div>
