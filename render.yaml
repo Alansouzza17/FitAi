@@ -12,7 +12,15 @@ services:
       - key: NODE_VERSION
         value: 20.19.0
       - key: GEMINI_MODEL
-        value: gemini-2.5-flash
+        value: gemini-3.8-flash
+      - key: GEMINI_FALLBACK_MODEL
+        value: gemini-3.6-flash
+      - key: GEMINI_MAX_RETRIES
+        value: 5
+      - key: GEMINI_INITIAL_DELAY
+        value: 2000
+      - key: GEMINI_TIMEOUT
+        value: 60000
       - key: GEMINI_API_KEY
         sync: false
       - key: CORS_ORIGINS

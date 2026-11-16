@@ -616,7 +616,7 @@ export default function App() {
       {!showExerciseGifReview && <nav className={`mobile-bottom-nav md:hidden fixed bottom-0 left-0 right-0 z-50 bg-zinc-900/95 backdrop-blur-md border-t border-zinc-800 px-2 pt-2 flex items-center justify-around ${activeTab === 'active-workout' ? 'is-workout-hidden' : ''}`} aria-label="Navegação principal">
         <MobileNavButton id="dashboard" icon={Activity} label="Início" active={activeTab} onClick={setActiveTab} />
         <MobileNavButton id="workout" icon={Dumbbell} label="Treino" active={activeTab} onClick={setActiveTab} />
-        <MobileNavButton id="generator" icon={Sparkles} label="IA" active={activeTab} onClick={setActiveTab} highlight />
+        <MobileNavButton id="generator" icon={Sparkles} label="Gerar" active={activeTab} onClick={setActiveTab} highlight />
         <MobileNavButton id="exercises" icon={Eye} label="Catálogo" active={activeTab} onClick={setActiveTab} />
         <MobileNavButton id="profile" icon={User} label="Perfil" active={activeTab} onClick={setActiveTab} />
       </nav>}

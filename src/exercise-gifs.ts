@@ -5,7 +5,12 @@ const gifByExerciseId = new Map();
 
 for (const entry of entries) {
   gifByExerciseId.set(entry.exercise_id, entry);
-  for (const alias of entry.application_aliases || []) {
+  const aliases = Array.isArray(entry.application_aliases)
+    ? entry.application_aliases
+    : entry.application_aliases
+      ? [entry.application_aliases]
+      : [];
+  for (const alias of aliases) {
     gifByExerciseId.set(alias, entry);
   }
 }

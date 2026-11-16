@@ -185,7 +185,7 @@
         "Panturrilhas (Gastrocnêmio)"
       ],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": "leg-curl",
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -208,7 +208,7 @@
         "Core"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": "hip-thrust",
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -252,7 +252,7 @@
         "Oblíquos"
       ],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -276,7 +276,7 @@
         "Glúteos"
       ],
       "equipment": "Esteira",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -419,20 +419,20 @@
       "exercise_id": "triceps-testa-barra",
       "exercise_name": "Tríceps Testa com Barra",
       "english_name": "Barbell Skull Crusher",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0060",
+      "csv_name": "barbell lying triceps extension skull crusher",
+      "gif": "0060.gif",
+      "path": "/assets/0060.gif",
       "muscle_group": "Tríceps",
       "primary_muscles": [
         "Tríceps Braquial (Cabeça Longa, Lateral e Medial)"
       ],
       "secondary_muscles": [],
       "equipment": "Barra",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0060 (barbell lying triceps extension skull crusher)."
     },
     {
       "exercise_id": "leg-press-45",
@@ -463,10 +463,10 @@
       "exercise_id": "supino-declinado-barra",
       "exercise_name": "Supino Declinado com Barra",
       "english_name": "Decline Barbell Bench Press",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0033",
+      "csv_name": "barbell decline bench press",
+      "gif": "0033.gif",
+      "path": "/assets/0033.gif",
       "muscle_group": "Peito",
       "primary_muscles": [
         "Peitoral Maior (Porção Esternocostal Inferior)"
@@ -476,10 +476,10 @@
         "Deltoide Anterior"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0033 (barbell decline bench press)."
     },
     {
       "exercise_id": "supino-reto-halteres",
@@ -531,10 +531,10 @@
       "exercise_id": "supino-declinado-halteres",
       "exercise_name": "Supino Declinado com Halteres",
       "english_name": "Decline Dumbbell Press",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0301",
+      "csv_name": "dumbbell decline bench press",
+      "gif": "0301.gif",
+      "path": "/assets/0301.gif",
       "muscle_group": "Peito",
       "primary_muscles": [
         "Peitoral Maior (Inferior)"
@@ -544,10 +544,10 @@
         "Deltoide Anterior"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0301 (dumbbell decline bench press)."
     },
     {
       "exercise_id": "crucifixo-reto-halteres",
@@ -628,7 +628,7 @@
         "Deltoide Anterior"
       ],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -673,7 +673,7 @@
         "Bíceps Braquial (estabilização)"
       ],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -773,10 +773,10 @@
       "exercise_id": "mergulho-paralelas-peito",
       "exercise_name": "Mergulho nas Paralelas (Foco Peitoral)",
       "english_name": "Chest Dips",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0251",
+      "csv_name": "chest dip",
+      "gif": "0251.gif",
+      "path": "/assets/0251.gif",
       "muscle_group": "Peito",
       "primary_muscles": [
         "Peitoral Maior (Inferior)"
@@ -786,10 +786,10 @@
         "Deltoide Anterior"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0251 (chest dip)."
     },
     {
       "exercise_id": "supino-maquina-articulado",
@@ -908,10 +908,10 @@
       "exercise_id": "barra-fixa-neutra",
       "exercise_name": "Barra Fixa Neutra",
       "english_name": "Neutral Grip Pull-Up",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0651",
+      "csv_name": "pull up (neutral grip)",
+      "gif": "0651.gif",
+      "path": "/assets/0651.gif",
       "muscle_group": "Costas",
       "primary_muscles": [
         "Latíssimo do Dorso"
@@ -922,10 +922,10 @@
         "Trapézio Inferior"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0651 (pull up (neutral grip))."
     },
     {
       "exercise_id": "puxada-supinada-polia",
@@ -966,7 +966,7 @@
         "Romboides"
       ],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -989,7 +989,7 @@
         "Trapézio Inferior"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1085,7 +1085,7 @@
         "Deltoide Posterior"
       ],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1094,10 +1094,10 @@
       "exercise_id": "pulldown-corda-polia",
       "exercise_name": "Pulldown com Corda (Braços Estendidos)",
       "english_name": "Straight Arm Rope Pulldown",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0237",
+      "csv_name": "cable straight arm pulldown (with rope)",
+      "gif": "0237.gif",
+      "path": "/assets/0237.gif",
       "muscle_group": "Costas",
       "primary_muscles": [
         "Latíssimo do Dorso"
@@ -1107,19 +1107,19 @@
         "Serrátil Anterior"
       ],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0237 (cable straight arm pulldown (with rope))."
     },
     {
       "exercise_id": "pulldown-barra-reta",
       "exercise_name": "Pulldown com Barra Reta (Braços Estendidos)",
       "english_name": "Straight Arm Bar Pulldown",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0238",
+      "csv_name": "cable straight arm pulldown",
+      "gif": "0238.gif",
+      "path": "/assets/0238.gif",
       "muscle_group": "Costas",
       "primary_muscles": [
         "Latíssimo do Dorso"
@@ -1129,10 +1129,10 @@
         "Core (Estabilização)"
       ],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0238 (cable straight arm pulldown)."
     },
     {
       "exercise_id": "remada-pendlay",
@@ -1153,7 +1153,7 @@
         "Isquiotibiais (Isometria)"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1177,7 +1177,7 @@
         "Antebraço"
       ],
       "equipment": "Barra (T-Bar)",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1198,7 +1198,7 @@
         "Antebraços (Pegada)"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1219,7 +1219,7 @@
         "Antebraços"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1285,7 +1285,7 @@
         "Isquiotibiais"
       ],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1376,7 +1376,7 @@
         "Core"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1385,10 +1385,10 @@
       "exercise_id": "desenvolvimento-barra-sentado",
       "exercise_name": "Desenvolvimento com Barra Sentado",
       "english_name": "Seated Barbell Shoulder Press",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0091",
+      "csv_name": "barbell seated overhead press",
+      "gif": "0091.gif",
+      "path": "/assets/0091.gif",
       "muscle_group": "Ombros",
       "primary_muscles": [
         "Deltoide Anterior",
@@ -1399,19 +1399,19 @@
         "Peitoral Superior"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0091 (barbell seated overhead press)."
     },
     {
       "exercise_id": "desenvolvimento-arnold",
       "exercise_name": "Desenvolvimento Arnold",
       "english_name": "Arnold Press",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0287",
+      "csv_name": "dumbbell arnold press v. 2",
+      "gif": "0287.gif",
+      "path": "/assets/0287.gif",
       "muscle_group": "Ombros",
       "primary_muscles": [
         "Deltoide Anterior",
@@ -1422,10 +1422,10 @@
         "Tríceps Braquial"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0287 (dumbbell arnold press v. 2)."
     },
     {
       "exercise_id": "desenvolvimento-maquina",
@@ -1486,7 +1486,7 @@
         "Trapézio Superior"
       ],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1507,7 +1507,7 @@
         "Deltoide Posterior"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1593,7 +1593,7 @@
         "Peitoral Superior"
       ],
       "equipment": "Anilha",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1616,7 +1616,7 @@
         "Romboides"
       ],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": "face-pull",
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1638,7 +1638,7 @@
         "Trapézio Médio"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1681,7 +1681,7 @@
         "Trapézio Superior"
       ],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1704,7 +1704,7 @@
         "Manguito Rotador"
       ],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1735,10 +1735,10 @@
       "exercise_id": "desenvolvimento-nuca",
       "exercise_name": "Desenvolvimento Atrás da Nuca (Behind the Neck Press)",
       "english_name": "Behind the Neck Press",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0747",
+      "csv_name": "smith behind neck press",
+      "gif": "0747.gif",
+      "path": "/assets/0747.gif",
       "muscle_group": "Ombros",
       "primary_muscles": [
         "Deltoide Lateral",
@@ -1749,10 +1749,10 @@
         "Trapézio Superior"
       ],
       "equipment": "Barra (ou Smith)",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0747 (smith behind neck press)."
     },
     {
       "exercise_id": "rosca-direta-barra-ez",
@@ -1771,7 +1771,7 @@
         "Braquial"
       ],
       "equipment": "Barra EZ",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1780,10 +1780,10 @@
       "exercise_id": "rosca-alternada-halteres",
       "exercise_name": "Rosca Alternada com Halteres",
       "english_name": "Alternate Dumbbell Curl",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0285",
+      "csv_name": "dumbbell alternate biceps curl",
+      "gif": "0285.gif",
+      "path": "/assets/0285.gif",
       "muscle_group": "Bíceps",
       "primary_muscles": [
         "Bíceps Braquial"
@@ -1793,19 +1793,19 @@
         "Braquiorradial"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0285 (dumbbell alternate biceps curl)."
     },
     {
       "exercise_id": "rosca-martelo",
       "exercise_name": "Rosca Martelo",
       "english_name": "Hammer Curl",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0313",
+      "csv_name": "dumbbell hammer curl",
+      "gif": "0313.gif",
+      "path": "/assets/0313.gif",
       "muscle_group": "Bíceps",
       "primary_muscles": [
         "Braquiorradial",
@@ -1815,19 +1815,19 @@
         "Bíceps Braquial"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0313 (dumbbell hammer curl)."
     },
     {
       "exercise_id": "rosca-concentrada",
       "exercise_name": "Rosca Concentrada",
       "english_name": "Concentration Curl",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0297",
+      "csv_name": "dumbbell concentration curl",
+      "gif": "0297.gif",
+      "path": "/assets/0297.gif",
       "muscle_group": "Bíceps",
       "primary_muscles": [
         "Bíceps Braquial (Cabeça Curta)"
@@ -1836,19 +1836,19 @@
         "Braquial"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0297 (dumbbell concentration curl)."
     },
     {
       "exercise_id": "rosca-scott-barra",
       "exercise_name": "Rosca Scott com Barra (Preacher Curl)",
       "english_name": "Preacher Curl",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0070",
+      "csv_name": "barbell preacher curl",
+      "gif": "0070.gif",
+      "path": "/assets/0070.gif",
       "muscle_group": "Bíceps",
       "primary_muscles": [
         "Bíceps Braquial (Cabeça Curta)"
@@ -1857,10 +1857,10 @@
         "Braquial"
       ],
       "equipment": "Barra EZ / Banco Scott",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0070 (barbell preacher curl)."
     },
     {
       "exercise_id": "rosca-scott-haltere",
@@ -1878,7 +1878,7 @@
         "Braquial"
       ],
       "equipment": "Haltere / Banco Scott",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1887,10 +1887,10 @@
       "exercise_id": "rosca-aranha",
       "exercise_name": "Rosca Aranha (Spider Curl)",
       "english_name": "Spider Curl",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0454",
+      "csv_name": "ez barbell spider curl",
+      "gif": "0454.gif",
+      "path": "/assets/0454.gif",
       "muscle_group": "Bíceps",
       "primary_muscles": [
         "Bíceps Braquial (Cabeça Curta)"
@@ -1899,10 +1899,10 @@
         "Braquial"
       ],
       "equipment": "Barra / Halteres (Banco Inclinado)",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0454 (ez barbell spider curl)."
     },
     {
       "exercise_id": "rosca-polia-baixa",
@@ -1920,7 +1920,7 @@
         "Braquiorradial"
       ],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1929,10 +1929,10 @@
       "exercise_id": "rosca-inclinada-halteres",
       "exercise_name": "Rosca Inclinada com Halteres",
       "english_name": "Incline Dumbbell Curl",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0315",
+      "csv_name": "dumbbell incline biceps curl",
+      "gif": "0315.gif",
+      "path": "/assets/0315.gif",
       "muscle_group": "Bíceps",
       "primary_muscles": [
         "Bíceps Braquial (Cabeça Longa)"
@@ -1941,10 +1941,10 @@
         "Braquial"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0315 (dumbbell incline biceps curl)."
     },
     {
       "exercise_id": "rosca-unilateral-polia-alta",
@@ -1962,7 +1962,7 @@
         "Braquial"
       ],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -1971,10 +1971,10 @@
       "exercise_id": "rosca-zottman",
       "exercise_name": "Rosca Zottman",
       "english_name": "Zottman Curl",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0439",
+      "csv_name": "dumbbell zottman curl",
+      "gif": "0439.gif",
+      "path": "/assets/0439.gif",
       "muscle_group": "Bíceps",
       "primary_muscles": [
         "Bíceps Braquial",
@@ -1985,10 +1985,10 @@
         "Antebraços"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0439 (dumbbell zottman curl)."
     },
     {
       "exercise_id": "rosca-martelo-corda-polia",
@@ -2016,10 +2016,10 @@
       "exercise_id": "rosca-inversa-barra",
       "exercise_name": "Rosca Inversa com Barra",
       "english_name": "Reverse Barbell Curl",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0080",
+      "csv_name": "barbell reverse curl",
+      "gif": "0080.gif",
+      "path": "/assets/0080.gif",
       "muscle_group": "Bíceps",
       "primary_muscles": [
         "Braquiorradial",
@@ -2030,10 +2030,10 @@
         "Extensores do Antebraço"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0080 (barbell reverse curl)."
     },
     {
       "exercise_id": "rosca-21",
@@ -2052,7 +2052,7 @@
         "Braquiorradial"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2073,7 +2073,7 @@
         "Ancôneo"
       ],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2094,7 +2094,7 @@
         "Ancôneo"
       ],
       "equipment": "Barra EZ",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2116,7 +2116,7 @@
         "Core (Estabilização)"
       ],
       "equipment": "Haltere",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": "overhead-triceps-extension",
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2137,7 +2137,7 @@
         "Ancôneo"
       ],
       "equipment": "Haltere",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2159,7 +2159,7 @@
         "Deltoide Anterior"
       ],
       "equipment": "Peso Corporal / Bancos",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2168,10 +2168,10 @@
       "exercise_id": "mergulho-paralelas-triceps",
       "exercise_name": "Mergulho nas Paralelas (Foco Tríceps)",
       "english_name": "Triceps Dips",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0814",
+      "csv_name": "triceps dip",
+      "gif": "0814.gif",
+      "path": "/assets/0814.gif",
       "muscle_group": "Tríceps",
       "primary_muscles": [
         "Tríceps Braquial"
@@ -2181,19 +2181,19 @@
         "Deltoide Anterior"
       ],
       "equipment": "Peso Corporal / Barras Paralelas",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0814 (triceps dip)."
     },
     {
       "exercise_id": "supino-fechado",
       "exercise_name": "Supino Fechado",
       "english_name": "Close-Grip Bench Press",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0030",
+      "csv_name": "barbell close-grip bench press",
+      "gif": "0030.gif",
+      "path": "/assets/0030.gif",
       "muscle_group": "Tríceps",
       "primary_muscles": [
         "Tríceps Braquial"
@@ -2203,10 +2203,10 @@
         "Deltoide Anterior"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0030 (barbell close-grip bench press)."
     },
     {
       "exercise_id": "triceps-coice-haltere",
@@ -2224,7 +2224,7 @@
         "Ombro Posterior (Isometria)"
       ],
       "equipment": "Haltere",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2243,7 +2243,7 @@
       ],
       "secondary_muscles": [],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2273,39 +2273,39 @@
       "exercise_id": "triceps-pulldown-unilateral-reverso",
       "exercise_name": "Tríceps Unilateral na Polia (Pegada Inversa)",
       "english_name": "Reverse Grip Single-Arm Triceps Pushdown",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0207",
+      "csv_name": "cable reverse-grip pushdown",
+      "gif": "0207.gif",
+      "path": "/assets/0207.gif",
       "muscle_group": "Tríceps",
       "primary_muscles": [
         "Tríceps Braquial (Cabeça Medial)"
       ],
       "secondary_muscles": [],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0207 (cable reverse-grip pushdown)."
     },
     {
       "exercise_id": "triceps-pulldown-barra-v",
       "exercise_name": "Tríceps Pulldown com Barra em V",
       "english_name": "Triceps Pushdown (V-Bar)",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0241",
+      "csv_name": "cable triceps pushdown (v-bar)",
+      "gif": "0241.gif",
+      "path": "/assets/0241.gif",
       "muscle_group": "Tríceps",
       "primary_muscles": [
         "Tríceps Braquial (Cabeça Lateral e Medial)"
       ],
       "secondary_muscles": [],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0241 (cable triceps pushdown (v-bar))."
     },
     {
       "exercise_id": "maquina-mergulho-triceps",
@@ -2324,7 +2324,7 @@
         "Deltoide Anterior"
       ],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2345,7 +2345,7 @@
         "Deltoide Anterior"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2354,10 +2354,10 @@
       "exercise_id": "rosca-punho-invertida-barra",
       "exercise_name": "Rosca Punho Invertida com Barra",
       "english_name": "Reverse Barbell Wrist Curl",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0082",
+      "csv_name": "barbell reverse wrist curl",
+      "gif": "0082.gif",
+      "path": "/assets/0082.gif",
       "muscle_group": "Antebraço",
       "primary_muscles": [
         "Extensores do Antebraço",
@@ -2368,10 +2368,10 @@
         "Braquiorradial"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0082 (barbell reverse wrist curl)."
     },
     {
       "exercise_id": "rosca-punho-halteres",
@@ -2389,7 +2389,7 @@
         "Palmar Longo"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2410,7 +2410,7 @@
         "Braquiorradial"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2419,29 +2419,29 @@
       "exercise_id": "rosca-punho-tras-corpo-barra",
       "exercise_name": "Rosca Punho Atrás do Corpo com Barra",
       "english_name": "Behind-the-Back Barbell Wrist Curl",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0104",
+      "csv_name": "barbell standing back wrist curl",
+      "gif": "0104.gif",
+      "path": "/assets/0104.gif",
       "muscle_group": "Antebraço",
       "primary_muscles": [
         "Flexores do Antebraço"
       ],
       "secondary_muscles": [],
       "equipment": "Barra",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0104 (barbell standing back wrist curl)."
     },
     {
       "exercise_id": "rolo-de-punho",
       "exercise_name": "Rolo de Punho (Wrist Roller)",
       "english_name": "Wrist Roller",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0859",
+      "csv_name": "wrist rollerer",
+      "gif": "0859.gif",
+      "path": "/assets/0859.gif",
       "muscle_group": "Antebraço",
       "primary_muscles": [
         "Flexores do Antebraço",
@@ -2451,10 +2451,10 @@
         "Deltoide Anterior (Isometria)"
       ],
       "equipment": "Wrist Roller (Rolo e Corda)",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0859 (wrist rollerer)."
     },
     {
       "exercise_id": "caminhada-do-fazendeiro",
@@ -2474,7 +2474,7 @@
         "Panturrilhas"
       ],
       "equipment": "Halteres ou Kettlebells pesados",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2496,7 +2496,7 @@
         "Core"
       ],
       "equipment": "Barra Fixa",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2518,7 +2518,7 @@
         "Flexores do Antebraço"
       ],
       "equipment": "Anilhas",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2584,7 +2584,7 @@
         "Isquiotibiais"
       ],
       "equipment": "Máquina Smith",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2606,7 +2606,7 @@
         "Panturrilhas"
       ],
       "equipment": "Máquina (Cabos/Placas)",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2646,7 +2646,7 @@
       ],
       "secondary_muscles": [],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2669,7 +2669,7 @@
         "Core (Estabilização)"
       ],
       "equipment": "Halteres / Banco",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": "split-squat",
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2692,7 +2692,7 @@
         "Panturrilhas"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2715,7 +2715,7 @@
         "Core"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2724,10 +2724,10 @@
       "exercise_id": "agachamento-hack",
       "exercise_name": "Agachamento Hack (Hack Squat)",
       "english_name": "Hack Squat",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0743",
+      "csv_name": "sled hack squat",
+      "gif": "0743.gif",
+      "path": "/assets/0743.gif",
       "muscle_group": "Quadríceps",
       "primary_muscles": [
         "Quadríceps"
@@ -2737,19 +2737,19 @@
         "Isquiotibiais"
       ],
       "equipment": "Máquina Hack Squat",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual de todos os 12 quadros confirma agachamento na máquina hack com trenó; o GIF 0046 (hack squat com barra) foi rejeitado por incompatibilidade de equipamento."
     },
     {
       "exercise_id": "agachamento-goblet",
       "exercise_name": "Agachamento Goblet (Cálice)",
       "english_name": "Goblet Squat",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0534",
+      "csv_name": "kettlebell goblet squat",
+      "gif": "0534.gif",
+      "path": "/assets/0534.gif",
       "muscle_group": "Quadríceps",
       "primary_muscles": [
         "Quadríceps",
@@ -2759,10 +2759,10 @@
         "Core (Reto Abdominal)"
       ],
       "equipment": "Haltere / Kettlebell",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0534 (kettlebell goblet squat)."
     },
     {
       "exercise_id": "agachamento-sissy",
@@ -2789,10 +2789,10 @@
       "exercise_id": "agachamento-zercher",
       "exercise_name": "Agachamento Zercher",
       "english_name": "Zercher Squat",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0127",
+      "csv_name": "barbell zercher squat",
+      "gif": "0127.gif",
+      "path": "/assets/0127.gif",
       "muscle_group": "Quadríceps",
       "primary_muscles": [
         "Quadríceps",
@@ -2804,19 +2804,19 @@
         "Trapézio Superior"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0127 (barbell zercher squat)."
     },
     {
       "exercise_id": "subida-banco-halteres",
       "exercise_name": "Subida no Banco (Step-Up) com Halteres",
       "english_name": "Dumbbell Step-Ups",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0431",
+      "csv_name": "dumbbell step-up",
+      "gif": "0431.gif",
+      "path": "/assets/0431.gif",
       "muscle_group": "Quadríceps",
       "primary_muscles": [
         "Quadríceps",
@@ -2827,10 +2827,10 @@
         "Panturrilhas"
       ],
       "equipment": "Halteres / Banco",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0431 (dumbbell step-up)."
     },
     {
       "exercise_id": "agachamento-sumo",
@@ -2850,7 +2850,7 @@
         "Isquiotibiais"
       ],
       "equipment": "Haltere / Kettlebell",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2871,7 +2871,7 @@
         "Glúteos"
       ],
       "equipment": "Máquina Pendulum Squat",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2893,7 +2893,7 @@
         "Isquiotibiais"
       ],
       "equipment": "Máquina Belt Squat / Cinto de Lastro",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2916,7 +2916,7 @@
         "Core"
       ],
       "equipment": "Peso Corporal / Parede",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2925,10 +2925,10 @@
       "exercise_id": "agachamento-pistol",
       "exercise_name": "Agachamento Pistol (Pistol Squat)",
       "english_name": "Pistol Squat",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0544",
+      "csv_name": "kettlebell pistol squat",
+      "gif": "0544.gif",
+      "path": "/assets/0544.gif",
       "muscle_group": "Quadríceps",
       "primary_muscles": [
         "Quadríceps",
@@ -2940,10 +2940,10 @@
         "Estabilizadores de Tornozelo"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0544 (kettlebell pistol squat)."
     },
     {
       "exercise_id": "cadeira-flexora",
@@ -2961,7 +2961,7 @@
         "Gastrocnêmio"
       ],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -2982,7 +2982,7 @@
         "Glúteo Máximo (Isometria)"
       ],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3004,7 +3004,7 @@
         "Eretores da Espinha (Lombar)"
       ],
       "equipment": "Barra",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3013,10 +3013,10 @@
       "exercise_id": "stiff-halteres",
       "exercise_name": "Stiff com Halteres",
       "english_name": "Dumbbell Stiff-Legged Deadlift",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0432",
+      "csv_name": "dumbbell stiff leg deadlift",
+      "gif": "0432.gif",
+      "path": "/assets/0432.gif",
       "muscle_group": "Posterior de Coxa",
       "primary_muscles": [
         "Isquiotibiais",
@@ -3027,10 +3027,10 @@
         "Antebraços"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0432 (dumbbell stiff leg deadlift)."
     },
     {
       "exercise_id": "levantamento-terra-romeno",
@@ -3075,7 +3075,7 @@
         "Eretores da Espinha"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3097,7 +3097,7 @@
         "Lombar"
       ],
       "equipment": "Peso Corporal / Suporte",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3120,7 +3120,7 @@
         "Eretores da Espinha"
       ],
       "equipment": "Máquina GHD",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "no_match",
       "application_aliases": null,
       "notes": "Exercício identificado no CSV (3193), mas o arquivo GIF correspondente não está na pasta assets."
@@ -3143,7 +3143,7 @@
         "Músculos Estabilizadores do Tornozelo"
       ],
       "equipment": "Haltere / Kettlebell",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3164,7 +3164,7 @@
         "Gastrocnêmio"
       ],
       "equipment": "Máquina de Cabos / Tornozeleira",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3212,7 +3212,7 @@
         "Panturrilhas"
       ],
       "equipment": "Bola Suíça (Fitball)",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3221,10 +3221,10 @@
       "exercise_id": "pull-through-polia",
       "exercise_name": "Pull-Through na Polia",
       "english_name": "Cable Pull-Through",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0196",
+      "csv_name": "cable pull through (with rope)",
+      "gif": "0196.gif",
+      "path": "/assets/0196.gif",
       "muscle_group": "Posterior de Coxa",
       "primary_muscles": [
         "Glúteo Máximo",
@@ -3235,10 +3235,10 @@
         "Eretores da Espinha"
       ],
       "equipment": "Máquina de Cabos / Corda",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0196 (cable pull through (with rope))."
     },
     {
       "exercise_id": "good-morning",
@@ -3289,10 +3289,10 @@
       "exercise_id": "elevacao-panturrilha-sentado",
       "exercise_name": "Elevação de Panturrilha Sentado",
       "english_name": "Seated Calf Raise",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0594",
+      "csv_name": "lever seated calf raise",
+      "gif": "0594.gif",
+      "path": "/assets/0594.gif",
       "muscle_group": "Panturrilhas",
       "primary_muscles": [
         "Sóleo"
@@ -3301,10 +3301,10 @@
         "Gastrocnêmio"
       ],
       "equipment": "Máquina / Halteres",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0594 (lever seated calf raise)."
     },
     {
       "exercise_id": "elevacao-panturrilha-leg-press",
@@ -3321,7 +3321,7 @@
       ],
       "secondary_muscles": [],
       "equipment": "Máquina Leg Press",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3352,10 +3352,10 @@
       "exercise_id": "elevacao-panturrilha-unilateral",
       "exercise_name": "Elevação de Panturrilha Unilateral",
       "english_name": "Single-Leg Calf Raise",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0409",
+      "csv_name": "dumbbell single leg calf raise",
+      "gif": "0409.gif",
+      "path": "/assets/0409.gif",
       "muscle_group": "Panturrilhas",
       "primary_muscles": [
         "Gastrocnêmio"
@@ -3365,19 +3365,19 @@
         "Estabilizadores do Tornozelo"
       ],
       "equipment": "Haltere / Peso Corporal",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0409 (dumbbell single leg calf raise)."
     },
     {
       "exercise_id": "elevacao-panturrilha-smith",
       "exercise_name": "Elevação de Panturrilha no Smith",
       "english_name": "Smith Machine Calf Raise",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0773",
+      "csv_name": "smith standing leg calf raise",
+      "gif": "0773.gif",
+      "path": "/assets/0773.gif",
       "muscle_group": "Panturrilhas",
       "primary_muscles": [
         "Gastrocnêmio",
@@ -3387,10 +3387,10 @@
         "Core"
       ],
       "equipment": "Máquina Smith / Step",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0773 (smith standing leg calf raise)."
     },
     {
       "exercise_id": "elevacao-panturrilha-livre-pe",
@@ -3427,7 +3427,7 @@
       ],
       "secondary_muscles": [],
       "equipment": "Peso Corporal / Parede / Aparelho Específico",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3436,10 +3436,10 @@
       "exercise_id": "elevacao-panturrilha-hack",
       "exercise_name": "Panturrilha no Hack Squat",
       "english_name": "Hack Machine Calf Raise",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "1383",
+      "csv_name": "hack calf raise",
+      "gif": "1383.gif",
+      "path": "/assets/1383.gif",
       "muscle_group": "Panturrilhas",
       "primary_muscles": [
         "Gastrocnêmio",
@@ -3447,10 +3447,10 @@
       ],
       "secondary_muscles": [],
       "equipment": "Máquina Hack Squat",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 1383 (hack calf raise)."
     },
     {
       "exercise_id": "pular-corda",
@@ -3472,7 +3472,7 @@
         "Antebraços"
       ],
       "equipment": "Corda de Pular",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "no_match",
       "application_aliases": null,
       "notes": "Exercício identificado no CSV (2612), mas o arquivo GIF correspondente não está na pasta assets."
@@ -3493,7 +3493,7 @@
         "Isquiotibiais"
       ],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3514,7 +3514,7 @@
         "Isquiotibiais"
       ],
       "equipment": "Máquina Smith / Banco",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3535,7 +3535,7 @@
         "Isquiotibiais"
       ],
       "equipment": "Haltere / Banco",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3557,7 +3557,7 @@
         "Core"
       ],
       "equipment": "Peso Corporal / Solo",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3579,7 +3579,7 @@
         "Core"
       ],
       "equipment": "Peso Corporal / Solo",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3601,7 +3601,7 @@
         "Core"
       ],
       "equipment": "Banco / Caixote",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3623,7 +3623,7 @@
         "Adutores"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3632,10 +3632,10 @@
       "exercise_id": "abducao-quadril-maquina",
       "exercise_name": "Cadeira Abdutora",
       "english_name": "Seated Hip Abduction Machine",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0597",
+      "csv_name": "lever seated hip abduction",
+      "gif": "0597.gif",
+      "path": "/assets/0597.gif",
       "muscle_group": "Glúteos",
       "primary_muscles": [
         "Glúteo Médio",
@@ -3645,10 +3645,10 @@
         "Tensor da Fáscia Lata"
       ],
       "equipment": "Máquina",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0597 (lever seated hip abduction)."
     },
     {
       "exercise_id": "abducao-quadril-polia",
@@ -3667,7 +3667,7 @@
         "Tensor da Fáscia Lata"
       ],
       "equipment": "Máquina de Cabos / Tornozeleira",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3676,10 +3676,10 @@
       "exercise_id": "gluteo-coice-polia",
       "exercise_name": "Glúteo Coice na Polia (Glute Kickback)",
       "english_name": "Cable Glute Kickback",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0860",
+      "csv_name": "cable kickback",
+      "gif": "0860.gif",
+      "path": "/assets/0860.gif",
       "muscle_group": "Glúteos",
       "primary_muscles": [
         "Glúteo Máximo"
@@ -3689,10 +3689,10 @@
         "Core (Estabilização)"
       ],
       "equipment": "Máquina de Cabos / Tornozeleira",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0860 (cable kickback)."
     },
     {
       "exercise_id": "gluteo-coice-maquina",
@@ -3710,7 +3710,7 @@
         "Isquiotibiais"
       ],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3732,7 +3732,7 @@
         "Core"
       ],
       "equipment": "Máquina Smith",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3753,7 +3753,7 @@
         "Core (Estabilização)"
       ],
       "equipment": "Caneleira (Pesos de Tornozelo)",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3775,7 +3775,7 @@
         "Core (Estabilização)"
       ],
       "equipment": "Caneleira",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3796,7 +3796,7 @@
         "Rotadores Externos do Quadril"
       ],
       "equipment": "Faixa Elástica (Mini Band)",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3819,7 +3819,7 @@
         "Quadríceps (Isometria)"
       ],
       "equipment": "Faixa Elástica (Mini Band)",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3841,7 +3841,7 @@
         "Quadríceps"
       ],
       "equipment": "Halteres",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3850,10 +3850,10 @@
       "exercise_id": "hiperextensao-reversa",
       "exercise_name": "Hiperextensão Reversa (Reverse Hyper)",
       "english_name": "Reverse Hyperextension",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0593",
+      "csv_name": "lever reverse hyperextension",
+      "gif": "0593.gif",
+      "path": "/assets/0593.gif",
       "muscle_group": "Glúteos",
       "primary_muscles": [
         "Glúteo Máximo",
@@ -3863,10 +3863,10 @@
         "Isquiotibiais"
       ],
       "equipment": "Máquina Reverse Hyper / Banco",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0593 (lever reverse hyperextension)."
     },
     {
       "exercise_id": "extensao-lombar-foco-gluteo",
@@ -3885,7 +3885,7 @@
         "Eretores da Espinha"
       ],
       "equipment": "Banco Romano 45 Graus",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3894,10 +3894,10 @@
       "exercise_id": "crunch-abdominal-solo",
       "exercise_name": "Crunch Abdominal no Solo",
       "english_name": "Floor Crunch",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0274",
+      "csv_name": "crunch floor",
+      "gif": "0274.gif",
+      "path": "/assets/0274.gif",
       "muscle_group": "Abdômen",
       "primary_muscles": [
         "Reto Abdominal (Parte Superior)"
@@ -3906,19 +3906,19 @@
         "Oblíquos Externos"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0274 (crunch floor)."
     },
     {
       "exercise_id": "abdominal-sit-up",
       "exercise_name": "Abdominal Sit-Up (Completo)",
       "english_name": "Sit-Up",
-      "csv_id": null,
-      "csv_name": null,
-      "gif": null,
-      "path": null,
+      "csv_id": "0001",
+      "csv_name": "3/4 sit-up",
+      "gif": "0001.gif",
+      "path": "/assets/0001.gif",
       "muscle_group": "Abdômen",
       "primary_muscles": [
         "Reto Abdominal",
@@ -3928,10 +3928,10 @@
         "Oblíquos"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
-      "status": "pending",
+      "confidence": 0.99,
+      "status": "confirmed",
       "application_aliases": null,
-      "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
+      "notes": "Inspeção visual quadro a quadro confirmou o padrão do movimento e a categoria de equipamento com o exercício do catálogo; CSV 0001 (3/4 sit-up)."
     },
     {
       "exercise_id": "prancha-isometrica",
@@ -3952,7 +3952,7 @@
         "Glúteos"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3974,7 +3974,7 @@
         "Glúteo Médio"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -3996,7 +3996,7 @@
         "Transverso do Abdômen"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4041,7 +4041,7 @@
         "Oblíquos"
       ],
       "equipment": "Cadeira Romana (Captain's Chair)",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4062,7 +4062,7 @@
         "Flexores do Quadril"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4083,7 +4083,7 @@
         "Oblíquos"
       ],
       "equipment": "Máquina de Cabos / Corda",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4106,7 +4106,7 @@
         "Ombros"
       ],
       "equipment": "Máquina de Cabos",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4128,7 +4128,7 @@
         "Flexores do Quadril"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4152,7 +4152,7 @@
         "Lombar"
       ],
       "equipment": "Roda Abdominal (Ab Wheel)",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4173,7 +4173,7 @@
         "Flexores do Quadril"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4214,7 +4214,7 @@
       ],
       "secondary_muscles": [],
       "equipment": "Máquina",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4257,7 +4257,7 @@
         "Lombar (Estabilização)"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4279,7 +4279,7 @@
         "Flexores do Quadril"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4301,7 +4301,7 @@
         "Ombros (Estabilização)"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4321,7 +4321,7 @@
       ],
       "secondary_muscles": [],
       "equipment": "Banco Reto",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4346,7 +4346,7 @@
         "Isquiotibiais"
       ],
       "equipment": "Esteira",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4368,7 +4368,7 @@
         "Panturrilhas"
       ],
       "equipment": "Esteira",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4389,7 +4389,7 @@
         "Quadríceps"
       ],
       "equipment": "Bicicleta Ergométrica",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4413,7 +4413,7 @@
         "Glúteos"
       ],
       "equipment": "Spin Bike",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4437,7 +4437,7 @@
         "Peito (ao empurrar/puxar braços)"
       ],
       "equipment": "Elíptico",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4460,7 +4460,7 @@
         "Panturrilhas"
       ],
       "equipment": "Simulador de Escadas",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4485,7 +4485,7 @@
         "Ombros"
       ],
       "equipment": "Remo Ergômetro (Concept2, etc)",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4510,7 +4510,7 @@
         "Peito"
       ],
       "equipment": "Air Bike (Assault, Echo, etc)",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "no_match",
       "application_aliases": null,
       "notes": "O CSV usa Air Bike para um movimento abdominal no solo; o catálogo descreve a bicicleta ergométrica. A associação foi rejeitada por diferença biomecânica.",
@@ -4533,7 +4533,7 @@
         "Antebraços"
       ],
       "equipment": "Corda de Pular",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
@@ -4557,7 +4557,7 @@
         "Ombros"
       ],
       "equipment": "Peso Corporal",
-      "confidence": 0.0,
+      "confidence": 0,
       "status": "pending",
       "application_aliases": null,
       "notes": "Não foi confirmada uma associação segura após comparação de nome, músculos, equipamento e movimento visual."
